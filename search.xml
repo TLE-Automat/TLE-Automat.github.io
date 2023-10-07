@@ -144,4 +144,58 @@ class="math inline">\(O(n k ^2)\)</span> 。</p>
         <tag>杂题</tag>
       </tags>
   </entry>
+  <entry>
+    <title>XCPC解题报告索引</title>
+    <url>/2023/10/07/XCPC%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A%E7%B4%A2%E5%BC%95/</url>
+    <content><![CDATA[<h1 id="season-2022---2023">Season 2022 - 2023</h1>
+<h2 id="icpc">ICPC</h2>
+<h3 id="icpc2022-济南站">ICPC2022 济南站</h3>
+<h2 id="ccpc">CCPC</h2>
+]]></content>
+      <categories>
+        <category>算法竞赛</category>
+      </categories>
+      <tags>
+        <tag>XCPC解题报告</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ICPC2022济南站 A. Tower</title>
+    <url>/2023/10/07/ICPC2022%E6%B5%8E%E5%8D%97%E7%AB%99%20A.%20Tower/</url>
+    <content><![CDATA[<h2 id="题目链接">题目链接</h2>
+<p><a
+href="https://codeforces.com/gym/104076/problem/A">https://codeforces.com/gym/104076/problem/A</a></p>
+<h2 id="题目大意">题目大意</h2>
+<p>给定长度为 <span class="math inline">\(n\)</span> 的序列 <span
+class="math inline">\(\{ a_n\}\)</span> ，移去其中长度为 <span
+class="math inline">\(m\)</span>
+的子序列，对于剩下的元素能进行如下三种操作（无顺序和次数限制）：</p>
+<ul>
+<li>加 <span class="math inline">\(1\)</span></li>
+<li>减 <span class="math inline">\(1\)</span></li>
+<li>除以 <span class="math inline">\(2\)</span> 并向下取整</li>
+</ul>
+<p>问最少进行多少次操作能把这些数变相同。</p>
+<h2 id="数据范围">数据范围</h2>
+<ul>
+<li><span class="math inline">\(1\le n \le 500 , 0 \le m &lt; n, 1\le
+a_i \le 10^{9}\)</span></li>
+</ul>
+<h2 id="解题思路">解题思路</h2>
+<p><img
+src="D:\Blog\blog_imagines\ICPC2022济南站%20A.%20Tower图1.png" /></p>
+<p><img
+src="D:\Blog\blog_imagines\ICPC2022济南站%20A.%20Tower图2.png" /></p>
+<h2 id="参考代码">参考代码</h2>
+<p><a
+href="https://codeforces.com/gym/104076/submission/226616247">https://codeforces.com/gym/104076/submission/226616247</a></p>
+]]></content>
+      <categories>
+        <category>算法竞赛</category>
+      </categories>
+      <tags>
+        <tag>XCPC解题报告</tag>
+        <tag>贪心</tag>
+      </tags>
+  </entry>
 </search>
