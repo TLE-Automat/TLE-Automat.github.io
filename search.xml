@@ -84,6 +84,20 @@ href="http://www.tle-automat.top/2023/10/11/CCPC2021威海站%20M.%20810975/">M.
       </tags>
   </entry>
   <entry>
+    <title>Re:从零开始的博弈论（博弈论学习笔记索引）</title>
+    <url>/2023/10/08/%E5%8D%9A%E5%BC%88%E8%AE%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
+    <content><![CDATA[<p>咕。咕。咕。</p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>算法竞赛</category>
+      </categories>
+      <tags>
+        <tag>索引</tag>
+        <tag>博弈论</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Re:从零开始的动态规划（动态规划学习笔记索引）</title>
     <url>/2023/10/08/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
     <content><![CDATA[<p>咕。咕。咕。</p>
@@ -95,6 +109,20 @@ href="http://www.tle-automat.top/2023/10/11/CCPC2021威海站%20M.%20810975/">M.
       <tags>
         <tag>索引</tag>
         <tag>动态规划(DP)</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Re:从零开始的图论（图论学习笔记索引）</title>
+    <url>/2023/10/08/%E5%9B%BE%E8%AE%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
+    <content><![CDATA[<p>咕。咕。咕。</p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>算法竞赛</category>
+      </categories>
+      <tags>
+        <tag>索引</tag>
+        <tag>图论</tag>
       </tags>
   </entry>
   <entry>
@@ -126,20 +154,6 @@ href="http://www.tle-automat.top/2023/10/11/CCPC2021威海站%20M.%20810975/">M.
       </tags>
   </entry>
   <entry>
-    <title>Re:从零开始的图论（图论学习笔记索引）</title>
-    <url>/2023/10/08/%E5%9B%BE%E8%AE%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
-    <content><![CDATA[<p>咕。咕。咕。</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>算法竞赛</category>
-      </categories>
-      <tags>
-        <tag>索引</tag>
-        <tag>图论</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Re:从零开始的数据结构（数据结构学习笔记索引）</title>
     <url>/2023/10/08/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
     <content><![CDATA[<p>咕。咕。咕。</p>
@@ -165,20 +179,6 @@ href="http://www.tle-automat.top/2023/10/11/CCPC2021威海站%20M.%20810975/">M.
       <tags>
         <tag>索引</tag>
         <tag>数论</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Re:从零开始的博弈论（博弈论学习笔记索引）</title>
-    <url>/2023/10/08/%E5%8D%9A%E5%BC%88%E8%AE%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
-    <content><![CDATA[<p>咕。咕。咕。</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>算法竞赛</category>
-      </categories>
-      <tags>
-        <tag>索引</tag>
-        <tag>博弈论</tag>
       </tags>
   </entry>
   <entry>
@@ -240,6 +240,7 @@ class="math inline">\(k\)</span> ，求方案数。</p>
 <ul>
 <li><span class="math inline">\(0 \le n, m, k \le 10^5\)</span></li>
 </ul>
+<span id="more"></span>
 <h2 id="解题思路">解题思路</h2>
 <p><img src="https://z1.ax1x.com/2023/10/11/piSCgJJ.png" /> <img
 src="https://z1.ax1x.com/2023/10/11/piSCci4.png" /> <img
