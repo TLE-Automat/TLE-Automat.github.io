@@ -34,22 +34,6 @@ Tower</a></p>
       </tags>
   </entry>
   <entry>
-    <title>Codeforces解题报告索引</title>
-    <url>/2023/10/08/Codeforces%20%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A%E7%B4%A2%E5%BC%95/</url>
-    <content><![CDATA[<h1 id="codeforces-round">Codeforces Round</h1>
-<span id="more"></span>
-<h1 id="educational-codeforces-round">Educational Codeforces Round</h1>
-<h1 id="other-round">Other Round</h1>
-]]></content>
-      <categories>
-        <category>算法竞赛</category>
-      </categories>
-      <tags>
-        <tag>Codeforces解题报告</tag>
-        <tag>索引</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>AtCoder解题报告索引</title>
     <url>/2023/10/08/AtCoder%20%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A%E7%B4%A2%E5%BC%95/</url>
     <content><![CDATA[<h1 id="atcoder-beginner-contest">AtCoder Beginner Contest</h1>
@@ -61,8 +45,24 @@ Tower</a></p>
         <category>算法竞赛</category>
       </categories>
       <tags>
-        <tag>索引</tag>
         <tag>AtCoder解题报告</tag>
+        <tag>索引</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Codeforces解题报告索引</title>
+    <url>/2023/10/08/Codeforces%20%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A%E7%B4%A2%E5%BC%95/</url>
+    <content><![CDATA[<h1 id="codeforces-round">Codeforces Round</h1>
+<span id="more"></span>
+<h1 id="educational-codeforces-round">Educational Codeforces Round</h1>
+<h1 id="other-round">Other Round</h1>
+]]></content>
+      <categories>
+        <category>算法竞赛</category>
+      </categories>
+      <tags>
+        <tag>索引</tag>
+        <tag>Codeforces解题报告</tag>
       </tags>
   </entry>
   <entry>
@@ -135,20 +135,6 @@ Tower</a></p>
       </tags>
   </entry>
   <entry>
-    <title>Re:从零开始的数据结构（数据结构学习笔记索引）</title>
-    <url>/2023/10/08/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
-    <content><![CDATA[<p>咕。咕。咕。</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>算法竞赛</category>
-      </categories>
-      <tags>
-        <tag>索引</tag>
-        <tag>数据结构</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Re:从零开始的数论（数论学习笔记索引）</title>
     <url>/2023/10/08/%E6%95%B0%E8%AE%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
     <content><![CDATA[<p>咕。咕。咕。</p>
@@ -163,8 +149,8 @@ Tower</a></p>
       </tags>
   </entry>
   <entry>
-    <title>Re:从零开始的线性代数（线性代数学习笔记索引）</title>
-    <url>/2023/10/08/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
+    <title>Re:从零开始的字符串算法（字符串算法学习笔记索引）</title>
+    <url>/2023/10/08/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
     <content><![CDATA[<p>咕。咕。咕。</p>
 <span id="more"></span>
 ]]></content>
@@ -173,7 +159,21 @@ Tower</a></p>
       </categories>
       <tags>
         <tag>索引</tag>
-        <tag>线性代数</tag>
+        <tag>字符串算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Re:从零开始的数据结构（数据结构学习笔记索引）</title>
+    <url>/2023/10/08/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
+    <content><![CDATA[<p>咕。咕。咕。</p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>算法竞赛</category>
+      </categories>
+      <tags>
+        <tag>索引</tag>
+        <tag>数据结构</tag>
       </tags>
   </entry>
   <entry>
@@ -191,8 +191,8 @@ Tower</a></p>
       </tags>
   </entry>
   <entry>
-    <title>Re:从零开始的字符串算法（字符串算法学习笔记索引）</title>
-    <url>/2023/10/08/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
+    <title>Re:从零开始的线性代数（线性代数学习笔记索引）</title>
+    <url>/2023/10/08/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
     <content><![CDATA[<p>咕。咕。咕。</p>
 <span id="more"></span>
 ]]></content>
@@ -201,7 +201,40 @@ Tower</a></p>
       </categories>
       <tags>
         <tag>索引</tag>
-        <tag>字符串算法</tag>
+        <tag>线性代数</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CCPC2021威海站 M. 810975</title>
+    <url>/2023/10/11/CCPC2021%E5%A8%81%E6%B5%B7%E7%AB%99%20M.%20810975/</url>
+    <content><![CDATA[<h2 id="题目链接">题目链接</h2>
+<p><a
+href="https://codeforces.com/gym/103428/problem/M">https://codeforces.com/gym/103428/problem/M</a></p>
+<h2 id="题目大意">题目大意</h2>
+<p>一个长度为 <span class="math inline">\(n\)</span> 的 <span
+class="math inline">\(01\)</span> 串，有 <span
+class="math inline">\(m\)</span> 个位置是 <span
+class="math inline">\(1\)</span> ，最长的 <span
+class="math inline">\(1\)</span> 的连续段长度是 <span
+class="math inline">\(k\)</span> ，求方案数。</p>
+<h2 id="数据范围">数据范围</h2>
+<ul>
+<li><span class="math inline">\(0 \le n, m, k \le 10^5\)</span></li>
+</ul>
+<h2 id="解题思路">解题思路</h2>
+<p><img src="https://z1.ax1x.com/2023/10/11/piSCgJJ.png" /> <img
+src="https://z1.ax1x.com/2023/10/11/piSCci4.png" /> <img
+src="https://z1.ax1x.com/2023/10/11/piSCyoF.png" /></p>
+<h2 id="参考代码">参考代码</h2>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="type">const</span> <span class="type">int</span> MAXN = <span class="number">2e5</span> + <span class="number">10</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> Mod = <span class="number">998244353</span>;</span><br><span class="line"> </span><br><span class="line"><span class="type">int</span> fac[MAXN], invf[MAXN];</span><br><span class="line"> </span><br><span class="line"><span class="function">ll <span class="title">ksm</span><span class="params">(ll x, ll y)</span> </span>&#123;</span><br><span class="line">	ll res = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span> (y) &#123;</span><br><span class="line">		<span class="keyword">if</span> (y &amp; <span class="number">1</span>) &#123;</span><br><span class="line">			res = res * x % Mod;</span><br><span class="line">		&#125;</span><br><span class="line">		x = x * x % Mod;</span><br><span class="line">		y &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">ll <span class="title">inv</span><span class="params">(ll x)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">ksm</span>(x, Mod - <span class="number">2</span>);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">init</span><span class="params">(<span class="type">int</span> lim)</span> </span>&#123;</span><br><span class="line">	fac[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= lim; i++) &#123;</span><br><span class="line">		fac[i] = <span class="number">1ll</span> * fac[i - <span class="number">1</span>] * i % Mod;</span><br><span class="line">	&#125;</span><br><span class="line">	invf[lim] = <span class="built_in">inv</span>(fac[lim]);</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = lim - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">		invf[i] = <span class="number">1ll</span> * invf[i + <span class="number">1</span>] * (i + <span class="number">1</span>) % Mod; </span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">C</span><span class="params">(<span class="type">int</span> x, <span class="type">int</span> y)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (x &lt; y) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">1ll</span> * fac[x] * invf[y] % Mod * invf[x - y] % Mod;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">calc</span><span class="params">(<span class="type">int</span> x, <span class="type">int</span> y)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">C</span>(x + y - <span class="number">1</span>, y - <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">solve</span><span class="params">(<span class="type">int</span> n, <span class="type">int</span> m, <span class="type">int</span> k)</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> res = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt;= n - m + <span class="number">1</span>; i++) &#123;</span><br><span class="line">		<span class="type">int</span> coef = (i &amp; <span class="number">1</span>) ? <span class="number">-1</span> : <span class="number">1</span>;</span><br><span class="line">		<span class="type">int</span> add = <span class="number">1ll</span> * <span class="built_in">C</span>(n - m + <span class="number">1</span>, i) * <span class="built_in">calc</span>(m - i * (k + <span class="number">1</span>), n - m + <span class="number">1</span>) % Mod;</span><br><span class="line">		<span class="keyword">if</span> (coef == <span class="number">-1</span>) &#123;</span><br><span class="line">			add = Mod - add;</span><br><span class="line">		&#125;</span><br><span class="line">		res = (res + add) % Mod;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="built_in">init</span>(MAXN - <span class="number">1</span>);</span><br><span class="line">	</span><br><span class="line">	<span class="type">int</span> n, m, k;</span><br><span class="line">	cin &gt;&gt; n &gt;&gt; m &gt;&gt; k;</span><br><span class="line">	</span><br><span class="line">	<span class="type">int</span> ans = (<span class="built_in">solve</span>(n, m, k) - <span class="built_in">solve</span>(n, m, k - <span class="number">1</span>) + Mod) % Mod;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, ans);</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>算法竞赛</category>
+      </categories>
+      <tags>
+        <tag>XCPC解题报告</tag>
+        <tag>组合数学</tag>
+        <tag>容斥原理</tag>
       </tags>
   </entry>
   <entry>
@@ -231,8 +264,7 @@ a_i \le 10^{9}\)</span></li>
 <p><img src="https://z1.ax1x.com/2023/10/07/pPjdQYQ.png" /></p>
 <p><img src="https://z1.ax1x.com/2023/10/07/pPjd8ln.png" /></p>
 <h2 id="参考代码">参考代码</h2>
-<p><a
-href="https://codeforces.com/gym/104076/submission/226616247">https://codeforces.com/gym/104076/submission/226616247</a></p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="type">const</span> <span class="type">int</span> MAXN = <span class="number">5e2</span> + <span class="number">10</span>;</span><br><span class="line"><span class="type">const</span> ll INF = <span class="number">0x3f3f3f3f3f3f3f3f</span>;</span><br><span class="line"> </span><br><span class="line"><span class="type">int</span> n, m;</span><br><span class="line"><span class="type">int</span> a[MAXN];</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">fstep</span><span class="params">(<span class="type">int</span> x, <span class="type">int</span> cur)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (x &gt;= cur) &#123;</span><br><span class="line">		<span class="keyword">return</span> x - cur;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">int</span> s = <span class="number">0</span>, lstc = cur;</span><br><span class="line">	<span class="keyword">while</span> (cur &gt; x) &#123;</span><br><span class="line">		lstc = cur;</span><br><span class="line">		cur &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">		s++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">assert</span>(cur != <span class="number">0</span>);</span><br><span class="line">	<span class="type">int</span> res = <span class="built_in">min</span>(s + (x - cur), (s - <span class="number">1</span>) + (lstc - x));</span><br><span class="line">	<span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function">ll <span class="title">calc</span><span class="params">(<span class="type">int</span> x)</span> </span>&#123;</span><br><span class="line">	vector&lt;<span class="type">int</span>&gt; vec;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">		<span class="type">int</span> step = <span class="built_in">fstep</span>(x, a[i]);</span><br><span class="line">		vec.<span class="built_in">push_back</span>(step);</span><br><span class="line">	&#125;</span><br><span class="line">	ll res = <span class="number">0</span>;</span><br><span class="line">	<span class="built_in">sort</span>(vec.<span class="built_in">begin</span>(), vec.<span class="built_in">end</span>());</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n - m; i++) &#123;</span><br><span class="line">		res += vec[i];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	cin &gt;&gt; n &gt;&gt; m;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">		cin &gt;&gt; a[i];</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	ll ans = INF;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">		<span class="type">int</span> x = a[i];</span><br><span class="line">		<span class="keyword">while</span> (x) &#123;</span><br><span class="line">			ans = <span class="built_in">min</span>(ans, <span class="built_in">calc</span>(x));</span><br><span class="line">			x &gt;&gt;= <span class="number">1</span>; </span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>, ans);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> T;</span><br><span class="line">	cin &gt;&gt; T;</span><br><span class="line">	<span class="keyword">while</span> (T--) <span class="built_in">solve</span>();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>算法竞赛</category>
