@@ -1,382 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>目录</title>
-    <url>/2023/10/08/%E7%9B%AE%E5%BD%95/</url>
-    <content><![CDATA[<p>咕。咕。咕。</p>
+    <title>ARC167 D. Good Permutation</title>
+    <url>/2023/10/20/ARC167%20D.%20Good%20Permutation/</url>
+    <content><![CDATA[<h2 id="题目链接">题目链接</h2>
+<p><a
+href="https://atcoder.jp/contests/arc167/tasks/arc167_d">https://atcoder.jp/contests/arc167/tasks/arc167_d</a></p>
+<h2 id="题目大意">题目大意</h2>
+<p>给定一个 <span class="math inline">\(1\)</span> 到 <span
+class="math inline">\(n\)</span> 的排列 <span
+class="math inline">\(P\)</span> 。</p>
+<p>定义一个排列 <span class="math inline">\(Q\)</span>
+为好排列当且仅当对于任意整数 <span class="math inline">\(1\le x \le
+n\)</span> ，通过若干次赋值（可以为 <span
+class="math inline">\(0\)</span> 次） <span class="math inline">\(x
+\leftarrow Q_x\)</span> ，最终能够使得 <span
+class="math inline">\(x\)</span> 变成 <span
+class="math inline">\(1\)</span> 。</p>
+<p>现在可以进行若干次操作，每次可以交换 <span
+class="math inline">\(P\)</span> 的任意两个不同的位置。</p>
+<p>假设最少进行 <span class="math inline">\(m\)</span> 次操作使得 <span
+class="math inline">\(P\)</span> 成为一个好排列，求进行 <span
+class="math inline">\(m\)</span> 操作之后 <span
+class="math inline">\(P\)</span> 能够成为的字典序最小的好排列。</p>
+<h2 id="数据范围">数据范围</h2>
+<ul>
+<li><span class="math inline">\(\sum n \le 2 \times 10 ^
+{5}\)</span></li>
+</ul>
 <span id="more"></span>
-]]></content>
-      <categories>
-        <category>0</category>
-      </categories>
-      <tags>
-        <tag>索引</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>XCPC解题报告索引</title>
-    <url>/2023/10/07/XCPC%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A%E7%B4%A2%E5%BC%95/</url>
-    <content><![CDATA[<h1 id="icpc">ICPC</h1>
-<h2 id="season-2021---2022">Season 2021 - 2022</h2>
-<p>ICPC2021 沈阳站</p>
-<p><a
-href="http://www.tle-automat.top/2023/10/19/ICPC2021沈阳站%20L.%20Perfect%20Matchings/">L.
-Perfect Matchings</a></p>
-<p><a
-href="http://www.tle-automat.top/2023/10/15/ICPC2021沈阳站%20M.%20String%20Problem/">M.
-String Problem</a></p>
-<h2 id="season-2022---2023">Season 2022 - 2023</h2>
-<p>ICPC2022 济南站</p>
-<p><a
-href="https://tle-automat.top/2023/10/07/ICPC2022%E6%B5%8E%E5%8D%97%E7%AB%99%20A.%20Tower/">A.
-Tower</a></p>
-<h1 id="ccpc">CCPC</h1>
-<h2 id="season-2021---2022-1">Season 2021 - 2022</h2>
-<p>CCPC2021 威海站</p>
-<p><a
-href="http://www.tle-automat.top/2023/10/11/CCPC2021威海站%20M.%20810975/">M.
-810975</a></p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>算法竞赛</category>
-      </categories>
-      <tags>
-        <tag>索引</tag>
-        <tag>XCPC解题报告</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>AtCoder解题报告索引</title>
-    <url>/2023/10/08/AtCoder%20%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A%E7%B4%A2%E5%BC%95/</url>
-    <content><![CDATA[<h1 id="atcoder-beginner-contest">AtCoder Beginner Contest</h1>
-<span id="more"></span>
-<h1 id="atcoder-regular-contest">AtCoder Regular Contest</h1>
-<h1 id="atcoder-grand-contest">AtCoder Grand Contest</h1>
+<h2 id="解题思路">解题思路</h2>
+<h2 id="参考代码">参考代码</h2>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	cin &gt;&gt; n;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">		cin &gt;&gt; suf[i];</span><br><span class="line">		pre[suf[i]] = i;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	set&lt;<span class="type">int</span>&gt; circle, oth;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">		oth.<span class="built_in">insert</span>(i);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	oth.<span class="built_in">erase</span>(<span class="number">1</span>);</span><br><span class="line">	<span class="type">int</span> x = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span> (suf[x] != <span class="number">1</span>) &#123;</span><br><span class="line">		x = suf[x];</span><br><span class="line">		oth.<span class="built_in">erase</span>(x);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">		<span class="built_in">assert</span>(oth.<span class="built_in">find</span>(i) == oth.<span class="built_in">end</span>());</span><br><span class="line">		</span><br><span class="line">		<span class="keyword">if</span> (oth.<span class="built_in">empty</span>()) &#123;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="type">int</span> mnx = *oth.<span class="built_in">begin</span>();</span><br><span class="line">		</span><br><span class="line"><span class="comment">//		printf(&quot;i = %d, mnx = %d\n&quot;, i, mnx);</span></span><br><span class="line">		</span><br><span class="line">		<span class="keyword">if</span> (mnx &gt; suf[i] &amp;&amp; i + <span class="built_in">SZ</span>(oth) &lt; n) &#123;</span><br><span class="line"><span class="comment">//			printf(&quot;continue pos : %d\n&quot;, i);</span></span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		<span class="type">int</span> cur = mnx;</span><br><span class="line">		oth.<span class="built_in">erase</span>(cur);</span><br><span class="line">		<span class="keyword">while</span> (suf[cur] != mnx) &#123;</span><br><span class="line">			cur = suf[cur];</span><br><span class="line">			oth.<span class="built_in">erase</span>(cur);</span><br><span class="line">		&#125;</span><br><span class="line">		</span><br><span class="line">		suf[pre[mnx]] = suf[i];</span><br><span class="line">		pre[suf[i]] = pre[mnx];</span><br><span class="line">		</span><br><span class="line">		suf[i] = mnx;</span><br><span class="line">		pre[mnx] = i;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="function">vector&lt;<span class="type">int</span>&gt; <span class="title">ans</span><span class="params">(n + <span class="number">1</span>)</span></span>;</span><br><span class="line">	x = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">do</span> &#123;</span><br><span class="line">		ans[x] = suf[x];</span><br><span class="line">		x = suf[x];</span><br><span class="line">	&#125; <span class="keyword">while</span> (x != <span class="number">1</span>);</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, ans[i]); </span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> T;</span><br><span class="line">	cin &gt;&gt; T;</span><br><span class="line">	<span class="keyword">while</span> (T--) &#123;</span><br><span class="line">		<span class="built_in">solve</span>();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>算法竞赛</category>
       </categories>
       <tags>
         <tag>AtCoder解题报告</tag>
-        <tag>索引</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Codeforces解题报告索引</title>
-    <url>/2023/10/08/Codeforces%20%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A%E7%B4%A2%E5%BC%95/</url>
-    <content><![CDATA[<h1 id="codeforces-round">Codeforces Round</h1>
-<span id="more"></span>
-<h1 id="educational-codeforces-round">Educational Codeforces Round</h1>
-<h1 id="other-round">Other Round</h1>
-]]></content>
-      <categories>
-        <category>算法竞赛</category>
-      </categories>
-      <tags>
-        <tag>索引</tag>
-        <tag>Codeforces解题报告</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Re零系列学习笔记索引</title>
-    <url>/2023/10/08/Re%E9%9B%B6%E7%B3%BB%E5%88%97%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
-    <content><![CDATA[<p>咕。咕。咕。</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>算法竞赛</category>
-      </categories>
-      <tags>
-        <tag>索引</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Re:从零开始的动态规划（动态规划学习笔记索引）</title>
-    <url>/2023/10/08/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
-    <content><![CDATA[<p>咕。咕。咕。</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>算法竞赛</category>
-      </categories>
-      <tags>
-        <tag>索引</tag>
-        <tag>动态规划(DP)</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Re:从零开始的博弈论（博弈论学习笔记索引）</title>
-    <url>/2023/10/08/%E5%8D%9A%E5%BC%88%E8%AE%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
-    <content><![CDATA[<p>咕。咕。咕。</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>算法竞赛</category>
-      </categories>
-      <tags>
-        <tag>索引</tag>
-        <tag>博弈论</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Re:从零开始的图论（图论学习笔记索引）</title>
-    <url>/2023/10/08/%E5%9B%BE%E8%AE%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
-    <content><![CDATA[<p>咕。咕。咕。</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>算法竞赛</category>
-      </categories>
-      <tags>
-        <tag>索引</tag>
         <tag>图论</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Re:从零开始的字符串算法（字符串算法学习笔记索引）</title>
-    <url>/2023/10/08/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
-    <content><![CDATA[<p>咕。咕。咕。</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>算法竞赛</category>
-      </categories>
-      <tags>
-        <tag>索引</tag>
-        <tag>字符串算法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Re:从零开始的多项式（多项式学习笔记索引）</title>
-    <url>/2023/10/08/%E5%A4%9A%E9%A1%B9%E5%BC%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
-    <content><![CDATA[<p>咕。咕。咕。</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>算法竞赛</category>
-      </categories>
-      <tags>
-        <tag>索引</tag>
-        <tag>多项式</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Re:从零开始的数据结构（数据结构学习笔记索引）</title>
-    <url>/2023/10/08/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
-    <content><![CDATA[<p>咕。咕。咕。</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>算法竞赛</category>
-      </categories>
-      <tags>
-        <tag>索引</tag>
-        <tag>数据结构</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Re:从零开始的数论（数论学习笔记索引）</title>
-    <url>/2023/10/08/%E6%95%B0%E8%AE%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
-    <content><![CDATA[<p>咕。咕。咕。</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>算法竞赛</category>
-      </categories>
-      <tags>
-        <tag>索引</tag>
-        <tag>数论</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Re:从零开始的组合数学（组合数学学习笔记索引）</title>
-    <url>/2023/10/08/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
-    <content><![CDATA[<p>咕。咕。咕。</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>算法竞赛</category>
-      </categories>
-      <tags>
-        <tag>索引</tag>
-        <tag>组合数学</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Re:从零开始的线性代数（线性代数学习笔记索引）</title>
-    <url>/2023/10/08/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
-    <content><![CDATA[<p>咕。咕。咕。</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>算法竞赛</category>
-      </categories>
-      <tags>
-        <tag>索引</tag>
-        <tag>线性代数</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Re:从零开始的计算几何（计算几何学习笔记索引）</title>
-    <url>/2023/10/08/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
-    <content><![CDATA[<p>咕。咕。咕。</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>算法竞赛</category>
-      </categories>
-      <tags>
-        <tag>索引</tag>
-        <tag>计算几何</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>网络流学习笔记</title>
-    <url>/2023/10/12/%E7%BD%91%E7%BB%9C%E6%B5%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<p>咕。咕。咕。</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>算法竞赛</category>
-      </categories>
-      <tags>
-        <tag>图论</tag>
-        <tag>网络流</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ICPC2021沈阳站 L. Perfect Matchings</title>
-    <url>/2023/10/19/ICPC2021%E6%B2%88%E9%98%B3%E7%AB%99%20L.%20Perfect%20Matchings/</url>
-    <content><![CDATA[<h2 id="题目链接">题目链接</h2>
-<p><a
-href="https://codeforces.com/gym/103427/problem/L">https://codeforces.com/gym/103427/problem/L</a></p>
-<h2 id="题目大意">题目大意</h2>
-<p>有一个 <span class="math inline">\(2n\)</span>
-个点的完全图，给出这个完全图的一颗生成树，从完全图上删去树上的边，求剩下的图的完美匹配的方案数。</p>
-<h2 id="数据范围">数据范围</h2>
-<ul>
-<li><span class="math inline">\(2 \le n \le 2000\)</span></li>
-</ul>
-<span id="more"></span>
-<h2 id="解题思路">解题思路</h2>
-<p><img src="https://z1.ax1x.com/2023/10/19/piiGp7t.png" /> <img
-src="https://z1.ax1x.com/2023/10/19/piiGS0I.png" /></p>
-<h2 id="参考代码">参考代码</h2>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(<span class="type">int</span> u, <span class="type">int</span> fa)</span> </span>&#123;</span><br><span class="line">	sz[u] = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">auto</span> v : G[u]) &#123;</span><br><span class="line">		<span class="keyword">if</span> (v == fa) &#123;</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">dfs</span>(v, u);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	dp[u][<span class="number">0</span>][<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">auto</span> v : G[u]) &#123;</span><br><span class="line">		<span class="keyword">if</span> (v == fa) &#123;</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">memcpy</span>(tmp, dp[u], <span class="built_in">sizeof</span>(dp[u]));</span><br><span class="line">		<span class="built_in">memset</span>(dp[u], <span class="number">0</span>, <span class="built_in">sizeof</span>(dp[u]));</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt;= sz[u] / <span class="number">2</span>; i++) &#123;</span><br><span class="line">			<span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt;= sz[v] / <span class="number">2</span>; j++) &#123;</span><br><span class="line">				<span class="keyword">if</span> (!dp[v][j][<span class="number">0</span>]) &#123;</span><br><span class="line">					<span class="keyword">continue</span>;</span><br><span class="line">				&#125;</span><br><span class="line">			</span><br><span class="line">				<span class="keyword">if</span> (tmp[i][<span class="number">0</span>]) &#123;</span><br><span class="line">					<span class="built_in">add_mod</span>(dp[u][i + j][<span class="number">0</span>], <span class="number">1ll</span> * tmp[i][<span class="number">0</span>] * dp[v][j][<span class="number">0</span>] % Mod);</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">if</span> (tmp[i][<span class="number">0</span>]) &#123;</span><br><span class="line">					<span class="built_in">add_mod</span>(dp[u][i + j + <span class="number">1</span>][<span class="number">1</span>], <span class="number">1ll</span> * tmp[i][<span class="number">0</span>] * dp[v][j][<span class="number">0</span>] % Mod);</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">if</span> (tmp[i][<span class="number">1</span>]) &#123;</span><br><span class="line">					<span class="built_in">add_mod</span>(dp[u][i + j][<span class="number">1</span>], <span class="number">1ll</span> * tmp[i][<span class="number">1</span>] * dp[v][j][<span class="number">0</span>] % Mod);</span><br><span class="line">				&#125;	</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt;= sz[v] / <span class="number">2</span>; j++) &#123;</span><br><span class="line">				<span class="keyword">if</span> (!dp[v][j][<span class="number">1</span>]) &#123;</span><br><span class="line">					<span class="keyword">continue</span>;</span><br><span class="line">				&#125;</span><br><span class="line">				</span><br><span class="line">				<span class="keyword">if</span> (tmp[i][<span class="number">1</span>]) &#123;</span><br><span class="line">					<span class="built_in">add_mod</span>(dp[u][i + j][<span class="number">1</span>], <span class="number">1ll</span> * tmp[i][<span class="number">1</span>] * dp[v][j][<span class="number">1</span>] % Mod);</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">if</span> (tmp[i][<span class="number">0</span>]) &#123;</span><br><span class="line">					<span class="built_in">add_mod</span>(dp[u][i + j][<span class="number">0</span>], <span class="number">1ll</span> * tmp[i][<span class="number">0</span>] * dp[v][j][<span class="number">1</span>] % Mod);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		sz[u] += sz[v];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	</span><br><span class="line">	cin &gt;&gt; n;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">2</span> * n - <span class="number">1</span>; i++) &#123;</span><br><span class="line">		<span class="type">int</span> u, v;</span><br><span class="line">		cin &gt;&gt; u &gt;&gt; v;</span><br><span class="line">		G[u].<span class="built_in">push_back</span>(v);</span><br><span class="line">		G[v].<span class="built_in">push_back</span>(u);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	fac[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">2</span> * n; i++) &#123;</span><br><span class="line">		fac[i] = <span class="number">1ll</span> * fac[i - <span class="number">1</span>] * i % Mod;</span><br><span class="line">	&#125; </span><br><span class="line">	invf[<span class="number">2</span> * n] = <span class="built_in">inv</span>(fac[<span class="number">2</span> * n]);</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">2</span> * n - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">		invf[i] = <span class="number">1ll</span> * invf[i + <span class="number">1</span>] * (i + <span class="number">1</span>) % Mod;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	f[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">2</span>; i &lt;= <span class="number">2</span> * n; i += <span class="number">2</span>) &#123;</span><br><span class="line">		f[i] = <span class="number">1ll</span> * fac[i] * <span class="built_in">inv</span>(<span class="built_in">ksm</span>(<span class="number">2ll</span>, i / <span class="number">2</span>)) % Mod * invf[i / <span class="number">2</span>] % Mod;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">dfs</span>(<span class="number">1</span>, <span class="number">0</span>);</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">		g[i] = <span class="number">1ll</span> * (dp[<span class="number">1</span>][i][<span class="number">0</span>] + dp[<span class="number">1</span>][i][<span class="number">1</span>]) * f[<span class="number">2</span> * (n - i)] % Mod;	</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="type">int</span> ans = f[<span class="number">2</span> * n];</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">		<span class="type">int</span> add = g[i];</span><br><span class="line">		<span class="keyword">if</span> (i &amp; <span class="number">1</span>) &#123;</span><br><span class="line">			add = Mod - add;</span><br><span class="line">		&#125;</span><br><span class="line">		ans = (ans + add) % Mod;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, ans);</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>算法竞赛</category>
-      </categories>
-      <tags>
-        <tag>XCPC解题报告</tag>
-        <tag>组合数学</tag>
-        <tag>容斥原理</tag>
-        <tag>动态规划</tag>
-        <tag>树形背包</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ICPC2021沈阳站 M. String Problem</title>
-    <url>/2023/10/15/ICPC2021%E6%B2%88%E9%98%B3%E7%AB%99%20M.%20String%20Problem/</url>
-    <content><![CDATA[<h2 id="题目链接">题目链接</h2>
-<p><a
-href="https://codeforces.com/gym/103427/problem/M">https://codeforces.com/gym/103427/problem/M</a></p>
-<h2 id="题目大意">题目大意</h2>
-<p>给定小写字母构成的字符串 <span class="math inline">\(S\)</span>
-，对于 <span class="math inline">\(S\)</span>
-的每个前缀，求该前缀的所有子串中字典序最大且出现位置最靠左的子串的左右端点。</p>
-<h2 id="数据范围">数据范围</h2>
-<ul>
-<li><span class="math inline">\(1 \le |S| \le 10^6\)</span></li>
-</ul>
-<span id="more"></span>
-<h2 id="解题思路">解题思路</h2>
-<p><img src="https://z1.ax1x.com/2023/10/15/pi9XYUH.png" /> <img
-src="https://z1.ax1x.com/2023/10/15/pi9X3DO.png" /> <img
-src="https://z1.ax1x.com/2023/10/15/pi9XJVe.png" /> <img
-src="https://z1.ax1x.com/2023/10/15/pi9X8bD.png" /></p>
-<h2 id="参考代码">参考代码</h2>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="type">const</span> <span class="type">int</span> MAXN = <span class="number">1e6</span>+<span class="number">10</span>; </span><br><span class="line"><span class="type">const</span> <span class="type">int</span> INF = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> SA :: sa;</span><br><span class="line"><span class="keyword">using</span> SA :: rk;</span><br><span class="line"><span class="keyword">using</span> SA :: height;</span><br><span class="line"> </span><br><span class="line"><span class="type">int</span> n;</span><br><span class="line"><span class="type">char</span> s[MAXN];</span><br><span class="line"><span class="type">int</span> st[MAXN][<span class="number">21</span>];</span><br><span class="line"><span class="type">int</span> h[MAXN], pos[MAXN];</span><br><span class="line"><span class="type">int</span> lg2[MAXN];</span><br><span class="line">multiset&lt;<span class="type">int</span>&gt; S;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">query</span><span class="params">(<span class="type">int</span> l, <span class="type">int</span> r)</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> s = lg2[r - l + <span class="number">1</span>];</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">min</span>(st[l][s], st[r - (<span class="number">1</span> &lt;&lt; s) + <span class="number">1</span>][s]);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">qlmax</span><span class="params">(<span class="type">int</span> x)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">auto</span> it = S.<span class="built_in">lower_bound</span>(x);</span><br><span class="line">	<span class="keyword">if</span> (it == S.<span class="built_in">begin</span>()) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> &#123; </span><br><span class="line">		<span class="keyword">return</span> *(--it);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, s + <span class="number">1</span>);</span><br><span class="line">	n = <span class="built_in">strlen</span>(s + <span class="number">1</span>);</span><br><span class="line">	SA::<span class="built_in">init</span>(s, n);</span><br><span class="line">	</span><br><span class="line">	lg2[<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">2</span>; i &lt;= n; i++) &#123;</span><br><span class="line">		lg2[i] = lg2[i &gt;&gt; <span class="number">1</span>] + <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">		st[i][<span class="number">0</span>] = height[i];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">1</span>; j &lt;= <span class="number">20</span>; j++) &#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i + (<span class="number">1</span> &lt;&lt; j) - <span class="number">1</span> &lt;= n; i++) &#123;</span><br><span class="line">			st[i][j] = <span class="built_in">min</span>(st[i][j - <span class="number">1</span>], st[i + (<span class="number">1</span> &lt;&lt; (j - <span class="number">1</span>))][j - <span class="number">1</span>]);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	h[rk[<span class="number">1</span>]] = <span class="number">0</span>;</span><br><span class="line">	S.<span class="built_in">insert</span>(rk[<span class="number">1</span>]);</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">2</span>; i &lt;= n; i++) &#123;</span><br><span class="line">		<span class="type">int</span> r = rk[i];</span><br><span class="line">		<span class="type">int</span> l = <span class="built_in">qlmax</span>(r);</span><br><span class="line">		<span class="keyword">if</span> (l == <span class="number">-1</span>) &#123;</span><br><span class="line">			h[r] = <span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			h[r] = <span class="built_in">query</span>(l + <span class="number">1</span>, r);</span><br><span class="line">		&#125;</span><br><span class="line">		S.<span class="built_in">insert</span>(r);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = n, r = n; i &gt;= <span class="number">1</span>; i--) &#123;</span><br><span class="line">		<span class="type">int</span> x = sa[i] + h[i];</span><br><span class="line">		<span class="keyword">while</span> (r &gt;= x) &#123;</span><br><span class="line">			pos[r] = sa[i];</span><br><span class="line">			r--;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%d %d\n&quot;</span>, pos[i], i);</span><br><span class="line">	&#125;</span><br><span class="line"> </span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>算法竞赛</category>
-      </categories>
-      <tags>
-        <tag>XCPC解题报告</tag>
-        <tag>字符串算法</tag>
-        <tag>后缀排序</tag>
-        <tag>ST表</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>CCPC2021威海站 M. 810975</title>
-    <url>/2023/10/11/CCPC2021%E5%A8%81%E6%B5%B7%E7%AB%99%20M.%20810975/</url>
-    <content><![CDATA[<h2 id="题目链接">题目链接</h2>
-<p><a
-href="https://codeforces.com/gym/103428/problem/M">https://codeforces.com/gym/103428/problem/M</a></p>
-<h2 id="题目大意">题目大意</h2>
-<p>一个长度为 <span class="math inline">\(n\)</span> 的 <span
-class="math inline">\(01\)</span> 串，有 <span
-class="math inline">\(m\)</span> 个位置是 <span
-class="math inline">\(1\)</span> ，最长的 <span
-class="math inline">\(1\)</span> 的连续段长度是 <span
-class="math inline">\(k\)</span> ，求方案数。</p>
-<h2 id="数据范围">数据范围</h2>
-<ul>
-<li><span class="math inline">\(0 \le n, m, k \le 10^5\)</span></li>
-</ul>
-<span id="more"></span>
-<h2 id="解题思路">解题思路</h2>
-<p><img src="https://z1.ax1x.com/2023/10/11/piSCgJJ.png" /> <img
-src="https://z1.ax1x.com/2023/10/11/piSCci4.png" /> <img
-src="https://z1.ax1x.com/2023/10/11/piSCyoF.png" /></p>
-<h2 id="参考代码">参考代码</h2>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="type">const</span> <span class="type">int</span> MAXN = <span class="number">2e5</span> + <span class="number">10</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> Mod = <span class="number">998244353</span>;</span><br><span class="line"> </span><br><span class="line"><span class="type">int</span> fac[MAXN], invf[MAXN];</span><br><span class="line"> </span><br><span class="line"><span class="function">ll <span class="title">ksm</span><span class="params">(ll x, ll y)</span> </span>&#123;</span><br><span class="line">	ll res = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span> (y) &#123;</span><br><span class="line">		<span class="keyword">if</span> (y &amp; <span class="number">1</span>) &#123;</span><br><span class="line">			res = res * x % Mod;</span><br><span class="line">		&#125;</span><br><span class="line">		x = x * x % Mod;</span><br><span class="line">		y &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">ll <span class="title">inv</span><span class="params">(ll x)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">ksm</span>(x, Mod - <span class="number">2</span>);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">init</span><span class="params">(<span class="type">int</span> lim)</span> </span>&#123;</span><br><span class="line">	fac[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= lim; i++) &#123;</span><br><span class="line">		fac[i] = <span class="number">1ll</span> * fac[i - <span class="number">1</span>] * i % Mod;</span><br><span class="line">	&#125;</span><br><span class="line">	invf[lim] = <span class="built_in">inv</span>(fac[lim]);</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = lim - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">		invf[i] = <span class="number">1ll</span> * invf[i + <span class="number">1</span>] * (i + <span class="number">1</span>) % Mod; </span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">C</span><span class="params">(<span class="type">int</span> x, <span class="type">int</span> y)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (x &lt; y) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">1ll</span> * fac[x] * invf[y] % Mod * invf[x - y] % Mod;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">calc</span><span class="params">(<span class="type">int</span> x, <span class="type">int</span> y)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">C</span>(x + y - <span class="number">1</span>, y - <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">solve</span><span class="params">(<span class="type">int</span> n, <span class="type">int</span> m, <span class="type">int</span> k)</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> res = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt;= n - m + <span class="number">1</span>; i++) &#123;</span><br><span class="line">		<span class="type">int</span> coef = (i &amp; <span class="number">1</span>) ? <span class="number">-1</span> : <span class="number">1</span>;</span><br><span class="line">		<span class="type">int</span> add = <span class="number">1ll</span> * <span class="built_in">C</span>(n - m + <span class="number">1</span>, i) * <span class="built_in">calc</span>(m - i * (k + <span class="number">1</span>), n - m + <span class="number">1</span>) % Mod;</span><br><span class="line">		<span class="keyword">if</span> (coef == <span class="number">-1</span>) &#123;</span><br><span class="line">			add = Mod - add;</span><br><span class="line">		&#125;</span><br><span class="line">		res = (res + add) % Mod;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="built_in">init</span>(MAXN - <span class="number">1</span>);</span><br><span class="line">	</span><br><span class="line">	<span class="type">int</span> n, m, k;</span><br><span class="line">	cin &gt;&gt; n &gt;&gt; m &gt;&gt; k;</span><br><span class="line">	</span><br><span class="line">	<span class="type">int</span> ans = (<span class="built_in">solve</span>(n, m, k) - <span class="built_in">solve</span>(n, m, k - <span class="number">1</span>) + Mod) % Mod;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, ans);</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>算法竞赛</category>
-      </categories>
-      <tags>
-        <tag>XCPC解题报告</tag>
-        <tag>组合数学</tag>
-        <tag>容斥原理</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ICPC2022济南站 A. Tower</title>
-    <url>/2023/10/07/ICPC2022%E6%B5%8E%E5%8D%97%E7%AB%99%20A.%20Tower/</url>
-    <content><![CDATA[<h2 id="题目链接">题目链接</h2>
-<p><a
-href="https://codeforces.com/gym/104076/problem/A">https://codeforces.com/gym/104076/problem/A</a></p>
-<h2 id="题目大意">题目大意</h2>
-<p>给定长度为 <span class="math inline">\(n\)</span> 的序列 <span
-class="math inline">\(\{ a_n\}\)</span> ，移去其中长度为 <span
-class="math inline">\(m\)</span>
-的子序列，对于剩下的元素能进行如下三种操作（无顺序和次数限制）：</p>
-<ul>
-<li>加 <span class="math inline">\(1\)</span></li>
-<li>减 <span class="math inline">\(1\)</span></li>
-<li>除以 <span class="math inline">\(2\)</span> 并向下取整</li>
-</ul>
-<p>问最少进行多少次操作能把这些数变相同。</p>
-<h2 id="数据范围">数据范围</h2>
-<ul>
-<li><span class="math inline">\(1\le n \le 500 , 0 \le m &lt; n, 1\le
-a_i \le 10^{9}\)</span></li>
-</ul>
-<span id="more"></span>
-<h2 id="解题思路">解题思路</h2>
-<p><img src="https://z1.ax1x.com/2023/10/07/pPjdQYQ.png" /></p>
-<p><img src="https://z1.ax1x.com/2023/10/07/pPjd8ln.png" /></p>
-<h2 id="参考代码">参考代码</h2>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="type">const</span> <span class="type">int</span> MAXN = <span class="number">5e2</span> + <span class="number">10</span>;</span><br><span class="line"><span class="type">const</span> ll INF = <span class="number">0x3f3f3f3f3f3f3f3f</span>;</span><br><span class="line"> </span><br><span class="line"><span class="type">int</span> n, m;</span><br><span class="line"><span class="type">int</span> a[MAXN];</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">fstep</span><span class="params">(<span class="type">int</span> x, <span class="type">int</span> cur)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (x &gt;= cur) &#123;</span><br><span class="line">		<span class="keyword">return</span> x - cur;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">int</span> s = <span class="number">0</span>, lstc = cur;</span><br><span class="line">	<span class="keyword">while</span> (cur &gt; x) &#123;</span><br><span class="line">		lstc = cur;</span><br><span class="line">		cur &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">		s++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">assert</span>(cur != <span class="number">0</span>);</span><br><span class="line">	<span class="type">int</span> res = <span class="built_in">min</span>(s + (x - cur), (s - <span class="number">1</span>) + (lstc - x));</span><br><span class="line">	<span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function">ll <span class="title">calc</span><span class="params">(<span class="type">int</span> x)</span> </span>&#123;</span><br><span class="line">	vector&lt;<span class="type">int</span>&gt; vec;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">		<span class="type">int</span> step = <span class="built_in">fstep</span>(x, a[i]);</span><br><span class="line">		vec.<span class="built_in">push_back</span>(step);</span><br><span class="line">	&#125;</span><br><span class="line">	ll res = <span class="number">0</span>;</span><br><span class="line">	<span class="built_in">sort</span>(vec.<span class="built_in">begin</span>(), vec.<span class="built_in">end</span>());</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n - m; i++) &#123;</span><br><span class="line">		res += vec[i];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	cin &gt;&gt; n &gt;&gt; m;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">		cin &gt;&gt; a[i];</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	ll ans = INF;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">		<span class="type">int</span> x = a[i];</span><br><span class="line">		<span class="keyword">while</span> (x) &#123;</span><br><span class="line">			ans = <span class="built_in">min</span>(ans, <span class="built_in">calc</span>(x));</span><br><span class="line">			x &gt;&gt;= <span class="number">1</span>; </span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>, ans);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> T;</span><br><span class="line">	cin &gt;&gt; T;</span><br><span class="line">	<span class="keyword">while</span> (T--) <span class="built_in">solve</span>();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>算法竞赛</category>
-      </categories>
-      <tags>
-        <tag>XCPC解题报告</tag>
+        <tag>环</tag>
         <tag>贪心</tag>
       </tags>
   </entry>
@@ -523,6 +186,386 @@ class="math inline">\(O(n k ^2)\)</span> 。</p>
       </categories>
       <tags>
         <tag>杂题</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CCPC2021威海站 M. 810975</title>
+    <url>/2023/10/11/CCPC2021%E5%A8%81%E6%B5%B7%E7%AB%99%20M.%20810975/</url>
+    <content><![CDATA[<h2 id="题目链接">题目链接</h2>
+<p><a
+href="https://codeforces.com/gym/103428/problem/M">https://codeforces.com/gym/103428/problem/M</a></p>
+<h2 id="题目大意">题目大意</h2>
+<p>一个长度为 <span class="math inline">\(n\)</span> 的 <span
+class="math inline">\(01\)</span> 串，有 <span
+class="math inline">\(m\)</span> 个位置是 <span
+class="math inline">\(1\)</span> ，最长的 <span
+class="math inline">\(1\)</span> 的连续段长度是 <span
+class="math inline">\(k\)</span> ，求方案数。</p>
+<h2 id="数据范围">数据范围</h2>
+<ul>
+<li><span class="math inline">\(0 \le n, m, k \le 10^5\)</span></li>
+</ul>
+<span id="more"></span>
+<h2 id="解题思路">解题思路</h2>
+<p><img src="https://z1.ax1x.com/2023/10/11/piSCgJJ.png" /> <img
+src="https://z1.ax1x.com/2023/10/11/piSCci4.png" /> <img
+src="https://z1.ax1x.com/2023/10/11/piSCyoF.png" /></p>
+<h2 id="参考代码">参考代码</h2>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="type">const</span> <span class="type">int</span> MAXN = <span class="number">2e5</span> + <span class="number">10</span>;</span><br><span class="line"><span class="type">const</span> <span class="type">int</span> Mod = <span class="number">998244353</span>;</span><br><span class="line"> </span><br><span class="line"><span class="type">int</span> fac[MAXN], invf[MAXN];</span><br><span class="line"> </span><br><span class="line"><span class="function">ll <span class="title">ksm</span><span class="params">(ll x, ll y)</span> </span>&#123;</span><br><span class="line">	ll res = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">while</span> (y) &#123;</span><br><span class="line">		<span class="keyword">if</span> (y &amp; <span class="number">1</span>) &#123;</span><br><span class="line">			res = res * x % Mod;</span><br><span class="line">		&#125;</span><br><span class="line">		x = x * x % Mod;</span><br><span class="line">		y &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">ll <span class="title">inv</span><span class="params">(ll x)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">ksm</span>(x, Mod - <span class="number">2</span>);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">init</span><span class="params">(<span class="type">int</span> lim)</span> </span>&#123;</span><br><span class="line">	fac[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= lim; i++) &#123;</span><br><span class="line">		fac[i] = <span class="number">1ll</span> * fac[i - <span class="number">1</span>] * i % Mod;</span><br><span class="line">	&#125;</span><br><span class="line">	invf[lim] = <span class="built_in">inv</span>(fac[lim]);</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = lim - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">		invf[i] = <span class="number">1ll</span> * invf[i + <span class="number">1</span>] * (i + <span class="number">1</span>) % Mod; </span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">C</span><span class="params">(<span class="type">int</span> x, <span class="type">int</span> y)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (x &lt; y) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">1ll</span> * fac[x] * invf[y] % Mod * invf[x - y] % Mod;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">calc</span><span class="params">(<span class="type">int</span> x, <span class="type">int</span> y)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">C</span>(x + y - <span class="number">1</span>, y - <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">solve</span><span class="params">(<span class="type">int</span> n, <span class="type">int</span> m, <span class="type">int</span> k)</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> res = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt;= n - m + <span class="number">1</span>; i++) &#123;</span><br><span class="line">		<span class="type">int</span> coef = (i &amp; <span class="number">1</span>) ? <span class="number">-1</span> : <span class="number">1</span>;</span><br><span class="line">		<span class="type">int</span> add = <span class="number">1ll</span> * <span class="built_in">C</span>(n - m + <span class="number">1</span>, i) * <span class="built_in">calc</span>(m - i * (k + <span class="number">1</span>), n - m + <span class="number">1</span>) % Mod;</span><br><span class="line">		<span class="keyword">if</span> (coef == <span class="number">-1</span>) &#123;</span><br><span class="line">			add = Mod - add;</span><br><span class="line">		&#125;</span><br><span class="line">		res = (res + add) % Mod;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="built_in">init</span>(MAXN - <span class="number">1</span>);</span><br><span class="line">	</span><br><span class="line">	<span class="type">int</span> n, m, k;</span><br><span class="line">	cin &gt;&gt; n &gt;&gt; m &gt;&gt; k;</span><br><span class="line">	</span><br><span class="line">	<span class="type">int</span> ans = (<span class="built_in">solve</span>(n, m, k) - <span class="built_in">solve</span>(n, m, k - <span class="number">1</span>) + Mod) % Mod;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, ans);</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>算法竞赛</category>
+      </categories>
+      <tags>
+        <tag>XCPC解题报告</tag>
+        <tag>组合数学</tag>
+        <tag>容斥原理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AtCoder解题报告索引</title>
+    <url>/2023/10/08/AtCoder%20%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A%E7%B4%A2%E5%BC%95/</url>
+    <content><![CDATA[<h1 id="atcoder-beginner-contest">AtCoder Beginner Contest</h1>
+<span id="more"></span>
+<h1 id="atcoder-regular-contest">AtCoder Regular Contest</h1>
+<h1 id="atcoder-grand-contest">AtCoder Grand Contest</h1>
+]]></content>
+      <categories>
+        <category>算法竞赛</category>
+      </categories>
+      <tags>
+        <tag>AtCoder解题报告</tag>
+        <tag>索引</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Codeforces解题报告索引</title>
+    <url>/2023/10/08/Codeforces%20%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A%E7%B4%A2%E5%BC%95/</url>
+    <content><![CDATA[<h1 id="codeforces-round">Codeforces Round</h1>
+<span id="more"></span>
+<h1 id="educational-codeforces-round">Educational Codeforces Round</h1>
+<h1 id="other-round">Other Round</h1>
+]]></content>
+      <categories>
+        <category>算法竞赛</category>
+      </categories>
+      <tags>
+        <tag>索引</tag>
+        <tag>Codeforces解题报告</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ICPC2021沈阳站 L. Perfect Matchings</title>
+    <url>/2023/10/19/ICPC2021%E6%B2%88%E9%98%B3%E7%AB%99%20L.%20Perfect%20Matchings/</url>
+    <content><![CDATA[<h2 id="题目链接">题目链接</h2>
+<p><a
+href="https://codeforces.com/gym/103427/problem/L">https://codeforces.com/gym/103427/problem/L</a></p>
+<h2 id="题目大意">题目大意</h2>
+<p>有一个 <span class="math inline">\(2n\)</span>
+个点的完全图，给出这个完全图的一颗生成树，从完全图上删去树上的边，求剩下的图的完美匹配的方案数。</p>
+<h2 id="数据范围">数据范围</h2>
+<ul>
+<li><span class="math inline">\(2 \le n \le 2000\)</span></li>
+</ul>
+<span id="more"></span>
+<h2 id="解题思路">解题思路</h2>
+<p><img src="https://z1.ax1x.com/2023/10/19/piiGp7t.png" /> <img
+src="https://z1.ax1x.com/2023/10/19/piiGS0I.png" /></p>
+<h2 id="参考代码">参考代码</h2>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(<span class="type">int</span> u, <span class="type">int</span> fa)</span> </span>&#123;</span><br><span class="line">	sz[u] = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">auto</span> v : G[u]) &#123;</span><br><span class="line">		<span class="keyword">if</span> (v == fa) &#123;</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">dfs</span>(v, u);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	dp[u][<span class="number">0</span>][<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">auto</span> v : G[u]) &#123;</span><br><span class="line">		<span class="keyword">if</span> (v == fa) &#123;</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">memcpy</span>(tmp, dp[u], <span class="built_in">sizeof</span>(dp[u]));</span><br><span class="line">		<span class="built_in">memset</span>(dp[u], <span class="number">0</span>, <span class="built_in">sizeof</span>(dp[u]));</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt;= sz[u] / <span class="number">2</span>; i++) &#123;</span><br><span class="line">			<span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt;= sz[v] / <span class="number">2</span>; j++) &#123;</span><br><span class="line">				<span class="keyword">if</span> (!dp[v][j][<span class="number">0</span>]) &#123;</span><br><span class="line">					<span class="keyword">continue</span>;</span><br><span class="line">				&#125;</span><br><span class="line">			</span><br><span class="line">				<span class="keyword">if</span> (tmp[i][<span class="number">0</span>]) &#123;</span><br><span class="line">					<span class="built_in">add_mod</span>(dp[u][i + j][<span class="number">0</span>], <span class="number">1ll</span> * tmp[i][<span class="number">0</span>] * dp[v][j][<span class="number">0</span>] % Mod);</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">if</span> (tmp[i][<span class="number">0</span>]) &#123;</span><br><span class="line">					<span class="built_in">add_mod</span>(dp[u][i + j + <span class="number">1</span>][<span class="number">1</span>], <span class="number">1ll</span> * tmp[i][<span class="number">0</span>] * dp[v][j][<span class="number">0</span>] % Mod);</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">if</span> (tmp[i][<span class="number">1</span>]) &#123;</span><br><span class="line">					<span class="built_in">add_mod</span>(dp[u][i + j][<span class="number">1</span>], <span class="number">1ll</span> * tmp[i][<span class="number">1</span>] * dp[v][j][<span class="number">0</span>] % Mod);</span><br><span class="line">				&#125;	</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt;= sz[v] / <span class="number">2</span>; j++) &#123;</span><br><span class="line">				<span class="keyword">if</span> (!dp[v][j][<span class="number">1</span>]) &#123;</span><br><span class="line">					<span class="keyword">continue</span>;</span><br><span class="line">				&#125;</span><br><span class="line">				</span><br><span class="line">				<span class="keyword">if</span> (tmp[i][<span class="number">1</span>]) &#123;</span><br><span class="line">					<span class="built_in">add_mod</span>(dp[u][i + j][<span class="number">1</span>], <span class="number">1ll</span> * tmp[i][<span class="number">1</span>] * dp[v][j][<span class="number">1</span>] % Mod);</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">if</span> (tmp[i][<span class="number">0</span>]) &#123;</span><br><span class="line">					<span class="built_in">add_mod</span>(dp[u][i + j][<span class="number">0</span>], <span class="number">1ll</span> * tmp[i][<span class="number">0</span>] * dp[v][j][<span class="number">1</span>] % Mod);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		sz[u] += sz[v];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	</span><br><span class="line">	cin &gt;&gt; n;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">2</span> * n - <span class="number">1</span>; i++) &#123;</span><br><span class="line">		<span class="type">int</span> u, v;</span><br><span class="line">		cin &gt;&gt; u &gt;&gt; v;</span><br><span class="line">		G[u].<span class="built_in">push_back</span>(v);</span><br><span class="line">		G[v].<span class="built_in">push_back</span>(u);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	fac[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">2</span> * n; i++) &#123;</span><br><span class="line">		fac[i] = <span class="number">1ll</span> * fac[i - <span class="number">1</span>] * i % Mod;</span><br><span class="line">	&#125; </span><br><span class="line">	invf[<span class="number">2</span> * n] = <span class="built_in">inv</span>(fac[<span class="number">2</span> * n]);</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">2</span> * n - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">		invf[i] = <span class="number">1ll</span> * invf[i + <span class="number">1</span>] * (i + <span class="number">1</span>) % Mod;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	f[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">2</span>; i &lt;= <span class="number">2</span> * n; i += <span class="number">2</span>) &#123;</span><br><span class="line">		f[i] = <span class="number">1ll</span> * fac[i] * <span class="built_in">inv</span>(<span class="built_in">ksm</span>(<span class="number">2ll</span>, i / <span class="number">2</span>)) % Mod * invf[i / <span class="number">2</span>] % Mod;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">dfs</span>(<span class="number">1</span>, <span class="number">0</span>);</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">		g[i] = <span class="number">1ll</span> * (dp[<span class="number">1</span>][i][<span class="number">0</span>] + dp[<span class="number">1</span>][i][<span class="number">1</span>]) * f[<span class="number">2</span> * (n - i)] % Mod;	</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="type">int</span> ans = f[<span class="number">2</span> * n];</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">		<span class="type">int</span> add = g[i];</span><br><span class="line">		<span class="keyword">if</span> (i &amp; <span class="number">1</span>) &#123;</span><br><span class="line">			add = Mod - add;</span><br><span class="line">		&#125;</span><br><span class="line">		ans = (ans + add) % Mod;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, ans);</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>算法竞赛</category>
+      </categories>
+      <tags>
+        <tag>XCPC解题报告</tag>
+        <tag>组合数学</tag>
+        <tag>容斥原理</tag>
+        <tag>动态规划</tag>
+        <tag>树形背包</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ICPC2021沈阳站 M. String Problem</title>
+    <url>/2023/10/15/ICPC2021%E6%B2%88%E9%98%B3%E7%AB%99%20M.%20String%20Problem/</url>
+    <content><![CDATA[<h2 id="题目链接">题目链接</h2>
+<p><a
+href="https://codeforces.com/gym/103427/problem/M">https://codeforces.com/gym/103427/problem/M</a></p>
+<h2 id="题目大意">题目大意</h2>
+<p>给定小写字母构成的字符串 <span class="math inline">\(S\)</span>
+，对于 <span class="math inline">\(S\)</span>
+的每个前缀，求该前缀的所有子串中字典序最大且出现位置最靠左的子串的左右端点。</p>
+<h2 id="数据范围">数据范围</h2>
+<ul>
+<li><span class="math inline">\(1 \le |S| \le 10^6\)</span></li>
+</ul>
+<span id="more"></span>
+<h2 id="解题思路">解题思路</h2>
+<p><img src="https://z1.ax1x.com/2023/10/15/pi9XYUH.png" /> <img
+src="https://z1.ax1x.com/2023/10/15/pi9X3DO.png" /> <img
+src="https://z1.ax1x.com/2023/10/15/pi9XJVe.png" /> <img
+src="https://z1.ax1x.com/2023/10/15/pi9X8bD.png" /></p>
+<h2 id="参考代码">参考代码</h2>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="type">const</span> <span class="type">int</span> MAXN = <span class="number">1e6</span>+<span class="number">10</span>; </span><br><span class="line"><span class="type">const</span> <span class="type">int</span> INF = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> SA :: sa;</span><br><span class="line"><span class="keyword">using</span> SA :: rk;</span><br><span class="line"><span class="keyword">using</span> SA :: height;</span><br><span class="line"> </span><br><span class="line"><span class="type">int</span> n;</span><br><span class="line"><span class="type">char</span> s[MAXN];</span><br><span class="line"><span class="type">int</span> st[MAXN][<span class="number">21</span>];</span><br><span class="line"><span class="type">int</span> h[MAXN], pos[MAXN];</span><br><span class="line"><span class="type">int</span> lg2[MAXN];</span><br><span class="line">multiset&lt;<span class="type">int</span>&gt; S;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">query</span><span class="params">(<span class="type">int</span> l, <span class="type">int</span> r)</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> s = lg2[r - l + <span class="number">1</span>];</span><br><span class="line">	<span class="keyword">return</span> <span class="built_in">min</span>(st[l][s], st[r - (<span class="number">1</span> &lt;&lt; s) + <span class="number">1</span>][s]);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">qlmax</span><span class="params">(<span class="type">int</span> x)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">auto</span> it = S.<span class="built_in">lower_bound</span>(x);</span><br><span class="line">	<span class="keyword">if</span> (it == S.<span class="built_in">begin</span>()) &#123;</span><br><span class="line">		<span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> &#123; </span><br><span class="line">		<span class="keyword">return</span> *(--it);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>, s + <span class="number">1</span>);</span><br><span class="line">	n = <span class="built_in">strlen</span>(s + <span class="number">1</span>);</span><br><span class="line">	SA::<span class="built_in">init</span>(s, n);</span><br><span class="line">	</span><br><span class="line">	lg2[<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">2</span>; i &lt;= n; i++) &#123;</span><br><span class="line">		lg2[i] = lg2[i &gt;&gt; <span class="number">1</span>] + <span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">		st[i][<span class="number">0</span>] = height[i];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">1</span>; j &lt;= <span class="number">20</span>; j++) &#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i + (<span class="number">1</span> &lt;&lt; j) - <span class="number">1</span> &lt;= n; i++) &#123;</span><br><span class="line">			st[i][j] = <span class="built_in">min</span>(st[i][j - <span class="number">1</span>], st[i + (<span class="number">1</span> &lt;&lt; (j - <span class="number">1</span>))][j - <span class="number">1</span>]);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	h[rk[<span class="number">1</span>]] = <span class="number">0</span>;</span><br><span class="line">	S.<span class="built_in">insert</span>(rk[<span class="number">1</span>]);</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">2</span>; i &lt;= n; i++) &#123;</span><br><span class="line">		<span class="type">int</span> r = rk[i];</span><br><span class="line">		<span class="type">int</span> l = <span class="built_in">qlmax</span>(r);</span><br><span class="line">		<span class="keyword">if</span> (l == <span class="number">-1</span>) &#123;</span><br><span class="line">			h[r] = <span class="number">0</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			h[r] = <span class="built_in">query</span>(l + <span class="number">1</span>, r);</span><br><span class="line">		&#125;</span><br><span class="line">		S.<span class="built_in">insert</span>(r);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = n, r = n; i &gt;= <span class="number">1</span>; i--) &#123;</span><br><span class="line">		<span class="type">int</span> x = sa[i] + h[i];</span><br><span class="line">		<span class="keyword">while</span> (r &gt;= x) &#123;</span><br><span class="line">			pos[r] = sa[i];</span><br><span class="line">			r--;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%d %d\n&quot;</span>, pos[i], i);</span><br><span class="line">	&#125;</span><br><span class="line"> </span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>算法竞赛</category>
+      </categories>
+      <tags>
+        <tag>XCPC解题报告</tag>
+        <tag>字符串算法</tag>
+        <tag>后缀排序</tag>
+        <tag>ST表</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ICPC2022济南站 A. Tower</title>
+    <url>/2023/10/07/ICPC2022%E6%B5%8E%E5%8D%97%E7%AB%99%20A.%20Tower/</url>
+    <content><![CDATA[<h2 id="题目链接">题目链接</h2>
+<p><a
+href="https://codeforces.com/gym/104076/problem/A">https://codeforces.com/gym/104076/problem/A</a></p>
+<h2 id="题目大意">题目大意</h2>
+<p>给定长度为 <span class="math inline">\(n\)</span> 的序列 <span
+class="math inline">\(\{ a_n\}\)</span> ，移去其中长度为 <span
+class="math inline">\(m\)</span>
+的子序列，对于剩下的元素能进行如下三种操作（无顺序和次数限制）：</p>
+<ul>
+<li>加 <span class="math inline">\(1\)</span></li>
+<li>减 <span class="math inline">\(1\)</span></li>
+<li>除以 <span class="math inline">\(2\)</span> 并向下取整</li>
+</ul>
+<p>问最少进行多少次操作能把这些数变相同。</p>
+<h2 id="数据范围">数据范围</h2>
+<ul>
+<li><span class="math inline">\(1\le n \le 500 , 0 \le m &lt; n, 1\le
+a_i \le 10^{9}\)</span></li>
+</ul>
+<span id="more"></span>
+<h2 id="解题思路">解题思路</h2>
+<p><img src="https://z1.ax1x.com/2023/10/07/pPjdQYQ.png" /></p>
+<p><img src="https://z1.ax1x.com/2023/10/07/pPjd8ln.png" /></p>
+<h2 id="参考代码">参考代码</h2>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="type">const</span> <span class="type">int</span> MAXN = <span class="number">5e2</span> + <span class="number">10</span>;</span><br><span class="line"><span class="type">const</span> ll INF = <span class="number">0x3f3f3f3f3f3f3f3f</span>;</span><br><span class="line"> </span><br><span class="line"><span class="type">int</span> n, m;</span><br><span class="line"><span class="type">int</span> a[MAXN];</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">fstep</span><span class="params">(<span class="type">int</span> x, <span class="type">int</span> cur)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (x &gt;= cur) &#123;</span><br><span class="line">		<span class="keyword">return</span> x - cur;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">int</span> s = <span class="number">0</span>, lstc = cur;</span><br><span class="line">	<span class="keyword">while</span> (cur &gt; x) &#123;</span><br><span class="line">		lstc = cur;</span><br><span class="line">		cur &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">		s++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">assert</span>(cur != <span class="number">0</span>);</span><br><span class="line">	<span class="type">int</span> res = <span class="built_in">min</span>(s + (x - cur), (s - <span class="number">1</span>) + (lstc - x));</span><br><span class="line">	<span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function">ll <span class="title">calc</span><span class="params">(<span class="type">int</span> x)</span> </span>&#123;</span><br><span class="line">	vector&lt;<span class="type">int</span>&gt; vec;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">		<span class="type">int</span> step = <span class="built_in">fstep</span>(x, a[i]);</span><br><span class="line">		vec.<span class="built_in">push_back</span>(step);</span><br><span class="line">	&#125;</span><br><span class="line">	ll res = <span class="number">0</span>;</span><br><span class="line">	<span class="built_in">sort</span>(vec.<span class="built_in">begin</span>(), vec.<span class="built_in">end</span>());</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; n - m; i++) &#123;</span><br><span class="line">		res += vec[i];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">solve</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	cin &gt;&gt; n &gt;&gt; m;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">		cin &gt;&gt; a[i];</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	ll ans = INF;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">		<span class="type">int</span> x = a[i];</span><br><span class="line">		<span class="keyword">while</span> (x) &#123;</span><br><span class="line">			ans = <span class="built_in">min</span>(ans, <span class="built_in">calc</span>(x));</span><br><span class="line">			x &gt;&gt;= <span class="number">1</span>; </span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>, ans);</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	<span class="type">int</span> T;</span><br><span class="line">	cin &gt;&gt; T;</span><br><span class="line">	<span class="keyword">while</span> (T--) <span class="built_in">solve</span>();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>算法竞赛</category>
+      </categories>
+      <tags>
+        <tag>贪心</tag>
+        <tag>XCPC解题报告</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>XCPC解题报告索引</title>
+    <url>/2023/10/07/XCPC%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A%E7%B4%A2%E5%BC%95/</url>
+    <content><![CDATA[<h1 id="icpc">ICPC</h1>
+<h2 id="season-2021---2022">Season 2021 - 2022</h2>
+<p>ICPC2021 沈阳站</p>
+<p><a
+href="http://www.tle-automat.top/2023/10/19/ICPC2021沈阳站%20L.%20Perfect%20Matchings/">L.
+Perfect Matchings</a></p>
+<p><a
+href="http://www.tle-automat.top/2023/10/15/ICPC2021沈阳站%20M.%20String%20Problem/">M.
+String Problem</a></p>
+<h2 id="season-2022---2023">Season 2022 - 2023</h2>
+<p>ICPC2022 济南站</p>
+<p><a
+href="https://tle-automat.top/2023/10/07/ICPC2022%E6%B5%8E%E5%8D%97%E7%AB%99%20A.%20Tower/">A.
+Tower</a></p>
+<h1 id="ccpc">CCPC</h1>
+<h2 id="season-2021---2022-1">Season 2021 - 2022</h2>
+<p>CCPC2021 威海站</p>
+<p><a
+href="http://www.tle-automat.top/2023/10/11/CCPC2021威海站%20M.%20810975/">M.
+810975</a></p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>算法竞赛</category>
+      </categories>
+      <tags>
+        <tag>XCPC解题报告</tag>
+        <tag>索引</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Re零系列学习笔记索引</title>
+    <url>/2023/10/08/Re%E9%9B%B6%E7%B3%BB%E5%88%97%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
+    <content><![CDATA[<p>咕。咕。咕。</p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>算法竞赛</category>
+      </categories>
+      <tags>
+        <tag>索引</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Re:从零开始的动态规划（动态规划学习笔记索引）</title>
+    <url>/2023/10/08/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
+    <content><![CDATA[<p>咕。咕。咕。</p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>算法竞赛</category>
+      </categories>
+      <tags>
+        <tag>索引</tag>
+        <tag>动态规划(DP)</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Re:从零开始的博弈论（博弈论学习笔记索引）</title>
+    <url>/2023/10/08/%E5%8D%9A%E5%BC%88%E8%AE%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
+    <content><![CDATA[<p>咕。咕。咕。</p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>算法竞赛</category>
+      </categories>
+      <tags>
+        <tag>索引</tag>
+        <tag>博弈论</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Re:从零开始的图论（图论学习笔记索引）</title>
+    <url>/2023/10/08/%E5%9B%BE%E8%AE%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
+    <content><![CDATA[<p>咕。咕。咕。</p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>算法竞赛</category>
+      </categories>
+      <tags>
+        <tag>图论</tag>
+        <tag>索引</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Re:从零开始的多项式（多项式学习笔记索引）</title>
+    <url>/2023/10/08/%E5%A4%9A%E9%A1%B9%E5%BC%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
+    <content><![CDATA[<p>咕。咕。咕。</p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>算法竞赛</category>
+      </categories>
+      <tags>
+        <tag>索引</tag>
+        <tag>多项式</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Re:从零开始的字符串算法（字符串算法学习笔记索引）</title>
+    <url>/2023/10/08/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
+    <content><![CDATA[<p>咕。咕。咕。</p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>算法竞赛</category>
+      </categories>
+      <tags>
+        <tag>索引</tag>
+        <tag>字符串算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Re:从零开始的数据结构（数据结构学习笔记索引）</title>
+    <url>/2023/10/08/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
+    <content><![CDATA[<p>咕。咕。咕。</p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>算法竞赛</category>
+      </categories>
+      <tags>
+        <tag>索引</tag>
+        <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Re:从零开始的数论（数论学习笔记索引）</title>
+    <url>/2023/10/08/%E6%95%B0%E8%AE%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
+    <content><![CDATA[<p>咕。咕。咕。</p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>算法竞赛</category>
+      </categories>
+      <tags>
+        <tag>索引</tag>
+        <tag>数论</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Re:从零开始的线性代数（线性代数学习笔记索引）</title>
+    <url>/2023/10/08/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
+    <content><![CDATA[<p>咕。咕。咕。</p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>算法竞赛</category>
+      </categories>
+      <tags>
+        <tag>索引</tag>
+        <tag>线性代数</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Re:从零开始的组合数学（组合数学学习笔记索引）</title>
+    <url>/2023/10/08/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
+    <content><![CDATA[<p>咕。咕。咕。</p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>算法竞赛</category>
+      </categories>
+      <tags>
+        <tag>组合数学</tag>
+        <tag>索引</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Re:从零开始的计算几何（计算几何学习笔记索引）</title>
+    <url>/2023/10/08/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
+    <content><![CDATA[<p>咕。咕。咕。</p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>算法竞赛</category>
+      </categories>
+      <tags>
+        <tag>索引</tag>
+        <tag>计算几何</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>目录</title>
+    <url>/2023/10/08/%E7%9B%AE%E5%BD%95/</url>
+    <content><![CDATA[<p>咕。咕。咕。</p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>0</category>
+      </categories>
+      <tags>
+        <tag>索引</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>网络流学习笔记</title>
+    <url>/2023/10/12/%E7%BD%91%E7%BB%9C%E6%B5%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p>咕。咕。咕。</p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>算法竞赛</category>
+      </categories>
+      <tags>
+        <tag>图论</tag>
+        <tag>网络流</tag>
       </tags>
   </entry>
 </search>
