@@ -20,6 +20,7 @@
 <p>大学第一场 xcpc ，有些小激动。</p>
 <p>经历了一天的颠簸，晚上终于坐飞机到桂林了，刷新了从小到大到达过的最南边和最西边的记录。</p>
 <p>不愧于“桂林山水甲天下”的美誉，桂林的喀斯特地貌几乎随处可见，小城周围环绕的山地总能给人一种与世隔绝的安宁。</p>
+<span id="more"></span>
 <h1 id="day-0">Day 0</h1>
 <p>早上领到了桂林站主办方准备的桂林特产。</p>
 <p>中午吃到了桂林本地的螺狮粉（其实这是我第一次吃螺狮粉），我也不知道这是不是正宗的螺狮粉，反正跟臭豆腐差不多，制作过程中闻起来挺臭，但吃起来一点也不臭。</p>
@@ -62,6 +63,62 @@ B
 <p>还是要多 vp CF Edu 和 ARC
 的比赛提升个人的思维和代码水平，并且通过和队友一起 vp xcpc
 真题来提升队伍磨合。</p>
+]]></content>
+      <categories>
+        <category>游记</category>
+      </categories>
+      <tags>
+        <tag>游记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ICPC2023南京站【游记】</title>
+    <url>/2023/11/08/ICPC2023%E5%8D%97%E4%BA%AC%E7%AB%99%E3%80%90%E6%B8%B8%E8%AE%B0%E3%80%91/</url>
+    <content><![CDATA[<h1 id="day--">Day -?</h1>
+<p>上场打桂林的那个队伍的大三学长因为有事，这场打不了，我们队招募来了一个新的大一佬
+wyx ，并且 vp 了七八场历年的 xcpc
+真题，平均位次在铜牌首部到银牌中部。</p>
+<p>鉴于桂林打铁的教训，我们非常重视队伍的磨合以及做题策略，赛前一直在做积极的心理暗示。</p>
+<h1 id="day--1">Day -1</h1>
+<p>坐高铁从秦皇岛到了南京，因为酒店位置有点偏，没有吃到当地有名的鸭血粉丝汤。</p>
+<p>另外一队的大一佬 warzone 过来提醒我们今晚有 CF
+Edu，于是就直接开打，过了 ABCD 题，E
+题读了题但没啥时间，索性不想直接睡觉了，毕竟第二天还挺忙的。</p>
+<span id="more"></span>
+<h1 id="day-0">Day 0</h1>
+<p>中午到了南京航空航天大学。</p>
+<p>居然有校园巴士，狠狠羡慕了。</p>
+<p>乘坐校园巴士到体育馆领了南京站的外套（巨好看，上面还印着 Floyd
+最短路的代码），并且合了个影。然后就是到南航的食堂吃午饭，忘记第几食堂了，反正看门口的招牌，感觉跟到了饭店一样，25
+块钱的餐券根本花不完。</p>
+<p>吃完饭闲的没事干跑去篮球场看看，结果还真有球卡在球框和板之间了，用矿泉水瓶砸下来然后开始和队友投篮，过了一会还来了一个国防科技大学的佬来一起打，这下成物理热身了（</p>
+<p>然后就是下午的热身赛，题目是前几年的四个南京站原题，还得知热身赛和正赛都有中文题面（好耶）。南京站的硬件配置也属实顶级，果然有钱就是好，南京站独有的经典袋鼠吉祥物每个队伍也有（i了i了）。</p>
+<p>傍晚的时候回来看了一眼昨晚 CF 的榜 rk500 多，rating 大概涨了 40
+分左右。</p>
+<h1 id="day-1">Day 1</h1>
+<p>开场依然有点紧张，但还是一直哼唱周董的歌努力让自己平静下来。</p>
+<p>三人分别从头、尾和中间开始看题，我还负责盯榜，然后发现 I
+是签到，但是求稳还是写得很慢，防止出错，20min 时一发过了。</p>
+<p>然后看榜发现 G 和 C 是目前最可做的题。</p>
+<p>我先想了 G
+题，凭感觉加简单证明，就是把物品按体积排序之后，从头部和尾部分别写两个背包，然后枚举一下两个背包分开的位置，结果第一发
+WA 了，以为思路假了，结果发现是背包写出了小锅，改完马上过了。</p>
+<p>然后 wyx C
+题有思路了，经过简短的讨论之后发现很真，然后开始码，过了样例之后一发过了。</p>
+<p>过了一会，大二队友 F
+题有思路了，三个人探讨了一下细节，然后我接着开始码，然后又直接一发过了。</p>
+<p>到目前位置很顺，感觉赛前的磨合还是很有用的，三个队友分别看 A , L ,
+M。</p>
+<p>我看完 M 没啥思路，于是去跟队友探讨 L
+题，然后讨论出了很真的贪心的思路，就是代码不太好写，码了很久才码完，样例也调了很久，最后交上去还
+WA 了，然后对着代码瞪了半个小时没看出一点错。这个时候 wyx A
+题出思路了，于是我把代码打印出来开始调，他开始码 A 。</p>
+<p>此时已经封榜了，时间比较紧，我对着大二队友开始了小黄鸭调试法，大概过了半个小时发现一个减号的前后写反了，立马反过来，交了一发直接过了。</p>
+<p>此时过了 5 题，以为绝杀拿 Ag
+了，可惜队友时间不够用了，A题没调出来，否则就是稳 Ag 了。</p>
+<p>可惜最后不尽人意，滚榜被滚到了铜首，差 8 名 Ag
+，不过还好终于有牌子了。</p>
+<p>还是一句话：个人水平不够，还得加油练啊！！！</p>
 ]]></content>
       <categories>
         <category>游记</category>
@@ -167,8 +224,8 @@ Good Permutation</a></p>
       </tags>
   </entry>
   <entry>
-    <title>Re:从零开始的动态规划（动态规划学习笔记索引）</title>
-    <url>/2023/10/08/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
+    <title>Re:从零开始的博弈论（博弈论学习笔记索引）</title>
+    <url>/2023/10/08/%E5%8D%9A%E5%BC%88%E8%AE%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
     <content><![CDATA[<p>咕。咕。咕。</p>
 <span id="more"></span>
 ]]></content>
@@ -177,7 +234,7 @@ Good Permutation</a></p>
       </categories>
       <tags>
         <tag>索引</tag>
-        <tag>动态规划(DP)</tag>
+        <tag>博弈论</tag>
       </tags>
   </entry>
   <entry>
@@ -195,34 +252,6 @@ Good Permutation</a></p>
       </tags>
   </entry>
   <entry>
-    <title>Re:从零开始的多项式（多项式学习笔记索引）</title>
-    <url>/2023/10/08/%E5%A4%9A%E9%A1%B9%E5%BC%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
-    <content><![CDATA[<p>咕。咕。咕。</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>算法竞赛</category>
-      </categories>
-      <tags>
-        <tag>索引</tag>
-        <tag>多项式</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Re:从零开始的博弈论（博弈论学习笔记索引）</title>
-    <url>/2023/10/08/%E5%8D%9A%E5%BC%88%E8%AE%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
-    <content><![CDATA[<p>咕。咕。咕。</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>算法竞赛</category>
-      </categories>
-      <tags>
-        <tag>索引</tag>
-        <tag>博弈论</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Re:从零开始的字符串算法（字符串算法学习笔记索引）</title>
     <url>/2023/10/08/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
     <content><![CDATA[<p>咕。咕。咕。</p>
@@ -234,6 +263,20 @@ Good Permutation</a></p>
       <tags>
         <tag>索引</tag>
         <tag>字符串算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Re:从零开始的多项式（多项式学习笔记索引）</title>
+    <url>/2023/10/08/%E5%A4%9A%E9%A1%B9%E5%BC%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
+    <content><![CDATA[<p>咕。咕。咕。</p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>算法竞赛</category>
+      </categories>
+      <tags>
+        <tag>索引</tag>
+        <tag>多项式</tag>
       </tags>
   </entry>
   <entry>
@@ -304,6 +347,20 @@ Good Permutation</a></p>
       <tags>
         <tag>索引</tag>
         <tag>计算几何</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Re:从零开始的动态规划（动态规划学习笔记索引）</title>
+    <url>/2023/10/08/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
+    <content><![CDATA[<p>咕。咕。咕。</p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>算法竞赛</category>
+      </categories>
+      <tags>
+        <tag>索引</tag>
+        <tag>动态规划(DP)</tag>
       </tags>
   </entry>
   <entry>
