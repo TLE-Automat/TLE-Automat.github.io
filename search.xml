@@ -426,20 +426,6 @@ href="https://zhuanlan.zhihu.com/p/382644742">https://zhuanlan.zhihu.com/p/38264
       </tags>
   </entry>
   <entry>
-    <title>Re:从零开始的图论（图论学习笔记索引）</title>
-    <url>/2023/10/08/%E5%9B%BE%E8%AE%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
-    <content><![CDATA[<p>咕。咕。咕。</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>算法竞赛</category>
-      </categories>
-      <tags>
-        <tag>图论</tag>
-        <tag>索引</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Re:从零开始的多项式（多项式学习笔记索引）</title>
     <url>/2023/10/08/%E5%A4%9A%E9%A1%B9%E5%BC%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
     <content><![CDATA[<p>咕。咕。咕。</p>
@@ -524,6 +510,20 @@ href="https://zhuanlan.zhihu.com/p/382644742">https://zhuanlan.zhihu.com/p/38264
       </tags>
   </entry>
   <entry>
+    <title>Re:从零开始的图论（图论学习笔记索引）</title>
+    <url>/2023/10/08/%E5%9B%BE%E8%AE%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
+    <content><![CDATA[<p>咕。咕。咕。</p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>算法竞赛</category>
+      </categories>
+      <tags>
+        <tag>图论</tag>
+        <tag>索引</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Re:从零开始的计算几何（计算几何学习笔记索引）</title>
     <url>/2023/10/08/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
     <content><![CDATA[<p>咕。咕。咕。</p>
@@ -552,7 +552,152 @@ href="https://zhuanlan.zhihu.com/p/382644742">https://zhuanlan.zhihu.com/p/38264
       </tags>
   </entry>
   <entry>
-    <title>ABC171 F.Strivore</title>
+    <title>ABC335G - Discrete Logarithm Problems</title>
+    <url>/2024/01/17/ABC335G/</url>
+    <content><![CDATA[<h2 id="题目链接">题目链接</h2>
+<p><a
+href="https://atcoder.jp/contests/abc335/tasks/abc335_g">https://atcoder.jp/contests/abc335/tasks/abc335_g</a></p>
+<h2 id="题目大意">题目大意</h2>
+<p>给定 <span class="math inline">\(n\)</span> 个正整数 <span
+class="math inline">\(a_1,a_2,\cdots,a_n\)</span> 和一个素数 <span
+class="math inline">\(P\)</span>。求满足以下条件的二元组 <span
+class="math inline">\((i,j)\)</span> 的个数。</p>
+<ul>
+<li><p><span class="math inline">\(1\leq i,j\leq N\)</span> 。</p></li>
+<li><p>存在正整数 <span class="math inline">\(k\)</span> ，使得 <span
+class="math inline">\(A_i^k\equiv A_j\pmod P\)</span>。</p></li>
+</ul>
+<h2 id="数据范围">数据范围</h2>
+<ul>
+<li><span class="math inline">\(1\le n\le 2\times 10^{5}\)</span></li>
+<li><span class="math inline">\(1\le a_i &lt; P\)</span></li>
+<li><span class="math inline">\(2 &lt; P \le 10^{13}\)</span> 且 <span
+class="math inline">\(P\)</span> 是素数</li>
+</ul>
+<span id="more"></span>
+<h2 id="解题思路">解题思路</h2>
+<p>考虑同余式 <span class="math inline">\(x^k \equiv y \pmod P\)</span>
+能推出什么结论。</p>
+<p>令 <span class="math inline">\(\delta_{P}(x)\)</span> 表示 <span
+class="math inline">\(x\)</span> 在模 <span
+class="math inline">\(P\)</span> 意义下的阶，因为 <span
+class="math inline">\(x^k\)</span> 和 <span
+class="math inline">\(y\)</span> 在模 <span
+class="math inline">\(P\)</span> 意义下同余，所以一定有 <span
+class="math inline">\(\delta_{P}(x^{k}) = \delta_P(y)\)</span> 。</p>
+<p>其实以上的转化是我看题解看到的，至于应该怎么想才能自然地想到这一步，感觉需要一定的数学直觉，并且需要靠多做题积累经验。</p>
+根据阶的性质，有 <span class="math inline">\(\delta_{P}(x^{k}) =
+\displaystyle\frac{\delta_{P}(x)}{\gcd(k, \delta_{P}(x))}\)</span>
+，所以可以得到 <span class="math inline">\(\delta_{P}(x) = \gcd(k,
+\delta_{P}(x)) \cdot \delta_{P}(y)\)</span> ，所以我们能推出一个必要条件
+$$
+<span class="math display">\[\begin{aligned}
+
+\exist{k \in \mathbb{N}} , \text{ }x^{k} \equiv y \pmod P \implies
+\delta_{P}(y) \mid \delta_{P}(x)
+
+\end{aligned}\]</span>
+<p>$$ 那么该条件的充分性是否成立呢。</p>
+<ul>
+<li><p><strong>lemma 1</strong></p>
+<p>如果 <span class="math inline">\(ta \equiv tb \pmod {tc}\)</span>
+，则 <span class="math inline">\(a \equiv b \pmod c\)</span> 成立，其中
+<span class="math inline">\(t,a,b\in \mathbb{N_{+}}\)</span> 。</p>
+<p>证明非常简单，只需要把取模运算的表达式写出来即可证明。</p></li>
+</ul>
+<p>假设 <span class="math inline">\(g\)</span> 为 <span
+class="math inline">\(P\)</span> 的一个原根，根据原根的性质，一定存在
+<span class="math inline">\(e_1\)</span> 和 <span
+class="math inline">\(e_2\)</span> 使得 <span
+class="math inline">\(g^{e_1} \equiv x \pmod P\)</span> ，<span
+class="math inline">\(g^{e_2} \equiv y \pmod
+P\)</span>，两边取离散对数有 <span class="math inline">\(e_{1} \equiv
+\operatorname{ind}_{g}(x) \pmod{P-1}\)</span> ，<span
+class="math inline">\(e_{2} \equiv \operatorname{ind}_{g}(y) \pmod{P -
+1}\)</span> 。我们要证 <span class="math inline">\(\exist{k \in
+\mathbb{N}} , x^{k} \equiv y \pmod P\)</span> ，即证 <span
+class="math inline">\(\exist{k \in \mathbb{N}} , ke_{1} \equiv e_2
+\pmod{P-1}\)</span> 。</p>
+根据条件有 $$
+<span class="math display">\[\begin{aligned}
+
+\delta_{P}(y) \mid \delta_{P}(x) \iff\delta_{P}(g^{e_2}) \mid
+\delta_{P}(g^{e_1}) \iff \displaystyle\frac{P-1}{\gcd(e_2, P-1)} \mid
+\displaystyle\frac{P-1}{\gcd(e_1, P-1)} \iff \gcd(e_1, P-1) \mid
+\gcd(e_2, P-1)
+
+\end{aligned}\]</span>
+<p>$$</p>
+令 <span class="math inline">\(t = \gcd(e_1, P - 1)\)</span> ，根据
+<strong>lemma 1</strong> 和 <span class="math inline">\(ke_{1}\equiv e_2
+\pmod{P-1}\)</span> ，有 $$
+<span class="math display">\[\begin{aligned}
+
+k\frac{e_1}{t} \equiv \frac{e_{2}}{t} \pmod{\frac{P-1}{t}}
+
+\end{aligned}\]</span>
+<span class="math display">\[
+因为 $\displaystyle\frac{e_{1}}{t}$ 与 $\displaystyle\frac{P-1}{t}$
+互质，所以有
+\]</span>
+<span class="math display">\[\begin{aligned}
+
+k\equiv \frac{e_{2}}{t} \cdot \left(\frac{e_1}{t}\right)^{-1}
+\pmod{\frac{P-1}{t}}
+
+\end{aligned}\]</span>
+<span class="math display">\[
+所以条件的充分性成立，即
+\]</span>
+<span class="math display">\[\begin{aligned}
+
+\exist{k \in \mathbb{N}} , \text{ }x^{k} \equiv y \pmod P \implies
+\delta_{P}(y) \mid \delta_{P}(x)
+
+\end{aligned}\]</span>
+<p>$$ 接下来，考虑如何求一个数 <span class="math inline">\(a\)</span>
+在模 <span class="math inline">\(P\)</span> 意义下的阶 <span
+class="math inline">\(\delta_{P}(a)\)</span> 。因为 <span
+class="math inline">\(\delta_{P}(a) \mid (P - 1)\)</span> ，并且若 <span
+class="math inline">\(\delta_{P}(a) \mid b\)</span> ，那么 <span
+class="math inline">\(x^{b} \equiv 1 \pmod P\)</span> 成立，所以可以先将
+<span class="math inline">\(P - 1\)</span> 质因数分解，初始时令 <span
+class="math inline">\(b = P - 1\)</span> ，每次选取一个质因数 <span
+class="math inline">\(p\)</span> ，判断 <span class="math inline">\(x ^
+{\frac{b}{p}} \equiv 1 \pmod P\)</span> 是否成立，成立则将 <span
+class="math inline">\(p\)</span>
+除掉，不成立就取下一个质因数做相同的操作，这样最后得到的 <span
+class="math inline">\(b\)</span> 就是 <span
+class="math inline">\(a\)</span> 的阶。对于给定序列的每一个 <span
+class="math inline">\(a_i\)</span> 做一遍上述操作的时间复杂度为 <span
+class="math inline">\(O(\sqrt{P} + n \log^{2} P)\)</span> 。</p>
+<p><img
+src="https://cdn.luogu.com.cn/upload/image_hosting/3ok46vsq.png" /></p>
+<p>根据上表，我们发现 <span class="math inline">\(P - 1\)</span>
+的约数个数的级别不超过 <span class="math inline">\(10^4\)</span>
+，所以可以直接 <span
+class="math inline">\(O(\operatorname{d}(P)^{2})\)</span> 计算 <span
+class="math inline">\(\delta_{P}(a_i)\)</span> 对答案的贡献。</p>
+<p>所以总时间复杂度为 <span class="math inline">\(O(\sqrt{P} + n
+\log^{2} P + \operatorname{d}(P)^{2})\)</span> ，时限为 <span
+class="math inline">\(5\text{s}\)</span> ，可以通过本题。</p>
+<h2 id="参考代码">参考代码</h2>
+<p><a
+href="https://atcoder.jp/contests/abc335/submissions/49356980">https://atcoder.jp/contests/abc335/submissions/49356980</a></p>
+]]></content>
+      <categories>
+        <category>算法竞赛</category>
+      </categories>
+      <tags>
+        <tag>AtCoder解题报告</tag>
+        <tag>数论</tag>
+        <tag>阶</tag>
+        <tag>原根</tag>
+        <tag>离散对数</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ABC171F - Strivore</title>
     <url>/2023/12/15/ABC171F/</url>
     <content><![CDATA[<h2 id="题目链接">题目链接</h2>
 <p><a
@@ -622,7 +767,7 @@ href="https://atcoder.jp/contests/abc171/submissions/48405143">https://atcoder.j
       </tags>
   </entry>
   <entry>
-    <title>CF1907 G.Lights</title>
+    <title>CF1907G - Lights</title>
     <url>/2023/12/09/CF1907G/</url>
     <content><![CDATA[<h2 id="题目链接">题目链接</h2>
 <p><a
@@ -688,8 +833,8 @@ href="https://codeforces.com/contest/1907/submission/236342135">https://codeforc
       </tags>
   </entry>
   <entry>
-    <title>ARC167 D. Good Permutation</title>
-    <url>/2023/10/20/ARC167%20D.%20Good%20Permutation/</url>
+    <title>ARC167D - Good Permutation</title>
+    <url>/2023/10/20/ARC167D/</url>
     <content><![CDATA[<h2 id="题目链接">题目链接</h2>
 <p><a
 href="https://atcoder.jp/contests/arc167/tasks/arc167_d">https://atcoder.jp/contests/arc167/tasks/arc167_d</a></p>
