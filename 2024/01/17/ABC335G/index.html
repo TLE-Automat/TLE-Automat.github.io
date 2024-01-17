@@ -28,7 +28,7 @@
 <meta property="og:description" content="题目链接 https:&#x2F;&#x2F;atcoder.jp&#x2F;contests&#x2F;abc335&#x2F;tasks&#x2F;abc335_g 题目大意 给定 \(n\) 个正整数 \(a_1,a_2,\cdots,a_n\) 和一个素数 \(P\)。求满足以下条件的二元组 \((i,j)\) 的个数。  \(1\leq i,j\leq N\) 。 存在正整数 \(k\) ，使得 \(A_i^k\equiv A_j\p">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-01-16T16:00:00.000Z">
-<meta property="article:modified_time" content="2024-01-17T05:44:42.183Z">
+<meta property="article:modified_time" content="2024-01-17T06:09:07.306Z">
 <meta property="article:author" content="TLE_Automat">
 <meta property="article:tag" content="AtCoder解题报告">
 <meta property="article:tag" content="数论">
@@ -223,7 +223,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2024-01-17 00:00:00 / 修改时间：13:44:42" itemprop="dateCreated datePublished" datetime="2024-01-17T00:00:00+08:00">2024-01-17</time>
+              <time title="创建时间：2024-01-17 00:00:00 / 修改时间：14:09:07" itemprop="dateCreated datePublished" datetime="2024-01-17T00:00:00+08:00">2024-01-17</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -342,19 +342,17 @@ class="math inline">\(ke_{1}\equiv e_2 \pmod{P-1}\)</span> ，有 $$
 k\frac{e_1}{t} \equiv \frac{e_{2}}{t} \pmod{\frac{P-1}{t}}
 
 \end{aligned}\]</span>
-<span class="math display">\[
-因为 $\displaystyle\frac{e_{1}}{t}$ 与 $\displaystyle\frac{P-1}{t}$
-互质，所以有
-\]</span>
+$$ 因为 <span
+class="math inline">\(\displaystyle\frac{e_{1}}{t}\)</span> 与 <span
+class="math inline">\(\displaystyle\frac{P-1}{t}\)</span> 互质，所以有
+$$
 <span class="math display">\[\begin{aligned}
 
 k\equiv \frac{e_{2}}{t} \cdot \left(\frac{e_1}{t}\right)^{-1}
 \pmod{\frac{P-1}{t}}
 
 \end{aligned}\]</span>
-<span class="math display">\[
-所以条件的充分性成立，即
-\]</span>
+$$ 所以条件的充分性成立，即 $$
 <span class="math display">\[\begin{aligned}
 
 \exists{k \in \mathbb{N}} , \text{ }x^{k} \equiv y \pmod P \implies
