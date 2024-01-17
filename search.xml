@@ -454,8 +454,8 @@ href="https://zhuanlan.zhihu.com/p/382644742">https://zhuanlan.zhihu.com/p/38264
       </tags>
   </entry>
   <entry>
-    <title>Re:从零开始的数论（数论学习笔记索引）</title>
-    <url>/2023/10/08/%E6%95%B0%E8%AE%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
+    <title>Re:从零开始的字符串算法（字符串算法学习笔记索引）</title>
+    <url>/2023/10/08/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
     <content><![CDATA[<p>咕。咕。咕。</p>
 <span id="more"></span>
 ]]></content>
@@ -463,8 +463,8 @@ href="https://zhuanlan.zhihu.com/p/382644742">https://zhuanlan.zhihu.com/p/38264
         <category>算法竞赛</category>
       </categories>
       <tags>
-        <tag>数论</tag>
         <tag>索引</tag>
+        <tag>字符串算法</tag>
       </tags>
   </entry>
   <entry>
@@ -482,8 +482,8 @@ href="https://zhuanlan.zhihu.com/p/382644742">https://zhuanlan.zhihu.com/p/38264
       </tags>
   </entry>
   <entry>
-    <title>Re:从零开始的字符串算法（字符串算法学习笔记索引）</title>
-    <url>/2023/10/08/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
+    <title>Re:从零开始的数论（数论学习笔记索引）</title>
+    <url>/2023/10/08/%E6%95%B0%E8%AE%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
     <content><![CDATA[<p>咕。咕。咕。</p>
 <span id="more"></span>
 ]]></content>
@@ -491,8 +491,8 @@ href="https://zhuanlan.zhihu.com/p/382644742">https://zhuanlan.zhihu.com/p/38264
         <category>算法竞赛</category>
       </categories>
       <tags>
+        <tag>数论</tag>
         <tag>索引</tag>
-        <tag>字符串算法</tag>
       </tags>
   </entry>
   <entry>
@@ -621,6 +621,7 @@ class="math inline">\(e_{2} \equiv \operatorname{ind}_{g}(y) \pmod{P -
 class="math inline">\(\exists{k \in \mathbb{N}} , ke_{1} \equiv e_2
 \pmod{P-1}\)</span> 。</p>
 <p>根据条件有</p>
+$$
 <span class="math display">\[\begin{aligned}
 
 \delta_{P}(y) \mid \delta_{P}(x) \iff\delta_{P}(g^{e_2}) \mid
@@ -629,31 +630,38 @@ class="math inline">\(\exists{k \in \mathbb{N}} , ke_{1} \equiv e_2
 \gcd(e_2, P-1)
 
 \end{aligned}\]</span>
+<p>$$</p>
 <p>令 <span class="math inline">\(t = \gcd(e_1, P - 1)\)</span> ，根据
 <strong>lemma 1</strong> 和要证的式子 <span
 class="math inline">\(ke_{1}\equiv e_2 \pmod{P-1}\)</span> ，有</p>
+$$
 <span class="math display">\[\begin{aligned}
 
 k\frac{e_1}{t} \equiv \frac{e_{2}}{t} \pmod{\frac{P-1}{t}}
 
 \end{aligned}\]</span>
+<p>$$</p>
 <p>因为 <span
 class="math inline">\(\displaystyle\frac{e_{1}}{t}\)</span> 与 <span
 class="math inline">\(\displaystyle\frac{P-1}{t}\)</span>
 互质，所以有</p>
+$$
 <span class="math display">\[\begin{aligned}
 
 k\equiv \frac{e_{2}}{t} \cdot \left(\frac{e_1}{t}\right)^{-1}
 \pmod{\frac{P-1}{t}}
 
 \end{aligned}\]</span>
+<p>$$</p>
 <p>所以条件的充分性成立，即</p>
+$$
 <span class="math display">\[\begin{aligned}
 
 \exists{k \in \mathbb{N}} , \text{ }x^{k} \equiv y \pmod P \implies
 \delta_{P}(y) \mid \delta_{P}(x)
 
 \end{aligned}\]</span>
+<p>$$</p>
 <p>接下来，考虑如何求一个数 <span class="math inline">\(a\)</span> 在模
 <span class="math inline">\(P\)</span> 意义下的阶 <span
 class="math inline">\(\delta_{P}(a)\)</span> 。因为 <span
