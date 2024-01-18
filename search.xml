@@ -305,13 +305,16 @@ href="http://www.tle-automat.top/2023/10/11/CCPC2021威海站%20M.%20810975/">M.
     <url>/2023/10/08/AtCoder%20%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A%E7%B4%A2%E5%BC%95/</url>
     <content><![CDATA[<h2 id="atcoder-beginner-contest">AtCoder Beginner Contest</h2>
 <p><strong>ABC171</strong></p>
-<p><a href="https://tle-automat.top/2023/12/15/ABC171F/">F.
+<p><a href="https://tle-automat.top/2023/12/15/ABC171F/">F -
 Strivore</a></p>
+<p><strong>ABC335</strong></p>
+<p><a href="https://tle-automat.top/2024/01/17/ABC335G/">G - Discrete
+Logarithm Problems</a></p>
 <h2 id="atcoder-regular-contest">AtCoder Regular Contest</h2>
 <p><strong>ARC167</strong></p>
 <p><a
-href="http://www.tle-automat.top/2023/10/20/ARC167%20D.%20Good%20Permutation/">D.
-Good Permutation</a></p>
+href="http://www.tle-automat.top/2023/10/20/ARC167%20D.%20Good%20Permutation/">D
+- Good Permutation</a></p>
 <h2 id="atcoder-grand-contest">AtCoder Grand Contest</h2>
 <span id="more"></span>
 ]]></content>
@@ -440,20 +443,6 @@ href="https://zhuanlan.zhihu.com/p/382644742">https://zhuanlan.zhihu.com/p/38264
       </tags>
   </entry>
   <entry>
-    <title>Re:从零开始的多项式（多项式学习笔记索引）</title>
-    <url>/2023/10/08/%E5%A4%9A%E9%A1%B9%E5%BC%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
-    <content><![CDATA[<p>咕。咕。咕。</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>算法竞赛</category>
-      </categories>
-      <tags>
-        <tag>索引</tag>
-        <tag>多项式</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Re:从零开始的字符串算法（字符串算法学习笔记索引）</title>
     <url>/2023/10/08/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
     <content><![CDATA[<p>咕。咕。咕。</p>
@@ -465,6 +454,20 @@ href="https://zhuanlan.zhihu.com/p/382644742">https://zhuanlan.zhihu.com/p/38264
       <tags>
         <tag>索引</tag>
         <tag>字符串算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Re:从零开始的多项式（多项式学习笔记索引）</title>
+    <url>/2023/10/08/%E5%A4%9A%E9%A1%B9%E5%BC%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
+    <content><![CDATA[<p>咕。咕。咕。</p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>算法竞赛</category>
+      </categories>
+      <tags>
+        <tag>索引</tag>
+        <tag>多项式</tag>
       </tags>
   </entry>
   <entry>
@@ -510,20 +513,6 @@ href="https://zhuanlan.zhihu.com/p/382644742">https://zhuanlan.zhihu.com/p/38264
       </tags>
   </entry>
   <entry>
-    <title>Re:从零开始的组合数学（组合数学学习笔记索引）</title>
-    <url>/2023/10/08/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
-    <content><![CDATA[<p>咕。咕。咕。</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>算法竞赛</category>
-      </categories>
-      <tags>
-        <tag>组合数学</tag>
-        <tag>索引</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Re:从零开始的计算几何（计算几何学习笔记索引）</title>
     <url>/2023/10/08/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
     <content><![CDATA[<p>咕。咕。咕。</p>
@@ -535,6 +524,20 @@ href="https://zhuanlan.zhihu.com/p/382644742">https://zhuanlan.zhihu.com/p/38264
       <tags>
         <tag>索引</tag>
         <tag>计算几何</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Re:从零开始的组合数学（组合数学学习笔记索引）</title>
+    <url>/2023/10/08/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
+    <content><![CDATA[<p>咕。咕。咕。</p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>算法竞赛</category>
+      </categories>
+      <tags>
+        <tag>组合数学</tag>
+        <tag>索引</tag>
       </tags>
   </entry>
   <entry>
