@@ -1,76 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>ABC171F - Strivore</title>
-    <url>/2023/12/15/ABC171F/</url>
-    <content><![CDATA[<h2 id="题目链接">题目链接</h2>
-<p><a
-href="https://atcoder.jp/contests/abc171/tasks/abc171_f">https://atcoder.jp/contests/abc171/tasks/abc171_f</a></p>
-<h2 id="题目大意">题目大意</h2>
-<p>给定一个长度为 <span class="math inline">\(n\)</span>
-的由小写字母组成的字符串 <span class="math inline">\(s\)</span>
-，每次操作任选一个位置插入任意一个小写字母，问进行恰好 <span
-class="math inline">\(k\)</span>
-次操作之后能得到多少种本质不同的字符串，答案对 <span
-class="math inline">\(10^{9} + 7\)</span> 取模。</p>
-<p>两个字符串本质不同，当且仅当长度不同或者至少有一个位置上的字母不同。</p>
-<h2 id="数据范围">数据范围</h2>
-<ul>
-<li><span class="math inline">\(1\le n, k \le 10^{6}\)</span></li>
-</ul>
-<span id="more"></span>
-<h2 id="解题思路">解题思路</h2>
-<p>不难想到，问题等价于有 <span class="math inline">\(n + k\)</span>
-个位置，我们先找出 <span class="math inline">\(n\)</span>
-个位置依次放上字符串 <span class="math inline">\(s\)</span>
-的每一位，然后剩下的 <span class="math inline">\(k\)</span>
-个位置每个随便选一个字母，能得到多少种本质不同的字符串。</p>
-<p>很显然，这样简单粗暴的计算会导致答案统计重复。</p>
-<p>如果从反向考虑，假设存在一个答案，我们如何通过一一映射的方法让它统计且恰好被统计一次。</p>
-<p>考虑到，一个合法的方案，最终得到的长度为 <span
-class="math inline">\(n + k\)</span> 的字符串，<span
-class="math inline">\(s\)</span>
-一定是它的一个子序列，假设最靠前出现的那个子序列对应的位置为 <span
-class="math inline">\(p_1, p_2, \cdots, p_n\)</span> 。考虑枚举 <span
-class="math inline">\(p_1, p_2, \cdots, p_n\)</span>
-，钦定这些位置为最靠前出现的那个子序列，
-选取剩下位置的小写字母时不破坏前面的性质，这样我们每个合法的答案只会被最靠前出现的那个子序列统计一次，这样就能不重不漏地统计了。</p>
-<p>那么如何保证不破坏前面那条性质呢？</p>
-<p>显然，只要在区间 <span class="math inline">\((0, p_1)\)</span>
-上不要选取字母 <span class="math inline">\(s_{p_1}\)</span> ，区间 <span
-class="math inline">\((p_1, p_2)\)</span> 上不要选取字母 <span
-class="math inline">\(s_{p_2}\)</span> ，在区间 <span
-class="math inline">\((p_2, p_3)\)</span> 上不要选取字母 <span
-class="math inline">\(s_{p_3}\)</span> ，在区间 <span
-class="math inline">\((p_{i - 1}, p_{i})\)</span> 上不要选取字母 <span
-class="math inline">\(s_{p_i}\)</span> 即可。</p>
-<p>考虑枚举最后一个放置字母的位置 <span class="math inline">\(i\)</span>
-，根据上面的分析，在 <span class="math inline">\(i\)</span>
-之前的每个空位，都只能选取 <span class="math inline">\(25\)</span>
-个不同的小写字母，在 <span class="math inline">\(i\)</span>
-之后的每个空位，可以选取 <span class="math inline">\(26\)</span>
-个不同的小写字母，所以容易得到最终答案是</p>
-$$
-<span class="math display">\[\begin{aligned}
-
-\sum\limits_{i = n} ^ {n + k} \binom{i - 1}{n - 1} 25^{i - n} 26^{n + k
-- i}
-
-\end{aligned}\]</span>
-<p>$$</p>
-<h2 id="参考代码">参考代码</h2>
-<p><a
-href="https://atcoder.jp/contests/abc171/submissions/48405143">https://atcoder.jp/contests/abc171/submissions/48405143</a></p>
-]]></content>
-      <categories>
-        <category>算法竞赛</category>
-      </categories>
-      <tags>
-        <tag>AtCoder解题报告</tag>
-        <tag>组合数学</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>7,8月杂题选做</title>
     <url>/2023/07/18/7,8%E6%9C%88%E6%9D%82%E9%A2%98%E9%80%89%E5%81%9A/</url>
     <content><![CDATA[<h1 id="图论相关">图论相关</h1>
@@ -368,6 +298,102 @@ href="https://atcoder.jp/contests/abc335/submissions/49356980">https://atcoder.j
       </tags>
   </entry>
   <entry>
+    <title>ABC171F - Strivore</title>
+    <url>/2023/12/15/ABC171F/</url>
+    <content><![CDATA[<h2 id="题目链接">题目链接</h2>
+<p><a
+href="https://atcoder.jp/contests/abc171/tasks/abc171_f">https://atcoder.jp/contests/abc171/tasks/abc171_f</a></p>
+<h2 id="题目大意">题目大意</h2>
+<p>给定一个长度为 <span class="math inline">\(n\)</span>
+的由小写字母组成的字符串 <span class="math inline">\(s\)</span>
+，每次操作任选一个位置插入任意一个小写字母，问进行恰好 <span
+class="math inline">\(k\)</span>
+次操作之后能得到多少种本质不同的字符串，答案对 <span
+class="math inline">\(10^{9} + 7\)</span> 取模。</p>
+<p>两个字符串本质不同，当且仅当长度不同或者至少有一个位置上的字母不同。</p>
+<h2 id="数据范围">数据范围</h2>
+<ul>
+<li><span class="math inline">\(1\le n, k \le 10^{6}\)</span></li>
+</ul>
+<span id="more"></span>
+<h2 id="解题思路">解题思路</h2>
+<p>不难想到，问题等价于有 <span class="math inline">\(n + k\)</span>
+个位置，我们先找出 <span class="math inline">\(n\)</span>
+个位置依次放上字符串 <span class="math inline">\(s\)</span>
+的每一位，然后剩下的 <span class="math inline">\(k\)</span>
+个位置每个随便选一个字母，能得到多少种本质不同的字符串。</p>
+<p>很显然，这样简单粗暴的计算会导致答案统计重复。</p>
+<p>如果从反向考虑，假设存在一个答案，我们如何通过一一映射的方法让它统计且恰好被统计一次。</p>
+<p>考虑到，一个合法的方案，最终得到的长度为 <span
+class="math inline">\(n + k\)</span> 的字符串，<span
+class="math inline">\(s\)</span>
+一定是它的一个子序列，假设最靠前出现的那个子序列对应的位置为 <span
+class="math inline">\(p_1, p_2, \cdots, p_n\)</span> 。考虑枚举 <span
+class="math inline">\(p_1, p_2, \cdots, p_n\)</span>
+，钦定这些位置为最靠前出现的那个子序列，
+选取剩下位置的小写字母时不破坏前面的性质，这样我们每个合法的答案只会被最靠前出现的那个子序列统计一次，这样就能不重不漏地统计了。</p>
+<p>那么如何保证不破坏前面那条性质呢？</p>
+<p>显然，只要在区间 <span class="math inline">\((0, p_1)\)</span>
+上不要选取字母 <span class="math inline">\(s_{p_1}\)</span> ，区间 <span
+class="math inline">\((p_1, p_2)\)</span> 上不要选取字母 <span
+class="math inline">\(s_{p_2}\)</span> ，在区间 <span
+class="math inline">\((p_2, p_3)\)</span> 上不要选取字母 <span
+class="math inline">\(s_{p_3}\)</span> ，在区间 <span
+class="math inline">\((p_{i - 1}, p_{i})\)</span> 上不要选取字母 <span
+class="math inline">\(s_{p_i}\)</span> 即可。</p>
+<p>考虑枚举最后一个放置字母的位置 <span class="math inline">\(i\)</span>
+，根据上面的分析，在 <span class="math inline">\(i\)</span>
+之前的每个空位，都只能选取 <span class="math inline">\(25\)</span>
+个不同的小写字母，在 <span class="math inline">\(i\)</span>
+之后的每个空位，可以选取 <span class="math inline">\(26\)</span>
+个不同的小写字母，所以容易得到最终答案是</p>
+$$
+<span class="math display">\[\begin{aligned}
+
+\sum\limits_{i = n} ^ {n + k} \binom{i - 1}{n - 1} 25^{i - n} 26^{n + k
+- i}
+
+\end{aligned}\]</span>
+<p>$$</p>
+<h2 id="参考代码">参考代码</h2>
+<p><a
+href="https://atcoder.jp/contests/abc171/submissions/48405143">https://atcoder.jp/contests/abc171/submissions/48405143</a></p>
+]]></content>
+      <categories>
+        <category>算法竞赛</category>
+      </categories>
+      <tags>
+        <tag>AtCoder解题报告</tag>
+        <tag>组合数学</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AtCoder解题报告索引</title>
+    <url>/2023/10/08/AtCoder%20%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A%E7%B4%A2%E5%BC%95/</url>
+    <content><![CDATA[<h2 id="atcoder-beginner-contest">AtCoder Beginner Contest</h2>
+<p><strong>ABC171</strong></p>
+<p><a href="https://tle-automat.top/2023/12/15/ABC171F/">F -
+Strivore</a></p>
+<p><strong>ABC335</strong></p>
+<p><a href="https://tle-automat.top/2024/01/17/ABC335G/">G - Discrete
+Logarithm Problems</a></p>
+<h2 id="atcoder-regular-contest">AtCoder Regular Contest</h2>
+<p><strong>ARC167</strong></p>
+<p><a
+href="http://www.tle-automat.top/2023/10/20/ARC167%20D.%20Good%20Permutation/">D
+- Good Permutation</a></p>
+<h2 id="atcoder-grand-contest">AtCoder Grand Contest</h2>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>算法竞赛</category>
+      </categories>
+      <tags>
+        <tag>AtCoder解题报告</tag>
+        <tag>索引</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>ARC167D - Good Permutation</title>
     <url>/2023/10/20/ARC167D/</url>
     <content><![CDATA[<h2 id="题目链接">题目链接</h2>
@@ -445,29 +471,83 @@ src="https://z1.ax1x.com/2023/10/11/piSCyoF.png" /></p>
       </tags>
   </entry>
   <entry>
-    <title>AtCoder解题报告索引</title>
-    <url>/2023/10/08/AtCoder%20%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A%E7%B4%A2%E5%BC%95/</url>
-    <content><![CDATA[<h2 id="atcoder-beginner-contest">AtCoder Beginner Contest</h2>
-<p><strong>ABC171</strong></p>
-<p><a href="https://tle-automat.top/2023/12/15/ABC171F/">F -
-Strivore</a></p>
-<p><strong>ABC335</strong></p>
-<p><a href="https://tle-automat.top/2024/01/17/ABC335G/">G - Discrete
-Logarithm Problems</a></p>
-<h2 id="atcoder-regular-contest">AtCoder Regular Contest</h2>
-<p><strong>ARC167</strong></p>
-<p><a
-href="http://www.tle-automat.top/2023/10/20/ARC167%20D.%20Good%20Permutation/">D
-- Good Permutation</a></p>
-<h2 id="atcoder-grand-contest">AtCoder Grand Contest</h2>
+    <title>CCPC2023桂林站【游记】</title>
+    <url>/2023/11/08/CCPC2023%E6%A1%82%E6%9E%97%E7%AB%99%E6%B8%B8%E8%AE%B0/</url>
+    <content><![CDATA[<p><strong>省流：</strong></p>
+<ul>
+<li><strong>队名：</strong> 无名</li>
+<li><strong>题数：</strong> <span class="math inline">\(3\)</span></li>
+<li><strong>罚时：</strong> <span
+class="math inline">\(464\)</span></li>
+<li><strong>排名(offical)：</strong> <span
+class="math inline">\(\textcolor{red}{148}/240\)</span></li>
+<li><strong>奖牌：</strong> <strong><span
+class="math inline">\(\textcolor{red}{铁}\)</span></strong></li>
+</ul>
+<h1 id="day--1">Day -1</h1>
+<p><strong>10.27</strong></p>
+<p>大学第一场 xcpc ，有些小激动。</p>
+<p>经历了一天的颠簸，晚上终于坐飞机到桂林了，刷新了从小到大到达过的最南边和最西边的记录。</p>
+<p>不愧于“桂林山水甲天下”的美誉，桂林的喀斯特地貌几乎随处可见，小城周围环绕的山地总能给人一种与世隔绝的安宁。</p>
+<p>高中同学核仁好像也来桂林站，明天就可以面基了，耶！</p>
 <span id="more"></span>
+<h1 id="day-0">Day 0</h1>
+<p><strong>10.28</strong></p>
+<p>早上领到了桂林站主办方准备的桂林特产。</p>
+<p>中午吃到了桂林本地的螺狮粉（其实这是我第一次吃螺狮粉），我也不知道这是不是正宗的螺狮粉，反正跟臭豆腐差不多，制作过程中闻起来挺臭，但吃起来一点也不臭。</p>
+<p>下午热身赛。</p>
+<p>到了桂林电子科技大学之后，感觉东秦直接被吊打得体无完肤/ll。虽然桂电有地理位置的优势，四面环山环境优美，而且地还巨大，这些东秦没法比，但是为啥东秦的硬件被吊锤成这样，经费呢？？？？？？？？</p>
+<p>进场之后，由于我第一次使用 ubuntu 系统，并且没怎么用过 vscode 和
+code_blocks，更致命的是最有经验的大三队友还没到，另外一个队友也没用过，所以我们研究编译研究了好久，结果热身赛快结束的时候被同校的另外一支队伍告知是文件夹建在了中文目录下导致编译不了/tuu。</p>
+<p>最后热身赛只惨淡地过了一道题。</p>
+<p>面基了 He_Ren，他跟 ix35 和等腰三角形一队，三个 Au
+爷热身赛直接虐杀全场，甚至吊打了 jls 领衔的菜狗（恐怖如斯）。</p>
+<h1 id="day-1">Day 1</h1>
+<p><strong>10.29</strong></p>
+<p>开场十分紧张。</p>
+<p>队友先看到了签到题 G ，结果上来 WA
+了一发，更慌了，还好马上发现错误之后过了，然后我看了一眼 M
+题不是很会，过了一会看榜发现 M 好像是个签到题，又回来想
+M，脑子一热想错了一个条件，反复跟队友确认之后发现自己漏了一个条件想假了，又讨论了一会发现是个二分加最大子段和，然后带着慌张的情绪写写写，写完又出了好几个bug，不过还好调过样例之后就过了。</p>
+<p>然后此时队友说 B 有思路，提议看 B
+题，然后觉得队友想法很对，但是细节上有些乱，然后就写写写，发现有一种很重要的情况没有判断，然后开始改改改，中间浪费了很长时间，但样例还是一直过不去，心态已经开始炸了。</p>
+<p>大概 2.5h 左右，B题实在调不出来了，选择开 K
+题，很快发现是一个将数据范围分成两部分分别暴力，但是不管怎么写样例都能过，交上去还一直炸裂，就这样磨了
+1
+个多小时，心态已经被磨到不行了，最后队友发现是置换进行运算时不能交换，我做置换运算的时候做反了/ll。</p>
+<p>此时我们在铜牌垫底区，队友继续在调 B
+题，但我当时心态已经炸裂到不知道该干啥了，于是去跟榜看 I
+题。我努力试图让自己冷静下来，经过不久的思考，我把 I
+题的题意转化成一堆询问，每次询问求区间颜色数，这是一个非常经典的问题，但此时离比赛结束还有
+45min，我不知所措根本没有时间静下心来（其实也怪我菜，心理素质还差），居然没想到可以离线树状数组做，然后队友说可以主席树（但他在调
+B
+，显然没有时间过来帮我写），我一想也是，但已经完全忘记怎么写了，于是我就一直打摆打到比赛结束。</p>
+<p>最后 3 题遗憾打铁，属于是自费出来旅游了。（差 5 名 Cu）/大哭</p>
+<p>真是应了那句话“期望越大，失望越大”。</p>
+<p>究其原因，大概有以下几点：</p>
+<ul>
+<li><p><strong>队伍磨合差</strong></p>
+<p>其实按照实力来讲，我们队应该至少能过 5
+题，但赛前除了两场挂一场的预选赛，队伍从来没有在一起打过别的比赛，队内化学反应很差，根本磨合不起来。</p></li>
+<li><p><strong>自己水平不够</strong></p>
+<p>自己疏于算法竞赛一年多，本来就是个弱省省一水平，现在更菜了</p></li>
+<li><p><strong>怯场+心态不平稳</strong></p>
+<p>第一次线下赛怯场导致无法将自己实力全部发挥</p></li>
+</ul>
+<p>还是要多 vp CF Edu 和 ARC
+的比赛提升个人的思维和代码水平，并且通过和队友一起 vp xcpc
+真题来提升队伍磨合。</p>
+<p>最后膜拜一下高中同学 He_Ren 领衔的清华大学 world.search(you) 队，与
+jls 领衔的菜狗队同题数，但罚时遥遥领先，成功在 jls 头上摘冠。Orz Orz Orz
+Orz</p>
+<p>什么时候我才能有 He_Ren <span
+class="math inline">\(\frac{1}{10}\)</span> 的实力啊！！！</p>
 ]]></content>
       <categories>
-        <category>算法竞赛</category>
+        <category>游记</category>
       </categories>
       <tags>
-        <tag>AtCoder解题报告</tag>
-        <tag>索引</tag>
+        <tag>游记</tag>
       </tags>
   </entry>
   <entry>
@@ -569,83 +649,21 @@ class="math inline">\(O(n^2 k)\)</span> 加各种剪枝优化直接 1s
       </tags>
   </entry>
   <entry>
-    <title>CCPC2023桂林站【游记】</title>
-    <url>/2023/11/08/CCPC2023%E6%A1%82%E6%9E%97%E7%AB%99%E6%B8%B8%E8%AE%B0/</url>
-    <content><![CDATA[<p><strong>省流：</strong></p>
-<ul>
-<li><strong>队名：</strong> 无名</li>
-<li><strong>题数：</strong> <span class="math inline">\(3\)</span></li>
-<li><strong>罚时：</strong> <span
-class="math inline">\(464\)</span></li>
-<li><strong>排名(offical)：</strong> <span
-class="math inline">\(\textcolor{red}{148}/240\)</span></li>
-<li><strong>奖牌：</strong> <strong><span
-class="math inline">\(\textcolor{red}{铁}\)</span></strong></li>
-</ul>
-<h1 id="day--1">Day -1</h1>
-<p><strong>10.27</strong></p>
-<p>大学第一场 xcpc ，有些小激动。</p>
-<p>经历了一天的颠簸，晚上终于坐飞机到桂林了，刷新了从小到大到达过的最南边和最西边的记录。</p>
-<p>不愧于“桂林山水甲天下”的美誉，桂林的喀斯特地貌几乎随处可见，小城周围环绕的山地总能给人一种与世隔绝的安宁。</p>
-<p>高中同学核仁好像也来桂林站，明天就可以面基了，耶！</p>
+    <title>Codeforces解题报告索引</title>
+    <url>/2023/10/08/Codeforces%20%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A%E7%B4%A2%E5%BC%95/</url>
+    <content><![CDATA[<h2 id="codeforces-round">Codeforces Round</h2>
+<p><strong>Round 913 div.3</strong></p>
+<p><a href="https://tle-automat.top/2023/12/09/CF1907G/">CF1907G</a></p>
 <span id="more"></span>
-<h1 id="day-0">Day 0</h1>
-<p><strong>10.28</strong></p>
-<p>早上领到了桂林站主办方准备的桂林特产。</p>
-<p>中午吃到了桂林本地的螺狮粉（其实这是我第一次吃螺狮粉），我也不知道这是不是正宗的螺狮粉，反正跟臭豆腐差不多，制作过程中闻起来挺臭，但吃起来一点也不臭。</p>
-<p>下午热身赛。</p>
-<p>到了桂林电子科技大学之后，感觉东秦直接被吊打得体无完肤/ll。虽然桂电有地理位置的优势，四面环山环境优美，而且地还巨大，这些东秦没法比，但是为啥东秦的硬件被吊锤成这样，经费呢？？？？？？？？</p>
-<p>进场之后，由于我第一次使用 ubuntu 系统，并且没怎么用过 vscode 和
-code_blocks，更致命的是最有经验的大三队友还没到，另外一个队友也没用过，所以我们研究编译研究了好久，结果热身赛快结束的时候被同校的另外一支队伍告知是文件夹建在了中文目录下导致编译不了/tuu。</p>
-<p>最后热身赛只惨淡地过了一道题。</p>
-<p>面基了 He_Ren，他跟 ix35 和等腰三角形一队，三个 Au
-爷热身赛直接虐杀全场，甚至吊打了 jls 领衔的菜狗（恐怖如斯）。</p>
-<h1 id="day-1">Day 1</h1>
-<p><strong>10.29</strong></p>
-<p>开场十分紧张。</p>
-<p>队友先看到了签到题 G ，结果上来 WA
-了一发，更慌了，还好马上发现错误之后过了，然后我看了一眼 M
-题不是很会，过了一会看榜发现 M 好像是个签到题，又回来想
-M，脑子一热想错了一个条件，反复跟队友确认之后发现自己漏了一个条件想假了，又讨论了一会发现是个二分加最大子段和，然后带着慌张的情绪写写写，写完又出了好几个bug，不过还好调过样例之后就过了。</p>
-<p>然后此时队友说 B 有思路，提议看 B
-题，然后觉得队友想法很对，但是细节上有些乱，然后就写写写，发现有一种很重要的情况没有判断，然后开始改改改，中间浪费了很长时间，但样例还是一直过不去，心态已经开始炸了。</p>
-<p>大概 2.5h 左右，B题实在调不出来了，选择开 K
-题，很快发现是一个将数据范围分成两部分分别暴力，但是不管怎么写样例都能过，交上去还一直炸裂，就这样磨了
-1
-个多小时，心态已经被磨到不行了，最后队友发现是置换进行运算时不能交换，我做置换运算的时候做反了/ll。</p>
-<p>此时我们在铜牌垫底区，队友继续在调 B
-题，但我当时心态已经炸裂到不知道该干啥了，于是去跟榜看 I
-题。我努力试图让自己冷静下来，经过不久的思考，我把 I
-题的题意转化成一堆询问，每次询问求区间颜色数，这是一个非常经典的问题，但此时离比赛结束还有
-45min，我不知所措根本没有时间静下心来（其实也怪我菜，心理素质还差），居然没想到可以离线树状数组做，然后队友说可以主席树（但他在调
-B
-，显然没有时间过来帮我写），我一想也是，但已经完全忘记怎么写了，于是我就一直打摆打到比赛结束。</p>
-<p>最后 3 题遗憾打铁，属于是自费出来旅游了。（差 5 名 Cu）/大哭</p>
-<p>真是应了那句话“期望越大，失望越大”。</p>
-<p>究其原因，大概有以下几点：</p>
-<ul>
-<li><p><strong>队伍磨合差</strong></p>
-<p>其实按照实力来讲，我们队应该至少能过 5
-题，但赛前除了两场挂一场的预选赛，队伍从来没有在一起打过别的比赛，队内化学反应很差，根本磨合不起来。</p></li>
-<li><p><strong>自己水平不够</strong></p>
-<p>自己疏于算法竞赛一年多，本来就是个弱省省一水平，现在更菜了</p></li>
-<li><p><strong>怯场+心态不平稳</strong></p>
-<p>第一次线下赛怯场导致无法将自己实力全部发挥</p></li>
-</ul>
-<p>还是要多 vp CF Edu 和 ARC
-的比赛提升个人的思维和代码水平，并且通过和队友一起 vp xcpc
-真题来提升队伍磨合。</p>
-<p>最后膜拜一下高中同学 He_Ren 领衔的清华大学 world.search(you) 队，与
-jls 领衔的菜狗队同题数，但罚时遥遥领先，成功在 jls 头上摘冠。Orz Orz Orz
-Orz</p>
-<p>什么时候我才能有 He_Ren <span
-class="math inline">\(\frac{1}{10}\)</span> 的实力啊！！！</p>
+<h2 id="educational-codeforces-round">Educational Codeforces Round</h2>
+<h2 id="other-round">Other Round</h2>
 ]]></content>
       <categories>
-        <category>游记</category>
+        <category>算法竞赛</category>
       </categories>
       <tags>
-        <tag>游记</tag>
+        <tag>索引</tag>
+        <tag>Codeforces解题报告</tag>
       </tags>
   </entry>
   <entry>
@@ -715,21 +733,34 @@ href="https://codeforces.com/contest/1907/submission/236342135">https://codeforc
       </tags>
   </entry>
   <entry>
-    <title>Codeforces解题报告索引</title>
-    <url>/2023/10/08/Codeforces%20%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A%E7%B4%A2%E5%BC%95/</url>
-    <content><![CDATA[<h2 id="codeforces-round">Codeforces Round</h2>
-<p><strong>Round 913 div.3</strong></p>
-<p><a href="https://tle-automat.top/2023/12/09/CF1907G/">CF1907G</a></p>
+    <title>ICPC2021沈阳站 L. Perfect Matchings</title>
+    <url>/2023/10/19/ICPC2021%E6%B2%88%E9%98%B3%E7%AB%99%20L.%20Perfect%20Matchings/</url>
+    <content><![CDATA[<h2 id="题目链接">题目链接</h2>
+<p><a
+href="https://codeforces.com/gym/103427/problem/L">https://codeforces.com/gym/103427/problem/L</a></p>
+<h2 id="题目大意">题目大意</h2>
+<p>有一个 <span class="math inline">\(2n\)</span>
+个点的完全图，给出这个完全图的一颗生成树，从完全图上删去树上的边，求剩下的图的完美匹配的方案数。</p>
+<h2 id="数据范围">数据范围</h2>
+<ul>
+<li><span class="math inline">\(2 \le n \le 2000\)</span></li>
+</ul>
 <span id="more"></span>
-<h2 id="educational-codeforces-round">Educational Codeforces Round</h2>
-<h2 id="other-round">Other Round</h2>
+<h2 id="解题思路">解题思路</h2>
+<p><img src="https://z1.ax1x.com/2023/10/19/piiGp7t.png" /> <img
+src="https://z1.ax1x.com/2023/10/19/piiGS0I.png" /></p>
+<h2 id="参考代码">参考代码</h2>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(<span class="type">int</span> u, <span class="type">int</span> fa)</span> </span>&#123;</span><br><span class="line">	sz[u] = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">auto</span> v : G[u]) &#123;</span><br><span class="line">		<span class="keyword">if</span> (v == fa) &#123;</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">dfs</span>(v, u);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	dp[u][<span class="number">0</span>][<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">auto</span> v : G[u]) &#123;</span><br><span class="line">		<span class="keyword">if</span> (v == fa) &#123;</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">memcpy</span>(tmp, dp[u], <span class="built_in">sizeof</span>(dp[u]));</span><br><span class="line">		<span class="built_in">memset</span>(dp[u], <span class="number">0</span>, <span class="built_in">sizeof</span>(dp[u]));</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt;= sz[u] / <span class="number">2</span>; i++) &#123;</span><br><span class="line">			<span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt;= sz[v] / <span class="number">2</span>; j++) &#123;</span><br><span class="line">				<span class="keyword">if</span> (!dp[v][j][<span class="number">0</span>]) &#123;</span><br><span class="line">					<span class="keyword">continue</span>;</span><br><span class="line">				&#125;</span><br><span class="line">			</span><br><span class="line">				<span class="keyword">if</span> (tmp[i][<span class="number">0</span>]) &#123;</span><br><span class="line">					<span class="built_in">add_mod</span>(dp[u][i + j][<span class="number">0</span>], <span class="number">1ll</span> * tmp[i][<span class="number">0</span>] * dp[v][j][<span class="number">0</span>] % Mod);</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">if</span> (tmp[i][<span class="number">0</span>]) &#123;</span><br><span class="line">					<span class="built_in">add_mod</span>(dp[u][i + j + <span class="number">1</span>][<span class="number">1</span>], <span class="number">1ll</span> * tmp[i][<span class="number">0</span>] * dp[v][j][<span class="number">0</span>] % Mod);</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">if</span> (tmp[i][<span class="number">1</span>]) &#123;</span><br><span class="line">					<span class="built_in">add_mod</span>(dp[u][i + j][<span class="number">1</span>], <span class="number">1ll</span> * tmp[i][<span class="number">1</span>] * dp[v][j][<span class="number">0</span>] % Mod);</span><br><span class="line">				&#125;	</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt;= sz[v] / <span class="number">2</span>; j++) &#123;</span><br><span class="line">				<span class="keyword">if</span> (!dp[v][j][<span class="number">1</span>]) &#123;</span><br><span class="line">					<span class="keyword">continue</span>;</span><br><span class="line">				&#125;</span><br><span class="line">				</span><br><span class="line">				<span class="keyword">if</span> (tmp[i][<span class="number">1</span>]) &#123;</span><br><span class="line">					<span class="built_in">add_mod</span>(dp[u][i + j][<span class="number">1</span>], <span class="number">1ll</span> * tmp[i][<span class="number">1</span>] * dp[v][j][<span class="number">1</span>] % Mod);</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">if</span> (tmp[i][<span class="number">0</span>]) &#123;</span><br><span class="line">					<span class="built_in">add_mod</span>(dp[u][i + j][<span class="number">0</span>], <span class="number">1ll</span> * tmp[i][<span class="number">0</span>] * dp[v][j][<span class="number">1</span>] % Mod);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		sz[u] += sz[v];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	</span><br><span class="line">	cin &gt;&gt; n;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">2</span> * n - <span class="number">1</span>; i++) &#123;</span><br><span class="line">		<span class="type">int</span> u, v;</span><br><span class="line">		cin &gt;&gt; u &gt;&gt; v;</span><br><span class="line">		G[u].<span class="built_in">push_back</span>(v);</span><br><span class="line">		G[v].<span class="built_in">push_back</span>(u);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	fac[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">2</span> * n; i++) &#123;</span><br><span class="line">		fac[i] = <span class="number">1ll</span> * fac[i - <span class="number">1</span>] * i % Mod;</span><br><span class="line">	&#125; </span><br><span class="line">	invf[<span class="number">2</span> * n] = <span class="built_in">inv</span>(fac[<span class="number">2</span> * n]);</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">2</span> * n - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">		invf[i] = <span class="number">1ll</span> * invf[i + <span class="number">1</span>] * (i + <span class="number">1</span>) % Mod;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	f[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">2</span>; i &lt;= <span class="number">2</span> * n; i += <span class="number">2</span>) &#123;</span><br><span class="line">		f[i] = <span class="number">1ll</span> * fac[i] * <span class="built_in">inv</span>(<span class="built_in">ksm</span>(<span class="number">2ll</span>, i / <span class="number">2</span>)) % Mod * invf[i / <span class="number">2</span>] % Mod;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">dfs</span>(<span class="number">1</span>, <span class="number">0</span>);</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">		g[i] = <span class="number">1ll</span> * (dp[<span class="number">1</span>][i][<span class="number">0</span>] + dp[<span class="number">1</span>][i][<span class="number">1</span>]) * f[<span class="number">2</span> * (n - i)] % Mod;	</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="type">int</span> ans = f[<span class="number">2</span> * n];</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">		<span class="type">int</span> add = g[i];</span><br><span class="line">		<span class="keyword">if</span> (i &amp; <span class="number">1</span>) &#123;</span><br><span class="line">			add = Mod - add;</span><br><span class="line">		&#125;</span><br><span class="line">		ans = (ans + add) % Mod;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, ans);</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>算法竞赛</category>
       </categories>
       <tags>
-        <tag>索引</tag>
-        <tag>Codeforces解题报告</tag>
+        <tag>组合数学</tag>
+        <tag>XCPC解题报告</tag>
+        <tag>容斥原理</tag>
+        <tag>动态规划</tag>
+        <tag>树形背包</tag>
       </tags>
   </entry>
   <entry>
@@ -763,37 +794,6 @@ src="https://z1.ax1x.com/2023/10/15/pi9X8bD.png" /></p>
         <tag>字符串算法</tag>
         <tag>后缀排序</tag>
         <tag>ST表</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ICPC2021沈阳站 L. Perfect Matchings</title>
-    <url>/2023/10/19/ICPC2021%E6%B2%88%E9%98%B3%E7%AB%99%20L.%20Perfect%20Matchings/</url>
-    <content><![CDATA[<h2 id="题目链接">题目链接</h2>
-<p><a
-href="https://codeforces.com/gym/103427/problem/L">https://codeforces.com/gym/103427/problem/L</a></p>
-<h2 id="题目大意">题目大意</h2>
-<p>有一个 <span class="math inline">\(2n\)</span>
-个点的完全图，给出这个完全图的一颗生成树，从完全图上删去树上的边，求剩下的图的完美匹配的方案数。</p>
-<h2 id="数据范围">数据范围</h2>
-<ul>
-<li><span class="math inline">\(2 \le n \le 2000\)</span></li>
-</ul>
-<span id="more"></span>
-<h2 id="解题思路">解题思路</h2>
-<p><img src="https://z1.ax1x.com/2023/10/19/piiGp7t.png" /> <img
-src="https://z1.ax1x.com/2023/10/19/piiGS0I.png" /></p>
-<h2 id="参考代码">参考代码</h2>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">dfs</span><span class="params">(<span class="type">int</span> u, <span class="type">int</span> fa)</span> </span>&#123;</span><br><span class="line">	sz[u] = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">auto</span> v : G[u]) &#123;</span><br><span class="line">		<span class="keyword">if</span> (v == fa) &#123;</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">dfs</span>(v, u);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	dp[u][<span class="number">0</span>][<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">auto</span> v : G[u]) &#123;</span><br><span class="line">		<span class="keyword">if</span> (v == fa) &#123;</span><br><span class="line">			<span class="keyword">continue</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">memcpy</span>(tmp, dp[u], <span class="built_in">sizeof</span>(dp[u]));</span><br><span class="line">		<span class="built_in">memset</span>(dp[u], <span class="number">0</span>, <span class="built_in">sizeof</span>(dp[u]));</span><br><span class="line">		<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt;= sz[u] / <span class="number">2</span>; i++) &#123;</span><br><span class="line">			<span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt;= sz[v] / <span class="number">2</span>; j++) &#123;</span><br><span class="line">				<span class="keyword">if</span> (!dp[v][j][<span class="number">0</span>]) &#123;</span><br><span class="line">					<span class="keyword">continue</span>;</span><br><span class="line">				&#125;</span><br><span class="line">			</span><br><span class="line">				<span class="keyword">if</span> (tmp[i][<span class="number">0</span>]) &#123;</span><br><span class="line">					<span class="built_in">add_mod</span>(dp[u][i + j][<span class="number">0</span>], <span class="number">1ll</span> * tmp[i][<span class="number">0</span>] * dp[v][j][<span class="number">0</span>] % Mod);</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">if</span> (tmp[i][<span class="number">0</span>]) &#123;</span><br><span class="line">					<span class="built_in">add_mod</span>(dp[u][i + j + <span class="number">1</span>][<span class="number">1</span>], <span class="number">1ll</span> * tmp[i][<span class="number">0</span>] * dp[v][j][<span class="number">0</span>] % Mod);</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">if</span> (tmp[i][<span class="number">1</span>]) &#123;</span><br><span class="line">					<span class="built_in">add_mod</span>(dp[u][i + j][<span class="number">1</span>], <span class="number">1ll</span> * tmp[i][<span class="number">1</span>] * dp[v][j][<span class="number">0</span>] % Mod);</span><br><span class="line">				&#125;	</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">			<span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">0</span>; j &lt;= sz[v] / <span class="number">2</span>; j++) &#123;</span><br><span class="line">				<span class="keyword">if</span> (!dp[v][j][<span class="number">1</span>]) &#123;</span><br><span class="line">					<span class="keyword">continue</span>;</span><br><span class="line">				&#125;</span><br><span class="line">				</span><br><span class="line">				<span class="keyword">if</span> (tmp[i][<span class="number">1</span>]) &#123;</span><br><span class="line">					<span class="built_in">add_mod</span>(dp[u][i + j][<span class="number">1</span>], <span class="number">1ll</span> * tmp[i][<span class="number">1</span>] * dp[v][j][<span class="number">1</span>] % Mod);</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">if</span> (tmp[i][<span class="number">0</span>]) &#123;</span><br><span class="line">					<span class="built_in">add_mod</span>(dp[u][i + j][<span class="number">0</span>], <span class="number">1ll</span> * tmp[i][<span class="number">0</span>] * dp[v][j][<span class="number">1</span>] % Mod);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		sz[u] += sz[v];</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">	</span><br><span class="line">	cin &gt;&gt; n;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">2</span> * n - <span class="number">1</span>; i++) &#123;</span><br><span class="line">		<span class="type">int</span> u, v;</span><br><span class="line">		cin &gt;&gt; u &gt;&gt; v;</span><br><span class="line">		G[u].<span class="built_in">push_back</span>(v);</span><br><span class="line">		G[v].<span class="built_in">push_back</span>(u);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	fac[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">2</span> * n; i++) &#123;</span><br><span class="line">		fac[i] = <span class="number">1ll</span> * fac[i - <span class="number">1</span>] * i % Mod;</span><br><span class="line">	&#125; </span><br><span class="line">	invf[<span class="number">2</span> * n] = <span class="built_in">inv</span>(fac[<span class="number">2</span> * n]);</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">2</span> * n - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">		invf[i] = <span class="number">1ll</span> * invf[i + <span class="number">1</span>] * (i + <span class="number">1</span>) % Mod;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	f[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">2</span>; i &lt;= <span class="number">2</span> * n; i += <span class="number">2</span>) &#123;</span><br><span class="line">		f[i] = <span class="number">1ll</span> * fac[i] * <span class="built_in">inv</span>(<span class="built_in">ksm</span>(<span class="number">2ll</span>, i / <span class="number">2</span>)) % Mod * invf[i / <span class="number">2</span>] % Mod;</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="built_in">dfs</span>(<span class="number">1</span>, <span class="number">0</span>);</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">		g[i] = <span class="number">1ll</span> * (dp[<span class="number">1</span>][i][<span class="number">0</span>] + dp[<span class="number">1</span>][i][<span class="number">1</span>]) * f[<span class="number">2</span> * (n - i)] % Mod;	</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="type">int</span> ans = f[<span class="number">2</span> * n];</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">		<span class="type">int</span> add = g[i];</span><br><span class="line">		<span class="keyword">if</span> (i &amp; <span class="number">1</span>) &#123;</span><br><span class="line">			add = Mod - add;</span><br><span class="line">		&#125;</span><br><span class="line">		ans = (ans + add) % Mod;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, ans);</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>算法竞赛</category>
-      </categories>
-      <tags>
-        <tag>组合数学</tag>
-        <tag>XCPC解题报告</tag>
-        <tag>容斥原理</tag>
-        <tag>动态规划</tag>
-        <tag>树形背包</tag>
       </tags>
   </entry>
   <entry>
@@ -831,6 +831,95 @@ a_i \le 10^{9}\)</span></li>
       <tags>
         <tag>贪心</tag>
         <tag>XCPC解题报告</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ICPC2023南京站【游记】</title>
+    <url>/2023/11/08/ICPC2023%E5%8D%97%E4%BA%AC%E7%AB%99%E6%B8%B8%E8%AE%B0/</url>
+    <content><![CDATA[<p><strong>省流：</strong></p>
+<ul>
+<li><strong>队名：</strong> 无名</li>
+<li><strong>题数：</strong> <span class="math inline">\(5\)</span></li>
+<li><strong>罚时：</strong> <span
+class="math inline">\(625\)</span></li>
+<li><strong>排名(offical)：</strong> <span
+class="math inline">\(\textcolor{brown}{106} / 331\)</span></li>
+<li><strong>奖牌：</strong> <strong><span
+class="math inline">\(\textcolor{brown}{铜}\)</span></strong></li>
+</ul>
+<h1 id="day--">Day -?</h1>
+<p>上场打桂林的那个队伍的大三学长因为有事，这场打不了，我们队招募来了一个新的大一佬
+wyx ，并且 vp 了七八场历年的 xcpc
+真题，平均位次在铜牌首部到银牌中部。</p>
+<p>鉴于桂林打铁的教训，我们非常重视队伍的磨合以及做题策略，赛前一直在做积极的心理暗示。</p>
+<h1 id="day--1">Day -1</h1>
+<p><strong>11.03</strong></p>
+<p>坐高铁从秦皇岛到了南京，因为酒店位置有点偏，没有吃到当地有名的鸭血粉丝汤。</p>
+<p>另外一队的大一佬 warzone 过来提醒我们今晚有 CF
+Edu，于是就直接开打，过了 ABCD 题，E
+题读了题但没啥时间，索性不想直接睡觉了，毕竟第二天还挺忙的。</p>
+<span id="more"></span>
+<h1 id="day-0">Day 0</h1>
+<p><strong>11.04</strong></p>
+<p>中午到了南京航空航天大学。</p>
+<p>居然有校园巴士，狠狠羡慕了。</p>
+<p>乘坐校园巴士到体育馆领了南京站的外套（巨好看，上面还印着 Floyd
+最短路的代码），并且合了个影。然后就是到南航的食堂吃午饭，忘记第几食堂了，反正看门口的招牌，感觉跟到了饭店一样，25
+块钱的餐券根本花不完。</p>
+<p>吃完饭闲的没事干跑去篮球场看看，结果还真有球卡在球框和板之间了，用矿泉水瓶砸下来然后开始和队友投篮，过了一会还来了一个国防科技大学的佬来一起打，这下成物理热身了（</p>
+<p>然后就是下午的热身赛，题目是前几年的四个南京站原题，还得知热身赛和正赛都有中文题面（好耶）。南京站的硬件配置也属实顶级，果然有钱就是好，南京站独有的经典袋鼠吉祥物每个队伍也有（i了i了）。</p>
+<p>傍晚的时候回来看了一眼昨晚 CF 的榜 rk500 多，rating 大概涨了 40
+分左右。</p>
+<h1 id="day-1">Day 1</h1>
+<p><strong>11.05</strong></p>
+<p>开场依然有点紧张，但还是一直哼唱周董的歌努力让自己平静下来。</p>
+<p>三人分别从头、尾和中间开始看题，我还负责盯榜，然后发现 I
+是签到，但是求稳还是写得很慢，防止出错，20min 时一发过了。</p>
+<p>然后看榜发现 G 和 C 是目前最可做的题。</p>
+<p>我先想了 G
+题，凭感觉加简单证明，就是把物品按体积排序之后，从头部和尾部分别写两个背包，然后枚举一下两个背包分开的位置，结果第一发
+WA 了，以为思路假了，结果发现是背包写出了小锅，改完马上过了。</p>
+<p>然后 wyx C
+题有思路了，经过简短的讨论之后发现很真，然后开始码，过了样例之后一发过了。</p>
+<p>过了一会，大二队友 F
+题有思路了，三个人探讨了一下细节，然后我接着开始码，然后又直接一发过了。</p>
+<p>到目前位置很顺，感觉赛前的磨合还是很有用的，三个队友分别看 A , L ,
+M。</p>
+<p>我看完 M 没啥思路，于是去跟队友探讨 L
+题，然后讨论出了很真的贪心的思路，就是代码不太好写，码了很久才码完，样例也调了很久，最后交上去还
+WA 了，然后对着代码瞪了半个小时没看出一点错。这个时候 wyx A
+题出思路了，于是我把代码打印出来开始调，他开始码 A 。</p>
+<p>此时已经封榜了，时间比较紧，我对着大二队友开始了小黄鸭调试法，大概过了半个小时发现一个减号的前后写反了，立马反过来，交了一发直接过了。</p>
+<p>此时过了 5 题，以为绝杀拿 Ag
+了，可惜队友时间不够用了，A题没调出来，否则就是稳 Ag 了。</p>
+<p>可惜最后不尽人意，滚榜被滚到了铜首，差 8 名 Ag
+，不过还好终于有牌子了。</p>
+<p>还是一句话：个人水平不够，还得加油练啊！！！</p>
+<hr />
+<p>留两张图，算是纪念一下</p>
+<p><img src="https://z1.ax1x.com/2023/11/08/pi1jZHP.jpg"
+alt="pi1jZHP.jpg" /> <img
+src="https://z1.ax1x.com/2023/11/08/pi1jnN8.jpg"
+alt="pi1jnN8.jpg" /></p>
+]]></content>
+      <categories>
+        <category>游记</category>
+      </categories>
+      <tags>
+        <tag>游记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Re零系列学习笔记索引</title>
+    <url>/2023/10/08/Re%E9%9B%B6%E7%B3%BB%E5%88%97%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
+    <content><![CDATA[<p>咕。咕。咕。</p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>算法竞赛</category>
+      </categories>
+      <tags>
+        <tag>索引</tag>
       </tags>
   </entry>
   <entry>
@@ -1168,28 +1257,106 @@ class="math inline">\(fa\)</span> 的结点的个数。同理，贡献还要加�
 class="math inline">\(u\)</span> 的子树外结点编号小于 <span
 class="math inline">\(u\)</span> 的结点的个数。直接预处理出树的 dfs
 序，每次换根相当于查询一个区间有多少个数小于 <span
-class="math inline">\(k\)</span>，因为没有修改所以是静态的查询，直接用主席树处理即可。</p>
+class="math inline">\(k\)</span>，因为没有修改所以是静态的查询，直接用主席树处理即可。（以后有时间一定把数据结构封装一个模板）</p>
 <h2 id="section-5">1.21</h2>
-<p>准备补一下昨天 ABC 的 F 题，这 F 题过的还没 G 题多。</p>
+<p>昨天晚上因为 E 题忘记写 <span class="math inline">\(n + 1\)</span>
+卡了 <span class="math inline">\(40\text{min}\)</span>
+心态崩了，打农打到特别晚，因此第二天起的特别晚，摆了一天，F
+题处于一种一知半解的状态，然后打了晚上的 ARC。C
+题是一个很天才的套路，但我不知道，看题解知道了这个套路，遂记之。</p>
+<p><strong>题目 <span class="math inline">\(12\)</span> ：</strong><a
+href="https://atcoder.jp/contests/arc170/tasks/arc170_c">ARC170C -Prefix
+Mex Sequence</a> <span
+class="math inline">\(\textcolor{blue}{\bigstar}\textcolor{red}{\bigstar}\)</span>
+<strong>[dp]</strong></p>
+<p><strong>思路：</strong>如果这题思路一直限制在 <span
+class="math inline">\(\operatorname{mex}\)</span>
+上，那么可能很难回到正轨了。首先注意到前 <span class="math inline">\(i -
+1\)</span> 数的 <span class="math inline">\(\text{mex}\)</span> 的最大为
+<span class="math inline">\(i\)</span>，所以直接枚举 <span
+class="math inline">\(\text{mex}\)</span> 是 <span
+class="math inline">\(O(\min(n, m))\)</span> 级别的，那假设我们设 <span
+class="math inline">\(f_{i, j}\)</span> 代表前 <span
+class="math inline">\(i\)</span> 个数的 <span
+class="math inline">\(\text{mex}\)</span> 为 <span
+class="math inline">\(j\)</span> 且符合题目条件的方案数，发现 <span
+class="math inline">\(s_{i + 1} = 1\)</span> 时下一个状态的 <span
+class="math inline">\(\text{mex}\)</span>
+我们无法得知，不能进行转移，然后我就卡在这里了。注意到不管 <span
+class="math inline">\(\text{mex}\)</span> 是什么数， 假设 <span
+class="math inline">\(s_{i + 1} = 1\)</span>，那么 <span
+class="math inline">\(a_{i + 1}\)</span> 一定在 <span
+class="math inline">\(a_1 , a_{2} , \cdots, a_{i}\)</span>
+中没出现过。那我们不妨设 <span class="math inline">\(f_{i, j}\)</span>
+代表前 <span class="math inline">\(i\)</span> 个位置在满足题意的条件下有
+<span class="math inline">\(j\)</span>
+个不同的数的方案数，这样可以巧妙避免 <span
+class="math inline">\(\text{mex}\)</span>
+被记录到状态中导致无法转移的问题，更具体地说 <span
+class="math inline">\(\text{mex}\)</span> 只会对这个 dp
+的转移过程进行限制。若 <span class="math inline">\(s_{i + 1} =
+1\)</span>，相当于<strong>能且只能</strong>填入 <span
+class="math inline">\(\text{mex}\{a_1, a_2, \cdots,
+a_{n}\}\)</span>，所以 <span class="math inline">\(j\)</span> 一定会加
+<span class="math inline">\(1\)</span>，即进行转移 <span
+class="math inline">\(f_{i, j} \rightarrow f_{i + 1, j + 1}\)</span>
+；若 <span class="math inline">\(s_{i + 1} =
+0\)</span>，如果填入之前已经填入的数，即进行转移 <span
+class="math inline">\(j \times f_{i, j} \rightarrow f_{i + 1,
+j}\)</span>，如果填入之前不存在的数，那么有 <span
+class="math inline">\((m + 1) - j - 1\)</span> 种填数方式，减 <span
+class="math inline">\(1\)</span> 是因为 <span
+class="math inline">\(\text{mex}\{a_1, a_2, \cdots, a_{n}\}\)</span>
+不能填，即进行转移 <span class="math inline">\((m - j) \times f_{i, j}
+\rightarrow f_{i + 1, j + 1}\)</span>。最终答案 <span
+class="math inline">\(\displaystyle{ans = \sum\limits_{i = 1}^{\min(n, m
++ 1)} f_{n, i}}\)</span>，时间复杂度为 <span
+class="math inline">\(O(n^{2})\)</span>，可以通过。</p>
+<h2 id="section-6">1.22</h2>
+<p>vp 了 <a
+href="https://codeforces.com/contest/1777/problem/D">Codeforces Round
+845 Div.2</a>，赛时 <span class="math inline">\(4\)</span>
+题，后面的题还没补，但是觉得 D 挺有意思的，遂记录一下。</p>
+<p><strong>题目 <span class="math inline">\(13\)</span> ：</strong><a
+href="https://codeforces.com/contest/1777/problem/D">CF1777D - Score of
+a Tree</a> <span
+class="math inline">\(\textcolor{brown}{\bigstar}\)</span>
+<strong>[贡献的拆分 | 树形结构]</strong></p>
+<p><strong>思路：</strong>考虑把贡献拆开，计算每个结点 <span
+class="math inline">\(x\)</span> 在 <span
+class="math inline">\(t\)</span> 时刻对答案的贡献。注意到结点 <span
+class="math inline">\(x\)</span> 在 <span
+class="math inline">\(t\)</span> 时刻的值只会被 <span
+class="math inline">\(x\)</span> 向下 <span
+class="math inline">\(t\)</span> 层的子节点影响，假设 <span
+class="math inline">\(x\)</span> 向下 <span
+class="math inline">\(t\)</span> 层的子节点有 <span
+class="math inline">\(cnt\)</span> 个，那么这 <span
+class="math inline">\(cnt\)</span> 个结点的权值在 <span
+class="math inline">\(t = 0\)</span> 时有奇数个 <span
+class="math inline">\(1\)</span> 才能使得 <span
+class="math inline">\(x\)</span> 结点在 <span
+class="math inline">\(t\)</span> 时刻的权值为 <span
+class="math inline">\(1\)</span>，所以初始时这 <span
+class="math inline">\(cnt\)</span> 个结点的方案数为 <span
+class="math inline">\(\binom{cnt}{1} + \binom{cnt}{3} + \binom{cnt}{5} +
+\cdots = 2^{cnt - 1}\)</span>，因为其他结点初始的值对 <span
+class="math inline">\(x\)</span> 在 <span
+class="math inline">\(t\)</span> 时刻的权值没有影响，所以有 <span
+class="math inline">\(2^{n - cnt}\)</span> 种方案。所以如果 <span
+class="math inline">\(x\)</span> 向下 <span
+class="math inline">\(t\)</span>
+层具有子节点，不管具有多少个子节点，对答案的贡献都是 <span
+class="math inline">\(2^{cnt - 1} \times 2^{n - cnt} = 2^{n -
+1}\)</span>。所以只需要 dfs
+求出每个节点向下最深的结点的深度，然后计算贡献即可。</p>
+<h2 id="section-7">1.23</h2>
 ]]></content>
       <categories>
         <category>算法竞赛</category>
       </categories>
       <tags>
         <tag>杂题</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Re零系列学习笔记索引</title>
-    <url>/2023/10/08/Re%E9%9B%B6%E7%B3%BB%E5%88%97%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
-    <content><![CDATA[<p>咕。咕。咕。</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>算法竞赛</category>
-      </categories>
-      <tags>
-        <tag>索引</tag>
       </tags>
   </entry>
   <entry>
@@ -1221,8 +1388,8 @@ href="http://www.tle-automat.top/2023/10/11/CCPC2021威海站%20M.%20810975/">M.
         <category>算法竞赛</category>
       </categories>
       <tags>
-        <tag>XCPC解题报告</tag>
         <tag>索引</tag>
+        <tag>XCPC解题报告</tag>
       </tags>
   </entry>
   <entry>
@@ -1240,6 +1407,20 @@ href="http://www.tle-automat.top/2023/10/11/CCPC2021威海站%20M.%20810975/">M.
       </tags>
   </entry>
   <entry>
+    <title>Re:从零开始的图论（图论学习笔记索引）</title>
+    <url>/2023/10/08/%E5%9B%BE%E8%AE%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
+    <content><![CDATA[<p>咕。咕。咕。</p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>算法竞赛</category>
+      </categories>
+      <tags>
+        <tag>索引</tag>
+        <tag>图论</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Re:从零开始的博弈论（博弈论学习笔记索引）</title>
     <url>/2023/10/08/%E5%8D%9A%E5%BC%88%E8%AE%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
     <content><![CDATA[<p>咕。咕。咕。</p>
@@ -1251,33 +1432,6 @@ href="http://www.tle-automat.top/2023/10/11/CCPC2021威海站%20M.%20810975/">M.
       <tags>
         <tag>索引</tag>
         <tag>博弈论</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>哈希技巧小结</title>
-    <url>/2023/11/15/%E5%93%88%E5%B8%8C%E6%8A%80%E5%B7%A7%E5%B0%8F%E7%BB%93/</url>
-    <content><![CDATA[<p>咕。咕。咕。</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>算法竞赛</category>
-      </categories>
-      <tags>
-        <tag>哈希</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Re:从零开始的图论（图论学习笔记索引）</title>
-    <url>/2023/10/08/%E5%9B%BE%E8%AE%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
-    <content><![CDATA[<p>咕。咕。咕。</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>算法竞赛</category>
-      </categories>
-      <tags>
-        <tag>图论</tag>
-        <tag>索引</tag>
       </tags>
   </entry>
   <entry>
@@ -1295,79 +1449,16 @@ href="http://www.tle-automat.top/2023/10/11/CCPC2021威海站%20M.%20810975/">M.
       </tags>
   </entry>
   <entry>
-    <title>ICPC2023南京站【游记】</title>
-    <url>/2023/11/08/ICPC2023%E5%8D%97%E4%BA%AC%E7%AB%99%E6%B8%B8%E8%AE%B0/</url>
-    <content><![CDATA[<p><strong>省流：</strong></p>
-<ul>
-<li><strong>队名：</strong> 无名</li>
-<li><strong>题数：</strong> <span class="math inline">\(5\)</span></li>
-<li><strong>罚时：</strong> <span
-class="math inline">\(625\)</span></li>
-<li><strong>排名(offical)：</strong> <span
-class="math inline">\(\textcolor{brown}{106} / 331\)</span></li>
-<li><strong>奖牌：</strong> <strong><span
-class="math inline">\(\textcolor{brown}{铜}\)</span></strong></li>
-</ul>
-<h1 id="day--">Day -?</h1>
-<p>上场打桂林的那个队伍的大三学长因为有事，这场打不了，我们队招募来了一个新的大一佬
-wyx ，并且 vp 了七八场历年的 xcpc
-真题，平均位次在铜牌首部到银牌中部。</p>
-<p>鉴于桂林打铁的教训，我们非常重视队伍的磨合以及做题策略，赛前一直在做积极的心理暗示。</p>
-<h1 id="day--1">Day -1</h1>
-<p><strong>11.03</strong></p>
-<p>坐高铁从秦皇岛到了南京，因为酒店位置有点偏，没有吃到当地有名的鸭血粉丝汤。</p>
-<p>另外一队的大一佬 warzone 过来提醒我们今晚有 CF
-Edu，于是就直接开打，过了 ABCD 题，E
-题读了题但没啥时间，索性不想直接睡觉了，毕竟第二天还挺忙的。</p>
+    <title>哈希技巧小结</title>
+    <url>/2023/11/15/%E5%93%88%E5%B8%8C%E6%8A%80%E5%B7%A7%E5%B0%8F%E7%BB%93/</url>
+    <content><![CDATA[<p>咕。咕。咕。</p>
 <span id="more"></span>
-<h1 id="day-0">Day 0</h1>
-<p><strong>11.04</strong></p>
-<p>中午到了南京航空航天大学。</p>
-<p>居然有校园巴士，狠狠羡慕了。</p>
-<p>乘坐校园巴士到体育馆领了南京站的外套（巨好看，上面还印着 Floyd
-最短路的代码），并且合了个影。然后就是到南航的食堂吃午饭，忘记第几食堂了，反正看门口的招牌，感觉跟到了饭店一样，25
-块钱的餐券根本花不完。</p>
-<p>吃完饭闲的没事干跑去篮球场看看，结果还真有球卡在球框和板之间了，用矿泉水瓶砸下来然后开始和队友投篮，过了一会还来了一个国防科技大学的佬来一起打，这下成物理热身了（</p>
-<p>然后就是下午的热身赛，题目是前几年的四个南京站原题，还得知热身赛和正赛都有中文题面（好耶）。南京站的硬件配置也属实顶级，果然有钱就是好，南京站独有的经典袋鼠吉祥物每个队伍也有（i了i了）。</p>
-<p>傍晚的时候回来看了一眼昨晚 CF 的榜 rk500 多，rating 大概涨了 40
-分左右。</p>
-<h1 id="day-1">Day 1</h1>
-<p><strong>11.05</strong></p>
-<p>开场依然有点紧张，但还是一直哼唱周董的歌努力让自己平静下来。</p>
-<p>三人分别从头、尾和中间开始看题，我还负责盯榜，然后发现 I
-是签到，但是求稳还是写得很慢，防止出错，20min 时一发过了。</p>
-<p>然后看榜发现 G 和 C 是目前最可做的题。</p>
-<p>我先想了 G
-题，凭感觉加简单证明，就是把物品按体积排序之后，从头部和尾部分别写两个背包，然后枚举一下两个背包分开的位置，结果第一发
-WA 了，以为思路假了，结果发现是背包写出了小锅，改完马上过了。</p>
-<p>然后 wyx C
-题有思路了，经过简短的讨论之后发现很真，然后开始码，过了样例之后一发过了。</p>
-<p>过了一会，大二队友 F
-题有思路了，三个人探讨了一下细节，然后我接着开始码，然后又直接一发过了。</p>
-<p>到目前位置很顺，感觉赛前的磨合还是很有用的，三个队友分别看 A , L ,
-M。</p>
-<p>我看完 M 没啥思路，于是去跟队友探讨 L
-题，然后讨论出了很真的贪心的思路，就是代码不太好写，码了很久才码完，样例也调了很久，最后交上去还
-WA 了，然后对着代码瞪了半个小时没看出一点错。这个时候 wyx A
-题出思路了，于是我把代码打印出来开始调，他开始码 A 。</p>
-<p>此时已经封榜了，时间比较紧，我对着大二队友开始了小黄鸭调试法，大概过了半个小时发现一个减号的前后写反了，立马反过来，交了一发直接过了。</p>
-<p>此时过了 5 题，以为绝杀拿 Ag
-了，可惜队友时间不够用了，A题没调出来，否则就是稳 Ag 了。</p>
-<p>可惜最后不尽人意，滚榜被滚到了铜首，差 8 名 Ag
-，不过还好终于有牌子了。</p>
-<p>还是一句话：个人水平不够，还得加油练啊！！！</p>
-<hr />
-<p>留两张图，算是纪念一下</p>
-<p><img src="https://z1.ax1x.com/2023/11/08/pi1jZHP.jpg"
-alt="pi1jZHP.jpg" /> <img
-src="https://z1.ax1x.com/2023/11/08/pi1jnN8.jpg"
-alt="pi1jnN8.jpg" /></p>
 ]]></content>
       <categories>
-        <category>游记</category>
+        <category>算法竞赛</category>
       </categories>
       <tags>
-        <tag>游记</tag>
+        <tag>哈希</tag>
       </tags>
   </entry>
   <entry>
@@ -1385,8 +1476,8 @@ alt="pi1jnN8.jpg" /></p>
       </tags>
   </entry>
   <entry>
-    <title>Re:从零开始的数据结构（数据结构学习笔记索引）</title>
-    <url>/2023/10/08/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
+    <title>Re:从零开始的数论（数论学习笔记索引）</title>
+    <url>/2023/10/08/%E6%95%B0%E8%AE%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
     <content><![CDATA[<p>咕。咕。咕。</p>
 <span id="more"></span>
 ]]></content>
@@ -1394,8 +1485,8 @@ alt="pi1jnN8.jpg" /></p>
         <category>算法竞赛</category>
       </categories>
       <tags>
+        <tag>数论</tag>
         <tag>索引</tag>
-        <tag>数据结构</tag>
       </tags>
   </entry>
   <entry>
@@ -1413,6 +1504,20 @@ alt="pi1jnN8.jpg" /></p>
       </tags>
   </entry>
   <entry>
+    <title>Re:从零开始的数据结构（数据结构学习笔记索引）</title>
+    <url>/2023/10/08/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
+    <content><![CDATA[<p>咕。咕。咕。</p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>算法竞赛</category>
+      </categories>
+      <tags>
+        <tag>索引</tag>
+        <tag>数据结构</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>目录</title>
     <url>/2023/10/08/%E7%9B%AE%E5%BD%95/</url>
     <content><![CDATA[<p>咕。咕。咕。</p>
@@ -1426,8 +1531,8 @@ alt="pi1jnN8.jpg" /></p>
       </tags>
   </entry>
   <entry>
-    <title>Re:从零开始的数论（数论学习笔记索引）</title>
-    <url>/2023/10/08/%E6%95%B0%E8%AE%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
+    <title>Re:从零开始的线性代数（线性代数学习笔记索引）</title>
+    <url>/2023/10/08/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
     <content><![CDATA[<p>咕。咕。咕。</p>
 <span id="more"></span>
 ]]></content>
@@ -1435,8 +1540,8 @@ alt="pi1jnN8.jpg" /></p>
         <category>算法竞赛</category>
       </categories>
       <tags>
-        <tag>数论</tag>
         <tag>索引</tag>
+        <tag>线性代数</tag>
       </tags>
   </entry>
   <entry>
@@ -1456,6 +1561,20 @@ href="https://zhuanlan.zhihu.com/p/382644742">https://zhuanlan.zhihu.com/p/38264
       </tags>
   </entry>
   <entry>
+    <title>Re:从零开始的组合数学（组合数学学习笔记索引）</title>
+    <url>/2023/10/08/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
+    <content><![CDATA[<p>咕。咕。咕。</p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>算法竞赛</category>
+      </categories>
+      <tags>
+        <tag>组合数学</tag>
+        <tag>索引</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Re:从零开始的计算几何（计算几何学习笔记索引）</title>
     <url>/2023/10/08/%E8%AE%A1%E7%AE%97%E5%87%A0%E4%BD%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
     <content><![CDATA[<p>咕。咕。咕。</p>
@@ -1470,20 +1589,6 @@ href="https://zhuanlan.zhihu.com/p/382644742">https://zhuanlan.zhihu.com/p/38264
       </tags>
   </entry>
   <entry>
-    <title>Re:从零开始的线性代数（线性代数学习笔记索引）</title>
-    <url>/2023/10/08/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
-    <content><![CDATA[<p>咕。咕。咕。</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>算法竞赛</category>
-      </categories>
-      <tags>
-        <tag>索引</tag>
-        <tag>线性代数</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>网络流学习笔记</title>
     <url>/2023/10/12/%E7%BD%91%E7%BB%9C%E6%B5%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
     <content><![CDATA[<p>咕。咕。咕。</p>
@@ -1495,20 +1600,6 @@ href="https://zhuanlan.zhihu.com/p/382644742">https://zhuanlan.zhihu.com/p/38264
       <tags>
         <tag>图论</tag>
         <tag>网络流</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Re:从零开始的组合数学（组合数学学习笔记索引）</title>
-    <url>/2023/10/08/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
-    <content><![CDATA[<p>咕。咕。咕。</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>算法竞赛</category>
-      </categories>
-      <tags>
-        <tag>组合数学</tag>
-        <tag>索引</tag>
       </tags>
   </entry>
 </search>
