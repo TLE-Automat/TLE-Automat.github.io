@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.tle-automat.top","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="省流：  队名： 无名 题数： \(5\) 罚时： \(625\) 排名(offical)： \(\textcolor{brown}{106} &#x2F; 331\) 奖牌： \(\textcolor{brown}{铜}\)  Day -? 上场打桂林的那个队伍的大三学长因为有事，这场打不了，我们队招募来了一个新的大一佬 wyx ，并且 vp 了七八场历年的 xcpc 真题，平均位次">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ICPC2023南京站【游记】">
+<meta property="og:url" content="http://www.tle-automat.top/2023/11/08/%E3%80%90%E6%B8%B8%E8%AE%B0%E3%80%91ICPC2023%E5%8D%97%E4%BA%AC%E7%AB%99%E6%B8%B8%E8%AE%B0/index.html">
+<meta property="og:site_name" content="TLE_Automatの小窝">
+<meta property="og:description" content="省流：  队名： 无名 题数： \(5\) 罚时： \(625\) 排名(offical)： \(\textcolor{brown}{106} &#x2F; 331\) 奖牌： \(\textcolor{brown}{铜}\)  Day -? 上场打桂林的那个队伍的大三学长因为有事，这场打不了，我们队招募来了一个新的大一佬 wyx ，并且 vp 了七八场历年的 xcpc 真题，平均位次">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://z1.ax1x.com/2023/11/08/pi1jZHP.jpg">
+<meta property="article:published_time" content="2023-11-07T16:00:00.000Z">
+<meta property="article:modified_time" content="2024-02-02T07:11:48.504Z">
+<meta property="article:author" content="TLE_Automat">
+<meta property="article:tag" content="QwQ">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://z1.ax1x.com/2023/11/08/pi1jZHP.jpg">
+
+<link rel="canonical" href="http://www.tle-automat.top/2023/11/08/%E3%80%90%E6%B8%B8%E8%AE%B0%E3%80%91ICPC2023%E5%8D%97%E4%BA%AC%E7%AB%99%E6%B8%B8%E8%AE%B0/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>ICPC2023南京站【游记】 | TLE_Automatの小窝</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">TLE_Automatの小窝</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">求知若饥，虚心若愚</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://www.tle-automat.top/2023/11/08/%E3%80%90%E6%B8%B8%E8%AE%B0%E3%80%91ICPC2023%E5%8D%97%E4%BA%AC%E7%AB%99%E6%B8%B8%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://s1.ax1x.com/2023/08/06/pPAqrTI.jpg">
+      <meta itemprop="name" content="TLE_Automat">
+      <meta itemprop="description" content="以“ 逸一时，误一事 ”的态度惜时； 以“ 疑一事，务己试 ”的态度求学； 以“ 以宜时，悟一事 ”的方法学习； 以“ 忆伊时，吾衣湿 ”的情感爱身边的一切">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TLE_Automatの小窝">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          ICPC2023南京站【游记】
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-11-08 00:00:00" itemprop="dateCreated datePublished" datetime="2023-11-08T00:00:00+08:00">2023-11-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-02-02 15:11:48" itemprop="dateModified" datetime="2024-02-02T15:11:48+08:00">2024-02-02</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%B8%B8%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">游记</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.5k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><strong>省流：</strong></p>
+<ul>
+<li><strong>队名：</strong> 无名</li>
+<li><strong>题数：</strong> <span class="math inline">\(5\)</span></li>
+<li><strong>罚时：</strong> <span
+class="math inline">\(625\)</span></li>
+<li><strong>排名(offical)：</strong> <span
+class="math inline">\(\textcolor{brown}{106} / 331\)</span></li>
+<li><strong>奖牌：</strong> <strong><span
+class="math inline">\(\textcolor{brown}{铜}\)</span></strong></li>
+</ul>
+<h1 id="day--">Day -?</h1>
+<p>上场打桂林的那个队伍的大三学长因为有事，这场打不了，我们队招募来了一个新的大一佬
+wyx ，并且 vp 了七八场历年的 xcpc
+真题，平均位次在铜牌首部到银牌中部。</p>
+<p>鉴于桂林打铁的教训，我们非常重视队伍的磨合以及做题策略，赛前一直在做积极的心理暗示。</p>
+<h1 id="day--1">Day -1</h1>
+<p><strong>11.03</strong></p>
+<p>坐高铁从秦皇岛到了南京，因为酒店位置有点偏，没有吃到当地有名的鸭血粉丝汤。</p>
+<p>另外一队的大一佬 warzone 过来提醒我们今晚有 CF
+Edu，于是就直接开打，过了 ABCD 题，E
+题读了题但没啥时间，索性不想直接睡觉了，毕竟第二天还挺忙的。</p>
+<span id="more"></span>
+<h1 id="day-0">Day 0</h1>
+<p><strong>11.04</strong></p>
+<p>中午到了南京航空航天大学。</p>
+<p>居然有校园巴士，狠狠羡慕了。</p>
+<p>乘坐校园巴士到体育馆领了南京站的外套（巨好看，上面还印着 Floyd
+最短路的代码），并且合了个影。然后就是到南航的食堂吃午饭，忘记第几食堂了，反正看门口的招牌，感觉跟到了饭店一样，25
+块钱的餐券根本花不完。</p>
+<p>吃完饭闲的没事干跑去篮球场看看，结果还真有球卡在球框和板之间了，用矿泉水瓶砸下来然后开始和队友投篮，过了一会还来了一个国防科技大学的佬来一起打，这下成物理热身了（</p>
+<p>然后就是下午的热身赛，题目是前几年的四个南京站原题，还得知热身赛和正赛都有中文题面（好耶）。南京站的硬件配置也属实顶级，果然有钱就是好，南京站独有的经典袋鼠吉祥物每个队伍也有（i了i了）。</p>
+<p>傍晚的时候回来看了一眼昨晚 CF 的榜 rk500 多，rating 大概涨了 40
+分左右。</p>
+<h1 id="day-1">Day 1</h1>
+<p><strong>11.05</strong></p>
+<p>开场依然有点紧张，但还是一直哼唱周董的歌努力让自己平静下来。</p>
+<p>三人分别从头、尾和中间开始看题，我还负责盯榜，然后发现 I
+是签到，但是求稳还是写得很慢，防止出错，20min 时一发过了。</p>
+<p>然后看榜发现 G 和 C 是目前最可做的题。</p>
+<p>我先想了 G
+题，凭感觉加简单证明，就是把物品按体积排序之后，从头部和尾部分别写两个背包，然后枚举一下两个背包分开的位置，结果第一发
+WA 了，以为思路假了，结果发现是背包写出了小锅，改完马上过了。</p>
+<p>然后 wyx C
+题有思路了，经过简短的讨论之后发现很真，然后开始码，过了样例之后一发过了。</p>
+<p>过了一会，大二队友 F
+题有思路了，三个人探讨了一下细节，然后我接着开始码，然后又直接一发过了。</p>
+<p>到目前位置很顺，感觉赛前的磨合还是很有用的，三个队友分别看 A , L ,
+M。</p>
+<p>我看完 M 没啥思路，于是去跟队友探讨 L
+题，然后讨论出了很真的贪心的思路，就是代码不太好写，码了很久才码完，样例也调了很久，最后交上去还
+WA 了，然后对着代码瞪了半个小时没看出一点错。这个时候 wyx A
+题出思路了，于是我把代码打印出来开始调，他开始码 A 。</p>
+<p>此时已经封榜了，时间比较紧，我对着大二队友开始了小黄鸭调试法，大概过了半个小时发现一个减号的前后写反了，立马反过来，交了一发直接过了。</p>
+<p>此时过了 5 题，以为绝杀拿 Ag
+了，可惜队友时间不够用了，A题没调出来，否则就是稳 Ag 了。</p>
+<p>可惜最后不尽人意，滚榜被滚到了铜首，差 8 名 Ag
+，不过还好终于有牌子了。</p>
+<p>还是一句话：个人水平不够，还得加油练啊！！！</p>
+<hr />
+<p>留两张图，算是纪念一下</p>
+<p><img src="https://z1.ax1x.com/2023/11/08/pi1jZHP.jpg"
+alt="pi1jZHP.jpg" /> <img
+src="https://z1.ax1x.com/2023/11/08/pi1jnN8.jpg"
+alt="pi1jnN8.jpg" /></p>
+
+    </div>
+
+    
+    
+    
+        
+
+<div>
+<ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者： </strong>TLE_Automat
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://www.tle-automat.top/2023/11/08/%E3%80%90%E6%B8%B8%E8%AE%B0%E3%80%91ICPC2023%E5%8D%97%E4%BA%AC%E7%AB%99%E6%B8%B8%E8%AE%B0/" title="ICPC2023南京站【游记】">http://www.tle-automat.top/2023/11/08/【游记】ICPC2023南京站游记/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+</div>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/QwQ/" rel="tag"># QwQ</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/10/20/%E3%80%90%E9%A2%98%E8%A7%A3%E3%80%91ARC167D/" rel="prev" title="【题解】ARC167D - Good Permutation">
+      <i class="fa fa-chevron-left"></i> 【题解】ARC167D - Good Permutation
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2023/11/08/%E3%80%90%E6%B8%B8%E8%AE%B0%E3%80%91CCPC2023%E6%A1%82%E6%9E%97%E7%AB%99%E6%B8%B8%E8%AE%B0/" rel="next" title="CCPC2023桂林站【游记】">
+      CCPC2023桂林站【游记】 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#day--"><span class="nav-number">1.</span> <span class="nav-text">Day -?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#day--1"><span class="nav-number">2.</span> <span class="nav-text">Day -1</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#day-0"><span class="nav-number">3.</span> <span class="nav-text">Day 0</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#day-1"><span class="nav-number">4.</span> <span class="nav-text">Day 1</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="TLE_Automat"
+      src="https://s1.ax1x.com/2023/08/06/pPAqrTI.jpg">
+  <p class="site-author-name" itemprop="name">TLE_Automat</p>
+  <div class="site-description" itemprop="description">以“ 逸一时，误一事 ”的态度惜时； 以“ 疑一事，务己试 ”的态度求学； 以“ 以宜时，悟一事 ”的方法学习； 以“ 忆伊时，吾衣湿 ”的情感爱身边的一切</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">27</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">24</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2023-08 – 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">TLE_Automat</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+    <span title="站点总字数">34k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">31 分钟</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  
+  <script color='0,0,255' opacity='0.5' zIndex='-1' count='99' src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+</body>
+</html>
