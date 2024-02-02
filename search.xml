@@ -14,74 +14,6 @@
       </tags>
   </entry>
   <entry>
-    <title>【题解】CF1925F - Fractal Origami</title>
-    <url>/2024/02/02/%E3%80%90%E9%A2%98%E8%A7%A3%E3%80%91CF1925F/</url>
-    <content><![CDATA[<h2 id="题目链接">题目链接</h2>
-<p><a
-href="https://codeforces.com/contest/1925/problem/F">https://codeforces.com/contest/1925/problem/F</a></p>
-<h2 id="题目大意">题目大意</h2>
-<p><img
-src="https://espresso.codeforces.com/1bf93f34e8055ab56549c4ec1ea686c047564085.png" /></p>
-<p>将一个边长为 <span class="math inline">\(1\)</span>
-的正方形按如图所示的方法进行 <span class="math inline">\(N\)</span>
-次折叠（上图为 <span class="math inline">\(N = 2\)</span>
-的情况），折叠之后展开。</p>
-<p>展开后的折痕分为两种，一种是向内凹陷的折痕，总长度记为 <span
-class="math inline">\(V\)</span>，另外一种是向外凸出的折痕，总长度记为
-<span class="math inline">\(M\)</span>。</p>
-<p>可以证明 <span class="math inline">\(\displaystyle\frac{M}{V} = A +
-B\sqrt{2}\)</span>，其中 <span class="math inline">\(A,B\)</span>
-均为有理数。求 <span class="math inline">\(B\)</span> 对 <span
-class="math inline">\(999\text{ }999\text{ }893\)</span>
-取模的结果。</p>
-<h2 id="数据范围">数据范围</h2>
-<ul>
-<li><span class="math inline">\(1\le N \le 10^{9}\)</span></li>
-</ul>
-<span id="more"></span>
-<h2 id="解题思路">解题思路</h2>
-<p>直接拿张纸来手动折几次，经过观察和推理不难发现下列性质：</p>
-<ul>
-<li><p>所有凹陷的折痕全都是在奇数层产生的，所有凸出的折痕全都是在偶数层产生的。</p></li>
-<li><p>第 <span class="math inline">\(i\)</span> 次折叠前纸片总共有
-<span class="math inline">\(2^{i - 1}\)</span>
-层，折叠时对每一层产生总长度为 <span
-class="math inline">\(\displaystyle\frac{1}{(\sqrt{2})^{i}}\)</span>​
-的折痕。</p></li>
-</ul>
-设奇数层的折痕总长度为 <span
-class="math inline">\(4L_1\)</span>，偶数层的折痕总长度为 <span
-class="math inline">\(4L_2\)</span>，根据以上性质能够得到： $$
-<span class="math display">\[\begin{aligned}
-
-L_{1} &amp;= \frac{1}{\sqrt{2}} + \frac{1}{(\sqrt{2})^{2}}\times 2^{0} +
-\frac{1}{(\sqrt{2})^{3}}\times 2^{1} + \cdots +
-\frac{1}{(\sqrt{2})^{n}}\times 2^{n - 2} = (\sqrt{2})^{n} +
-(\sqrt{2})^{n - 1} - 1  \\
-
-L_{2} &amp;= \frac{1}{(\sqrt{2})^{2}}\times 2^{0} +
-\frac{1}{(\sqrt{2})^{3}}\times 2^{1} + \cdots +
-\frac{1}{(\sqrt{2})^{n}}\times 2^{n - 2} = (\sqrt{2})^{n} +
-(\sqrt{2})^{n - 1} - \sqrt{2}- 1 \\
-
-\end{aligned}\]</span>
-<p>$$ 我是直接暴力推 <span
-class="math inline">\(\displaystyle\frac{L_{2}}{L_{1}}\)</span> 算出来
-<span class="math inline">\(B\)</span> 的，实际上不用那么麻烦。</p>
-<p>实现一个 <span class="math inline">\(a + b\sqrt{2}\)</span>
-的类，重载一下加减乘除运算即可，这样省下了推式子的时间，而且还不容易出错。</p>
-<h2 id="参考代码">参考代码</h2>
-<p><a
-href="https://codeforces.com/contest/1925/submission/244500846">https://codeforces.com/contest/1925/submission/244500846</a></p>
-]]></content>
-      <categories>
-        <category>Codeforces解题报告</category>
-      </categories>
-      <tags>
-        <tag>几何</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>NEUQ-ACM 预备队&amp;竞赛队寒假集训刷题小记</title>
     <url>/2024/01/21/%E3%80%90%E6%9D%82%E9%A2%98%E3%80%91NEUQ%20ACM%20%E9%A2%84%E5%A4%87%E9%98%9F%E5%AF%92%E5%81%87%E9%9B%86%E8%AE%AD%E5%88%B7%E9%A2%98%E5%B0%8F%E8%AE%B0/</url>
     <content><![CDATA[<h2 id="brief">Brief</h2>
@@ -643,13 +575,86 @@ href="https://codeforces.com/contest/1925/problem/F">CF1925F - Fractal
 Origami</a> <span
 class="math inline">\(\textcolor{blue}{\bigstar}\)</span>
 <strong>[几何]</strong></p>
-<p><strong>思路：</strong></p>
+<p><strong>思路：</strong><a
+href="https://tle-automat.top/2024/02/02/%E3%80%90%E9%A2%98%E8%A7%A3%E3%80%91CF1925F/#more">【题解】CF1925F</a></p>
+<h2 id="section-13">1.28 ~ 1.30</h2>
+<p>摸鱼 + 摆烂 + 给最后一场比赛搞题。</p>
+<h2 id="section-14">1.31</h2>
+<p>收拾东西，回家喽！</p>
 ]]></content>
       <categories>
-        <category>杂题</category>
+        <category>算法竞赛</category>
       </categories>
       <tags>
-        <tag>QwQ</tag>
+        <tag>杂题</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【题解】CF1925F - Fractal Origami</title>
+    <url>/2024/02/02/%E3%80%90%E9%A2%98%E8%A7%A3%E3%80%91CF1925F/</url>
+    <content><![CDATA[<h2 id="题目链接">题目链接</h2>
+<p><a
+href="https://codeforces.com/contest/1925/problem/F">https://codeforces.com/contest/1925/problem/F</a></p>
+<h2 id="题目大意">题目大意</h2>
+<p><img
+src="https://espresso.codeforces.com/1bf93f34e8055ab56549c4ec1ea686c047564085.png" /></p>
+<p>将一个边长为 <span class="math inline">\(1\)</span>
+的正方形按如图所示的方法进行 <span class="math inline">\(N\)</span>
+次折叠（上图为 <span class="math inline">\(N = 2\)</span>
+的情况），折叠之后展开。</p>
+<p>展开后的折痕分为两种，一种是向内凹陷的折痕，总长度记为 <span
+class="math inline">\(V\)</span>，另外一种是向外凸出的折痕，总长度记为
+<span class="math inline">\(M\)</span>。</p>
+<p>可以证明 <span class="math inline">\(\displaystyle\frac{M}{V} = A +
+B\sqrt{2}\)</span>，其中 <span class="math inline">\(A,B\)</span>
+均为有理数。求 <span class="math inline">\(B\)</span> 对 <span
+class="math inline">\(999\text{ }999\text{ }893\)</span>
+取模的结果。</p>
+<h2 id="数据范围">数据范围</h2>
+<ul>
+<li><span class="math inline">\(1\le N \le 10^{9}\)</span></li>
+</ul>
+<span id="more"></span>
+<h2 id="解题思路">解题思路</h2>
+<p>直接拿张纸来手动折几次，经过观察和推理不难发现下列性质：</p>
+<ul>
+<li><p>所有凹陷的折痕全都是在奇数层产生的，所有凸出的折痕全都是在偶数层产生的。</p></li>
+<li><p>第 <span class="math inline">\(i\)</span> 次折叠前纸片总共有
+<span class="math inline">\(2^{i - 1}\)</span>
+层，折叠时对每一层产生总长度为 <span
+class="math inline">\(\displaystyle\frac{1}{(\sqrt{2})^{i}}\)</span>​
+的折痕。</p></li>
+</ul>
+设奇数层的折痕总长度为 <span
+class="math inline">\(4L_1\)</span>，偶数层的折痕总长度为 <span
+class="math inline">\(4L_2\)</span>，根据以上性质能够得到： $$
+<span class="math display">\[\begin{aligned}
+
+L_{1} &amp;= \frac{1}{\sqrt{2}} + \frac{1}{(\sqrt{2})^{2}}\times 2^{0} +
+\frac{1}{(\sqrt{2})^{3}}\times 2^{1} + \cdots +
+\frac{1}{(\sqrt{2})^{n}}\times 2^{n - 2} = (\sqrt{2})^{n} +
+(\sqrt{2})^{n - 1} - 1  \\
+
+L_{2} &amp;= \frac{1}{(\sqrt{2})^{2}}\times 2^{0} +
+\frac{1}{(\sqrt{2})^{3}}\times 2^{1} + \cdots +
+\frac{1}{(\sqrt{2})^{n}}\times 2^{n - 2} = (\sqrt{2})^{n} +
+(\sqrt{2})^{n - 1} - \sqrt{2}- 1 \\
+
+\end{aligned}\]</span>
+<p>$$ 我是直接暴力推 <span
+class="math inline">\(\displaystyle\frac{L_{2}}{L_{1}}\)</span> 算出来
+<span class="math inline">\(B\)</span> 的，实际上不用那么麻烦。</p>
+<p>实现一个 <span class="math inline">\(a + b\sqrt{2}\)</span>
+的类，重载一下加减乘除运算即可，这样省下了推式子的时间，而且还不容易出错。</p>
+<h2 id="参考代码">参考代码</h2>
+<p><a
+href="https://codeforces.com/contest/1925/submission/244500846">https://codeforces.com/contest/1925/submission/244500846</a></p>
+]]></content>
+      <categories>
+        <category>Codeforces解题报告</category>
+      </categories>
+      <tags>
+        <tag>几何</tag>
       </tags>
   </entry>
   <entry>
@@ -1629,19 +1634,6 @@ href="http://www.tle-automat.top/2023/10/11/CCPC2021威海站%20M.%20810975/">M.
       </tags>
   </entry>
   <entry>
-    <title>Re:从零开始的多项式（多项式学习笔记索引）</title>
-    <url>/2023/10/08/%E5%A4%9A%E9%A1%B9%E5%BC%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
-    <content><![CDATA[<p>咕。咕。咕。</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>索引</category>
-      </categories>
-      <tags>
-        <tag>多项式</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Re:从零开始的博弈论（博弈论学习笔记索引）</title>
     <url>/2023/10/08/%E5%8D%9A%E5%BC%88%E8%AE%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
     <content><![CDATA[<p>咕。咕。咕。</p>
@@ -1652,6 +1644,19 @@ href="http://www.tle-automat.top/2023/10/11/CCPC2021威海站%20M.%20810975/">M.
       </categories>
       <tags>
         <tag>博弈论</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Re:从零开始的多项式（多项式学习笔记索引）</title>
+    <url>/2023/10/08/%E5%A4%9A%E9%A1%B9%E5%BC%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
+    <content><![CDATA[<p>咕。咕。咕。</p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>索引</category>
+      </categories>
+      <tags>
+        <tag>多项式</tag>
       </tags>
   </entry>
   <entry>
@@ -1668,19 +1673,6 @@ href="http://www.tle-automat.top/2023/10/11/CCPC2021威海站%20M.%20810975/">M.
       </tags>
   </entry>
   <entry>
-    <title>Re:从零开始的生成函数（组合数学学习笔记索引）</title>
-    <url>/2023/10/08/%E7%94%9F%E6%88%90%E5%87%BD%E6%95%B0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
-    <content><![CDATA[<p>咕。咕。咕。</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>索引</category>
-      </categories>
-      <tags>
-        <tag>生成函数</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Re:从零开始的数论（数论学习笔记索引）</title>
     <url>/2023/10/08/%E6%95%B0%E8%AE%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
     <content><![CDATA[<p>咕。咕。咕。</p>
@@ -1691,6 +1683,19 @@ href="http://www.tle-automat.top/2023/10/11/CCPC2021威海站%20M.%20810975/">M.
       </categories>
       <tags>
         <tag>数论</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Re:从零开始的生成函数（组合数学学习笔记索引）</title>
+    <url>/2023/10/08/%E7%94%9F%E6%88%90%E5%87%BD%E6%95%B0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
+    <content><![CDATA[<p>咕。咕。咕。</p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>索引</category>
+      </categories>
+      <tags>
+        <tag>生成函数</tag>
       </tags>
   </entry>
   <entry>
