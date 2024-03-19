@@ -20,22 +20,20 @@
     var CONFIG = {"hostname":"www.tle-automat.top","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="省流：  队名： 无名 题数： \(5\) 罚时： \(625\) 排名(offical)： \(\textcolor{brown}{106} &#x2F; 331\) 奖牌： \(\textcolor{brown}{铜}\)  Day -? 上场打桂林的那个队伍的大三学长因为有事，这场打不了，我们队招募来了一个新的大一佬 wyx ，并且 vp 了七八场历年的 xcpc 真题，平均位次">
+  <meta name="description" content="I. 起因 之前打比赛多次担心写单哈希被卡，但 N 神之前说他高中打过的所有比赛，但凡是字符串的题写 unsigned long long 自然溢出从来没被卡过。我信以为真，认为现在已经没有人素质差到卡别人单模哈希。后来我打了一些 AtCoder 的比赛也写了很多 ull 自然溢出也没事。直到 这场CF N 神 B 题 ull 自然溢出被卡到裂开，以为思路错了，直到赛后才发现是单哈希被卡">
 <meta property="og:type" content="article">
-<meta property="og:title" content="ICPC2023南京站【游记】">
-<meta property="og:url" content="http://www.tle-automat.top/2023/11/08/%E3%80%90%E6%B8%B8%E8%AE%B0%E3%80%91ICPC2023%E5%8D%97%E4%BA%AC%E7%AB%99%E6%B8%B8%E8%AE%B0/index.html">
+<meta property="og:title" content="HashKiller——如何优雅地卡掉单模数哈希">
+<meta property="og:url" content="http://www.tle-automat.top/2024/03/19/HashKiller%E2%80%94%E2%80%94%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E5%9C%B0%E5%8D%A1%E6%8E%89%E5%8D%95%E6%A8%A1%E6%95%B0%E5%93%88%E5%B8%8C/index.html">
 <meta property="og:site_name" content="TLE_Automatの小窝">
-<meta property="og:description" content="省流：  队名： 无名 题数： \(5\) 罚时： \(625\) 排名(offical)： \(\textcolor{brown}{106} &#x2F; 331\) 奖牌： \(\textcolor{brown}{铜}\)  Day -? 上场打桂林的那个队伍的大三学长因为有事，这场打不了，我们队招募来了一个新的大一佬 wyx ，并且 vp 了七八场历年的 xcpc 真题，平均位次">
+<meta property="og:description" content="I. 起因 之前打比赛多次担心写单哈希被卡，但 N 神之前说他高中打过的所有比赛，但凡是字符串的题写 unsigned long long 自然溢出从来没被卡过。我信以为真，认为现在已经没有人素质差到卡别人单模哈希。后来我打了一些 AtCoder 的比赛也写了很多 ull 自然溢出也没事。直到 这场CF N 神 B 题 ull 自然溢出被卡到裂开，以为思路错了，直到赛后才发现是单哈希被卡">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://z1.ax1x.com/2023/11/08/pi1jZHP.jpg">
-<meta property="article:published_time" content="2023-11-07T16:00:00.000Z">
-<meta property="article:modified_time" content="2024-02-02T07:11:48.504Z">
+<meta property="article:published_time" content="2024-03-18T16:00:00.000Z">
+<meta property="article:modified_time" content="2024-03-19T14:03:13.786Z">
 <meta property="article:author" content="TLE_Automat">
-<meta property="article:tag" content="QwQ">
+<meta property="article:tag" content="哈希">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://z1.ax1x.com/2023/11/08/pi1jZHP.jpg">
 
-<link rel="canonical" href="http://www.tle-automat.top/2023/11/08/%E3%80%90%E6%B8%B8%E8%AE%B0%E3%80%91ICPC2023%E5%8D%97%E4%BA%AC%E7%AB%99%E6%B8%B8%E8%AE%B0/">
+<link rel="canonical" href="http://www.tle-automat.top/2024/03/19/HashKiller%E2%80%94%E2%80%94%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E5%9C%B0%E5%8D%A1%E6%8E%89%E5%8D%95%E6%A8%A1%E6%95%B0%E5%93%88%E5%B8%8C/">
 
 
 <script id="page-configurations">
@@ -48,7 +46,7 @@
   };
 </script>
 
-  <title>ICPC2023南京站【游记】 | TLE_Automatの小窝</title>
+  <title>HashKiller——如何优雅地卡掉单模数哈希 | TLE_Automatの小窝</title>
   
 
 
@@ -197,7 +195,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://www.tle-automat.top/2023/11/08/%E3%80%90%E6%B8%B8%E8%AE%B0%E3%80%91ICPC2023%E5%8D%97%E4%BA%AC%E7%AB%99%E6%B8%B8%E8%AE%B0/">
+    <link itemprop="mainEntityOfPage" href="http://www.tle-automat.top/2024/03/19/HashKiller%E2%80%94%E2%80%94%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E5%9C%B0%E5%8D%A1%E6%8E%89%E5%8D%95%E6%A8%A1%E6%95%B0%E5%93%88%E5%B8%8C/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="https://s1.ax1x.com/2023/08/06/pPAqrTI.jpg">
@@ -210,7 +208,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          ICPC2023南京站【游记】
+          HashKiller——如何优雅地卡掉单模数哈希
         </h1>
 
         <div class="post-meta">
@@ -219,23 +217,17 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2023-11-08 00:00:00" itemprop="dateCreated datePublished" datetime="2023-11-08T00:00:00+08:00">2023-11-08</time>
+              <time title="创建时间：2024-03-19 00:00:00 / 修改时间：22:03:13" itemprop="dateCreated datePublished" datetime="2024-03-19T00:00:00+08:00">2024-03-19</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-02-02 15:11:48" itemprop="dateModified" datetime="2024-02-02T15:11:48+08:00">2024-02-02</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%B8%B8%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">游记</span></a>
+                  <a href="/categories/%E4%B8%80%E4%BA%9B%E6%AF%92%E7%98%A4/" itemprop="url" rel="index"><span itemprop="name">一些毒瘤</span></a>
                 </span>
             </span>
 
@@ -245,14 +237,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.5k</span>
+              <span>3.1k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>3 分钟</span>
             </span>
 
         </div>
@@ -264,71 +256,146 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><strong>省流：</strong></p>
+        <h2 id="i.-起因">I. 起因</h2>
+<p>之前打比赛多次担心写单哈希被卡，但 N
+神之前说他高中打过的所有比赛，但凡是字符串的题写 unsigned long long
+自然溢出从来没被卡过。我信以为真，认为现在已经没有人素质差到卡别人单模哈希。后来我打了一些
+AtCoder 的比赛也写了很多 ull 自然溢出也没事。直到 <a
+target="_blank" rel="noopener" href="https://codeforces.com/contest/1943">这场CF</a> N 神 B 题 ull
+自然溢出被卡到裂开，以为思路错了，直到赛后才发现是单哈希被卡了。</p>
+<p>鉴于以上惨痛的经历，我决定学习一下毒瘤的卡单模数哈希的方法，来警示自己以及与
+N
+神心态类似的人：不要管出题人卡不卡，反正写双哈希就对了。<del>（警钟撅烂（逃</del></p>
+<h2 id="ii.-模-109-级别的大质数哈希">II. 模 <span
+class="math inline">\(10^9\)</span> 级别的大质数哈希</h2>
+<p>其实单模 <span class="math inline">\(10^9\)</span>
+级别的大质数哈希非常好卡，我们只需要随机一个长度为 <span
+class="math inline">\(10^5\)</span> 级别的只包含小写字母的字符串 <span
+class="math inline">\(s\)</span>，再任取一个大小为 <span
+class="math inline">\(100\)</span> 左右的子串长度 <span
+class="math inline">\(k\)</span>，那么 <span
+class="math inline">\(s\)</span> 的所有长度为 <span
+class="math inline">\(k\)</span>
+的子串中大概率会存在哈希冲突的字符串。</p>
+<p>那么概率到底有多大呢，我们可以使用<strong>生日悖论</strong>的方法来计算。</p>
+<p>字符串 <span class="math inline">\(s\)</span> 的长度为 <span
+class="math inline">\(k\)</span> 的子串总共有 <span
+class="math inline">\(26^{k}\)</span> 种可能，当 <span
+class="math inline">\(k = 100\)</span> 时 <span
+class="math inline">\(s\)</span> 的任意两个长度为 <span
+class="math inline">\(k\)</span>
+的子串几乎不可能相等，所以我们按照长度为 <span
+class="math inline">\(k\)</span>
+的子串均不同来考虑。（其实计算这个本身也是生日悖论）</p>
+<p>因为 <span class="math inline">\(s\)</span> 中总共有 <span
+class="math inline">\(10^5 - k + 1\)</span> 个长度为 <span
+class="math inline">\(k\)</span> 的子串，设 <span
+class="math inline">\(p\)</span> 为模数，则第 <span
+class="math inline">\(1\)</span> 个子串的哈希值不跟之前重复的概率为
+<span class="math inline">\(\displaystyle{\frac{p}{p}}\)</span>，第
+<span class="math inline">\(2\)</span>
+个子串的哈希值不跟之前重复的概率为 <span
+class="math inline">\(\displaystyle{\frac{p - 1}{p}}\)</span> ，第 <span
+class="math inline">\(n\)</span> 个子串的哈希值不跟之前重复的概率为
+<span class="math inline">\(\displaystyle{\frac{p - n +
+1}{p}}\)</span>。所以出现至少两个长度为 <span
+class="math inline">\(k\)</span> 子串哈希冲突的概率为 <span
+class="math inline">\(\displaystyle{1 - \prod\limits_{i = 1}^{10^{5} - k
++ 1} \frac{p - i + 1}{p}}\)</span>。当 <span class="math inline">\(p =
+10^9 + 7, k = 100\)</span> 时计算上式的值约为 <span
+class="math inline">\(0.9931958400\)</span>。</p>
+<p>根据以上结论，随便写个代码一随机就能找到两个哈希冲突的字符串，所以单模
+<span class="math inline">\(10^9\)</span> 级别的哈希千万不要写。</p>
+<h2 id="iii.-unsigned-long-long-自然溢出哈希">III. unsigned long long
+自然溢出哈希</h2>
+<p>由于样本空间是 <span class="math inline">\(10^{18}\)</span>
+级别，非常大，直接采取<strong>生日悖论</strong>的方法难以卡掉。</p>
+<p>其实我们用上面的方法算一下概率，取 <span class="math inline">\(p =
+10^{18}\)</span>，<span class="math inline">\(|s| =
+10^{6}\)</span>，<span class="math inline">\(k =
+100\)</span>，哈希冲突的概率约为 <span
+class="math inline">\(0.0000004999\)</span>。（这其实也为两个 <span
+class="math inline">\(10^{9}\)</span>
+级别大质数的双模哈希的正确性提供了证明。）</p>
+<p>所以我们要换一套方法来卡，这里一般的方法为构造法。</p>
+<h3 id="对于底数为偶数的情况">1. 对于底数为偶数的情况</h3>
+<p>构造字符串 <code>baaa...</code>（后面有 <span
+class="math inline">\(64\)</span> 个 <code>a</code>）与
+<code>caaa...</code>（后面有 <span class="math inline">\(64\)</span> 个
+<code>a</code>）即可卡掉。</p>
+<p>这两个字符串的后 <span class="math inline">\(64\)</span>​ 个字符均为
+<code>a</code>，所以只需要关心第 <span class="math inline">\(1\)</span>
+个位置对哈希值的贡献。</p>
+<p>对于第一个字符串，第 <span class="math inline">\(1\)</span>
+个位置对哈希值的贡献为 <span
+class="math inline">\(H(\text{&quot;b&quot;}) \times Base^{64} \bmod
+2^{64}\)</span>。</p>
+<p>对于第二个字符串，第 <span class="math inline">\(1\)</span>
+个位置对哈希值的贡献为 <span
+class="math inline">\(H(\text{&quot;a&quot;}) \times Base^{64} \bmod
+2^{64}\)</span>。</p>
+<p>因为 <span class="math inline">\(Base\)</span> 为偶数，所以 <span
+class="math inline">\(Base\)</span> 中至少含有一个因子 <span
+class="math inline">\(2\)</span>，所以 <span
+class="math inline">\(2^{64} \mid Base^{64}\)</span>，所以两个字符串的第
+<span class="math inline">\(1\)</span> 个位置对哈希值的贡献均为 <span
+class="math inline">\(0\)</span>，所以两字符串哈希冲突。</p>
+<h3 id="对于底数为奇数的情况">2. 对于底数为奇数的情况</h3>
+<p>考虑进行如下构造：</p>
 <ul>
-<li><strong>队名：</strong> 无名</li>
-<li><strong>题数：</strong> <span class="math inline">\(5\)</span></li>
-<li><strong>罚时：</strong> <span
-class="math inline">\(625\)</span></li>
-<li><strong>排名(offical)：</strong> <span
-class="math inline">\(\textcolor{brown}{106} / 331\)</span></li>
-<li><strong>奖牌：</strong> <strong><span
-class="math inline">\(\textcolor{brown}{铜}\)</span></strong></li>
+<li>定义 <span class="math inline">\(S_1 =
+\text{&quot;a&quot;}\)</span></li>
+<li>令 <span class="math inline">\(\text{len}(S_i)\)</span> 表示字符串
+<span class="math inline">\(S_i\)</span> 的长度</li>
+<li>令 <span class="math inline">\(\text{not}(T)\)</span> 为将字符串
+<span class="math inline">\(T\)</span> 中字符 <span
+class="math inline">\(\text{&quot;a&quot;}\)</span> 变为字符 <span
+class="math inline">\(\text{&quot;b&quot;}\)</span>，字符 <span
+class="math inline">\(\text{&quot;b&quot;}\)</span> 变为字符 <span
+class="math inline">\(\text{&quot;a&quot;}\)</span> 的函数</li>
+<li><span class="math inline">\(S_i = S_{i - 1} + \text{not}(S_{i -
+1})\)</span></li>
 </ul>
-<h1 id="day--">Day -?</h1>
-<p>上场打桂林的那个队伍的大三学长因为有事，这场打不了，我们队招募来了一个新的大一佬
-wyx ，并且 vp 了七八场历年的 xcpc
-真题，平均位次在铜牌首部到银牌中部。</p>
-<p>鉴于桂林打铁的教训，我们非常重视队伍的磨合以及做题策略，赛前一直在做积极的心理暗示。</p>
-<h1 id="day--1">Day -1</h1>
-<p><strong>11.03</strong></p>
-<p>坐高铁从秦皇岛到了南京，因为酒店位置有点偏，没有吃到当地有名的鸭血粉丝汤。</p>
-<p>另外一队的大一佬 warzone 过来提醒我们今晚有 CF
-Edu，于是就直接开打，过了 ABCD 题，E
-题读了题但没啥时间，索性不想直接睡觉了，毕竟第二天还挺忙的。</p>
-<span id="more"></span>
-<h1 id="day-0">Day 0</h1>
-<p><strong>11.04</strong></p>
-<p>中午到了南京航空航天大学。</p>
-<p>居然有校园巴士，狠狠羡慕了。</p>
-<p>乘坐校园巴士到体育馆领了南京站的外套（巨好看，上面还印着 Floyd
-最短路的代码），并且合了个影。然后就是到南航的食堂吃午饭，忘记第几食堂了，反正看门口的招牌，感觉跟到了饭店一样，25
-块钱的餐券根本花不完。</p>
-<p>吃完饭闲的没事干跑去篮球场看看，结果还真有球卡在球框和板之间了，用矿泉水瓶砸下来然后开始和队友投篮，过了一会还来了一个国防科技大学的佬来一起打，这下成物理热身了（</p>
-<p>然后就是下午的热身赛，题目是前几年的四个南京站原题，还得知热身赛和正赛都有中文题面（好耶）。南京站的硬件配置也属实顶级，果然有钱就是好，南京站独有的经典袋鼠吉祥物每个队伍也有（i了i了）。</p>
-<p>傍晚的时候回来看了一眼昨晚 CF 的榜 rk500 多，rating 大概涨了 40
-分左右。</p>
-<h1 id="day-1">Day 1</h1>
-<p><strong>11.05</strong></p>
-<p>开场依然有点紧张，但还是一直哼唱周董的歌努力让自己平静下来。</p>
-<p>三人分别从头、尾和中间开始看题，我还负责盯榜，然后发现 I
-是签到，但是求稳还是写得很慢，防止出错，20min 时一发过了。</p>
-<p>然后看榜发现 G 和 C 是目前最可做的题。</p>
-<p>我先想了 G
-题，凭感觉加简单证明，就是把物品按体积排序之后，从头部和尾部分别写两个背包，然后枚举一下两个背包分开的位置，结果第一发
-WA 了，以为思路假了，结果发现是背包写出了小锅，改完马上过了。</p>
-<p>然后 wyx C
-题有思路了，经过简短的讨论之后发现很真，然后开始码，过了样例之后一发过了。</p>
-<p>过了一会，大二队友 F
-题有思路了，三个人探讨了一下细节，然后我接着开始码，然后又直接一发过了。</p>
-<p>到目前位置很顺，感觉赛前的磨合还是很有用的，三个队友分别看 A , L ,
-M。</p>
-<p>我看完 M 没啥思路，于是去跟队友探讨 L
-题，然后讨论出了很真的贪心的思路，就是代码不太好写，码了很久才码完，样例也调了很久，最后交上去还
-WA 了，然后对着代码瞪了半个小时没看出一点错。这个时候 wyx A
-题出思路了，于是我把代码打印出来开始调，他开始码 A 。</p>
-<p>此时已经封榜了，时间比较紧，我对着大二队友开始了小黄鸭调试法，大概过了半个小时发现一个减号的前后写反了，立马反过来，交了一发直接过了。</p>
-<p>此时过了 5 题，以为绝杀拿 Ag
-了，可惜队友时间不够用了，A题没调出来，否则就是稳 Ag 了。</p>
-<p>可惜最后不尽人意，滚榜被滚到了铜首，差 8 名 Ag
-，不过还好终于有牌子了。</p>
-<p>还是一句话：个人水平不够，还得加油练啊！！！</p>
-<hr />
-<p>留两张图，算是纪念一下</p>
-<p><img src="https://z1.ax1x.com/2023/11/08/pi1jZHP.jpg"
-alt="pi1jZHP.jpg" /> <img
-src="https://z1.ax1x.com/2023/11/08/pi1jnN8.jpg"
-alt="pi1jnN8.jpg" /></p>
+可以推导出 <span class="math inline">\(\text{len}(S_i) = 2^{i -
+1}\)</span>，且 $$
+<span class="math display">\[\begin{aligned}
+
+&amp;H(S_i) = H(S_{i - 1}) \times Base^{2^{i - 1}} + H(\text{not}(S_{i -
+1})) \\
+
+&amp;H(\text{not}(S_i)) = H(\text{not}(S_{i - 1})) \times Base^{2^{i -
+1}} + H(S_{i - 1})
+
+\end{aligned}\]</span>
+<p><span class="math display">\[
+令 $f_i = H(S_i) - H(\text{not}(S_{i - 1}))$，上述两式相减，可得
+\]</span> f_{i} = f_{i - 1} (Base<sup>{2</sup>{i-1}} - 1) $$ 当 <span
+class="math inline">\(f_i \bmod 2^{64} = 0\)</span>
+时，我们即可构造出两个哈希冲突的字符串。</p>
+<p>注意到 <span class="math inline">\(Base\)</span> 为奇数，所以 <span
+class="math inline">\(Base^{2^{i - 1}} - 1\)</span> 必定为偶数。所以
+<span class="math inline">\(f_{64} \bmod 2^{64}\)</span> 必定为 <span
+class="math inline">\(0\)</span>，但是这要构造出两个长度为 <span
+class="math inline">\(2^{63}\)</span> 的字符串 <span
+class="math inline">\(S_{64}\)</span> 和 <span
+class="math inline">\(\text{not}(S_{64})\)</span>，理论上这两个串是哈希冲突的，但是因为长度太长，现实中显然无法进行读写。</p>
+<p>注意到 <span class="math inline">\((Base^{2^{i - 1}} - 1) =
+(Base^{2^{i - 2}} + 1)(Base^{2^{i-2}} - 1) = (Base^{2^{i - 2}} +
+1)(Base^{2^{i - 3}} + 1) \cdots (Base^{2^{1}} + 1)(Base^{2^{1}} -
+1)\)</span>。容易证明，上述的每一项都是偶数，所以 <span
+class="math inline">\(f_i\)</span> 中至少含有 <span
+class="math inline">\((i - 1) + (i - 2) + \cdots + 1 =
+\displaystyle{\frac{(i - 1)i}{2}}\)</span> 个因子 <span
+class="math inline">\(2\)</span>。</p>
+<p>由上述理论进行计算，<span class="math inline">\(f_{12}\)</span>
+中至少含有 <span class="math inline">\(66\)</span> 个因子 <span
+class="math inline">\(2\)</span>，所以 <span
+class="math inline">\(S_{12}\)</span> 与 <span
+class="math inline">\(\text{not}(S_{12})\)</span> 哈希冲突，长度仅为
+<span class="math inline">\(2^{11}\)</span>​。</p>
+<h2 id="iv.-小结">IV. 小结</h2>
+<p>至此，不管如何更换模数和进制，常见的单模哈希的所有情况均被上述算法卡掉。</p>
+<p>所以<strong>一定要写双模！！！一定要写双模！！！一定要写双模！！！双模一定要改模数，不要只改进制！！！</strong></p>
 
     </div>
 
@@ -344,7 +411,7 @@ alt="pi1jnN8.jpg" /></p>
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://www.tle-automat.top/2023/11/08/%E3%80%90%E6%B8%B8%E8%AE%B0%E3%80%91ICPC2023%E5%8D%97%E4%BA%AC%E7%AB%99%E6%B8%B8%E8%AE%B0/" title="ICPC2023南京站【游记】">http://www.tle-automat.top/2023/11/08/【游记】ICPC2023南京站游记/</a>
+    <a href="http://www.tle-automat.top/2024/03/19/HashKiller%E2%80%94%E2%80%94%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E5%9C%B0%E5%8D%A1%E6%8E%89%E5%8D%95%E6%A8%A1%E6%95%B0%E5%93%88%E5%B8%8C/" title="HashKiller——如何优雅地卡掉单模数哈希">http://www.tle-automat.top/2024/03/19/HashKiller——如何优雅地卡掉单模数哈希/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> 许可协议。转载请注明出处！
@@ -355,7 +422,7 @@ alt="pi1jnN8.jpg" /></p>
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/QwQ/" rel="tag"># QwQ</a>
+              <a href="/tags/%E5%93%88%E5%B8%8C/" rel="tag"># 哈希</a>
           </div>
 
         
@@ -364,13 +431,10 @@ alt="pi1jnN8.jpg" /></p>
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2023/11/08/%E3%80%90%E6%B8%B8%E8%AE%B0%E3%80%91CCPC2023%E6%A1%82%E6%9E%97%E7%AB%99%E6%B8%B8%E8%AE%B0/" rel="prev" title="CCPC2023桂林站【游记】">
-      <i class="fa fa-chevron-left"></i> CCPC2023桂林站【游记】
+    <a href="/2024/02/18/%E3%80%90%E9%A2%98%E8%A7%A3%E3%80%91CF1929E/" rel="prev" title="【题解】CF1929E - Sasha and the Happy Tree Cutting">
+      <i class="fa fa-chevron-left"></i> 【题解】CF1929E - Sasha and the Happy Tree Cutting
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2023/11/15/%E5%93%88%E5%B8%8C%E6%8A%80%E5%B7%A7%E5%B0%8F%E7%BB%93/" rel="next" title="哈希技巧小结">
-      哈希技巧小结 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -429,7 +493,8 @@ alt="pi1jnN8.jpg" /></p>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#day--"><span class="nav-number">1.</span> <span class="nav-text">Day -?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#day--1"><span class="nav-number">2.</span> <span class="nav-text">Day -1</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#day-0"><span class="nav-number">3.</span> <span class="nav-text">Day 0</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#day-1"><span class="nav-number">4.</span> <span class="nav-text">Day 1</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#i.-%E8%B5%B7%E5%9B%A0"><span class="nav-number">1.</span> <span class="nav-text">I. 起因</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ii.-%E6%A8%A1-109-%E7%BA%A7%E5%88%AB%E7%9A%84%E5%A4%A7%E8%B4%A8%E6%95%B0%E5%93%88%E5%B8%8C"><span class="nav-number">2.</span> <span class="nav-text">II. 模 \(10^9\) 级别的大质数哈希</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#iii.-unsigned-long-long-%E8%87%AA%E7%84%B6%E6%BA%A2%E5%87%BA%E5%93%88%E5%B8%8C"><span class="nav-number">3.</span> <span class="nav-text">III. unsigned long long
+自然溢出哈希</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E4%BA%8E%E5%BA%95%E6%95%B0%E4%B8%BA%E5%81%B6%E6%95%B0%E7%9A%84%E6%83%85%E5%86%B5"><span class="nav-number">3.1.</span> <span class="nav-text">1. 对于底数为偶数的情况</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E4%BA%8E%E5%BA%95%E6%95%B0%E4%B8%BA%E5%A5%87%E6%95%B0%E7%9A%84%E6%83%85%E5%86%B5"><span class="nav-number">3.2.</span> <span class="nav-text">2. 对于底数为奇数的情况</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#iv.-%E5%B0%8F%E7%BB%93"><span class="nav-number">4.</span> <span class="nav-text">IV. 小结</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
