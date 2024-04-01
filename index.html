@@ -478,6 +478,127 @@ target="_blank" rel="noopener" href="https://codeforces.com/contest/1943">这场
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://www.tle-automat.top/2024/04/01/%E3%80%90%E9%A2%98%E8%A7%A3%E3%80%91CF1942E/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://s1.ax1x.com/2023/08/06/pPAqrTI.jpg">
+      <meta itemprop="name" content="TLE_Automat">
+      <meta itemprop="description" content="以“ 逸一时，误一事 ”的态度惜时； 以“ 疑一事，务己试 ”的态度求学； 以“ 以宜时，悟一事 ”的方法学习； 以“ 忆伊时，吾衣湿 ”的情感爱身边的一切">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TLE_Automatの小窝">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/04/01/%E3%80%90%E9%A2%98%E8%A7%A3%E3%80%91CF1942E/" class="post-title-link" itemprop="url">【题解】CF1942E - Farm Game</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-04-01 00:00:00 / 修改时间：21:49:02" itemprop="dateCreated datePublished" datetime="2024-04-01T00:00:00+08:00">2024-04-01</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Codeforces%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/" itemprop="url" rel="index"><span itemprop="name">Codeforces解题报告</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.6k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="题目链接">题目链接</h2>
+<p><a
+target="_blank" rel="noopener" href="https://codeforces.com/contest/1942/problem/E">https://codeforces.com/contest/1942/problem/E</a></p>
+<h2 id="题目大意">题目大意</h2>
+<p>小 N 和小 J 各有 <span class="math inline">\(n\)</span> 头奶牛，小 N
+的奶牛位置为 <span class="math inline">\(a_1, a_2, \cdots,
+a_n\)</span>，小 J 的奶牛位置为 <span class="math inline">\(b_1, b_2,
+\cdots, b_n\)</span>。其中小 N 和小 J 的奶牛交替出现，且位置在 <span
+class="math inline">\(1\)</span> 与 <span
+class="math inline">\(l\)</span> 之间，即满足 <span
+class="math inline">\(0 &lt; a_1 &lt; b_1 &lt; a_2 &lt; b_2 &lt; \cdots
+&lt; a_n &lt; b_n &lt; l + 1\)</span> 或 <span class="math inline">\(0
+&lt; b_1 &lt; a_1 &lt; b_2 &lt; a_2 &lt; \cdots &lt; b_n &lt; a_n &lt; l
++ 1\)</span>。</p>
+<p>现在小 J 和小 N 轮流进行以下操作，小 J 先手：</p>
+<ul>
+<li>当前操作的人任意选中自己的 <span class="math inline">\(k(1 \le k \le
+n)\)</span>
+头奶牛，并且让这些奶牛一起向左或向右移动<strong>一格</strong>。移动后，位置不能与另外一个人的奶牛重合，也不能超出边界（即位置不能小于
+<span class="math inline">\(1\)</span> 也不能大于 <span
+class="math inline">\(n\)</span>）。</li>
+<li>若无法进行上述操作，当前操作的人判负。</li>
+</ul>
+<p>问有多少种合法的序列组合 <span class="math inline">\((a,
+b)\)</span>，使得小 J 必胜（两人均足够聪明）。</p>
+<h2 id="数据范围">数据范围</h2>
+<p>多组测试数据，保证</p>
+<ul>
+<li><span class="math inline">\(2 \le l \le 10^6 , \sum l \le
+10^{6}\)</span></li>
+<li><span class="math inline">\(1 \le n \le
+\left\lfloor\frac{l}{2}\right\rfloor\)</span></li>
+</ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2024/04/01/%E3%80%90%E9%A2%98%E8%A7%A3%E3%80%91CF1942E/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://www.tle-automat.top/2024/02/18/%E3%80%90%E9%A2%98%E8%A7%A3%E3%80%91CF1929E/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1135,124 +1256,10 @@ i\)</span></li>
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://www.tle-automat.top/2023/11/17/%E3%80%90%E6%B8%B8%E8%AE%B0%E3%80%91CCPC2023%E6%B7%B1%E5%9C%B3%E7%AB%99%E6%B8%B8%E8%AE%B0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://s1.ax1x.com/2023/08/06/pPAqrTI.jpg">
-      <meta itemprop="name" content="TLE_Automat">
-      <meta itemprop="description" content="以“ 逸一时，误一事 ”的态度惜时； 以“ 疑一事，务己试 ”的态度求学； 以“ 以宜时，悟一事 ”的方法学习； 以“ 忆伊时，吾衣湿 ”的情感爱身边的一切">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="TLE_Automatの小窝">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/11/17/%E3%80%90%E6%B8%B8%E8%AE%B0%E3%80%91CCPC2023%E6%B7%B1%E5%9C%B3%E7%AB%99%E6%B8%B8%E8%AE%B0/" class="post-title-link" itemprop="url">CCPC2023深圳站【游记】</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2023-11-17 00:00:00" itemprop="dateCreated datePublished" datetime="2023-11-17T00:00:00+08:00">2023-11-17</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-02-02 15:11:43" itemprop="dateModified" datetime="2024-02-02T15:11:43+08:00">2024-02-02</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%B8%B8%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">游记</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>2k</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p><strong>省流：</strong></p>
-<ul>
-<li><strong>队名：</strong> 可导必可积，积完要加C</li>
-<li><strong>题数：</strong> <span class="math inline">\(5\)</span></li>
-<li><strong>罚时：</strong> <span
-class="math inline">\(1167\)</span></li>
-<li><strong>排名(offical)：</strong> <span
-class="math inline">\(\textcolor{brown}{83} / 240\)</span></li>
-<li><strong>奖牌：</strong> <strong><span
-class="math inline">\(\textcolor{brown}{铜}\)</span></strong></li>
-</ul>
-<h1 id="day--1">Day -1</h1>
-<p><strong>11.10</strong></p>
-<p>赛季最后一战了，前两战桂林和南京分别收获了 1 铁 1 铜。</p>
-<p>这场我们是三个大一新生组的队，我的两个队友之前是中强省省一水平的 oier
-，我之前是中等偏弱省省一水平的 oier
-，论阵容的理论实力还是比前两场要高一些的，特别其中一个队友还是今年西安站乱搞搞出了校史第一块
-xcpc 区域赛 Au 的 NewIntown 神，下面简称 N 神，另外一个队友是 HN
-热爱多项式的前知名 oier【】的同学 warzone 神，下面简称王总。</p>
-<p>u1s1，这是我们上限最高的一集，同时也可能是下限最低的一集，因为我们从来没有一起练过，到时候机子怎么分还是个问题。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2023/11/17/%E3%80%90%E6%B8%B8%E8%AE%B0%E3%80%91CCPC2023%E6%B7%B1%E5%9C%B3%E7%AB%99%E6%B8%B8%E8%AE%B0/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
   </nav>
 
 
@@ -1320,7 +1327,7 @@ xcpc 区域赛 Au 的 NewIntown 神，下面简称 N 神，另外一个队友是
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">30</span>
+          <span class="site-state-item-count">31</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1369,12 +1376,12 @@ xcpc 区域赛 Au 的 NewIntown 神，下面简称 N 神，另外一个队友是
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">40k</span>
+    <span title="站点总字数">41k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">36 分钟</span>
+    <span title="站点阅读时长">37 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
