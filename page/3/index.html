@@ -191,6 +191,123 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://www.tle-automat.top/2023/07/18/%E3%80%90%E6%9D%82%E9%A2%98%E3%80%917,8%E6%9C%88%E6%9D%82%E9%A2%98%E9%80%89%E5%81%9A/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="https://s1.ax1x.com/2023/08/06/pPAqrTI.jpg">
+      <meta itemprop="name" content="TLE_Automat">
+      <meta itemprop="description" content="以“ 逸一时，误一事 ”的态度惜时； 以“ 疑一事，务己试 ”的态度求学； 以“ 以宜时，悟一事 ”的方法学习； 以“ 忆伊时，吾衣湿 ”的情感爱身边的一切">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TLE_Automatの小窝">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/07/18/%E3%80%90%E6%9D%82%E9%A2%98%E3%80%917,8%E6%9C%88%E6%9D%82%E9%A2%98%E9%80%89%E5%81%9A/" class="post-title-link" itemprop="url">【杂题】7,8月杂题选做</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-07-18 00:00:00" itemprop="dateCreated datePublished" datetime="2023-07-18T00:00:00+08:00">2023-07-18</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-02-02 15:11:53" itemprop="dateModified" datetime="2024-02-02T15:11:53+08:00">2024-02-02</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%9D%82%E9%A2%98/" itemprop="url" rel="index"><span itemprop="name">杂题</span></a>
+                </span>
+            </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.4k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>2 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="图论相关">图论相关</h1>
+<h2 id="题目来源">题目来源</h2>
+<p><a
+target="_blank" rel="noopener" href="https://atcoder.jp/contests/abc308/tasks/abc308_h">ABC308Ex</a></p>
+<h2 id="题意">题意</h2>
+<p>给定一张 <span class="math inline">\(n\)</span> 个点 <span
+class="math inline">\(m\)</span>
+条边的无向带权图，找到图中一个权值最小的 <span
+class="math inline">\(\text{Q}\)</span> 。</p>
+<p><span class="math inline">\(\text{Q}\)</span>
+定义为一个环带上一条与这个环相连且不在环上的边。</p>
+<p><span class="math inline">\(4\le n \le 300 , 4\le m \le
+\frac{n(n-1)}{2}\)</span> 。</p>
+<h2 id="思路">思路</h2>
+<p>考虑枚举每一条边作为 <span class="math inline">\(\text{Q}\)</span>
+的尾巴，然后把这条边删去，从这条边的一个端点跑一个单源最短路。然后再枚举两个点，能够轻松找到不经过这条边的一个最小环。</p>
+<p>这样枚举尾巴的时间复杂度为 <span
+class="math inline">\(O(n^2)\)</span> ，找最小环的时间复杂度为 <span
+class="math inline">\(O(n^2)\)</span> ，总时间复杂度为 <span
+class="math inline">\(O(n^4)\)</span> ，这是难以接受的。</p>
+<p>考虑到一个环会占用一个点相连的两条边，最劣情况下尾巴也是第三小的边，所以我们第一步不需要枚举所有的边作为尾巴，只需要枚举每个点相连的前三小的边做尾巴即可。这样枚举尾巴的时间复杂度降为
+<span class="math inline">\(O(n)\)</span> ，总时间复杂度降为 <span
+class="math inline">\(O(n^3)\)</span> 。</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2023/07/18/%E3%80%90%E6%9D%82%E9%A2%98%E3%80%917,8%E6%9C%88%E6%9D%82%E9%A2%98%E9%80%89%E5%81%9A/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://www.tle-automat.top/2023/10/08/%E3%80%90%E7%B4%A2%E5%BC%95%E3%80%91AtCoder%20%E8%A7%A3%E9%A2%98%E6%8A%A5%E5%91%8A/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1075,101 +1192,6 @@ href="http://www.tle-automat.top/2023/10/11/CCPC2021威海站%20M.%20810975/">M.
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://www.tle-automat.top/2023/10/08/%E6%95%B0%E8%AE%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="https://s1.ax1x.com/2023/08/06/pPAqrTI.jpg">
-      <meta itemprop="name" content="TLE_Automat">
-      <meta itemprop="description" content="以“ 逸一时，误一事 ”的态度惜时； 以“ 疑一事，务己试 ”的态度求学； 以“ 以宜时，悟一事 ”的方法学习； 以“ 忆伊时，吾衣湿 ”的情感爱身边的一切">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="TLE_Automatの小窝">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2023/10/08/%E6%95%B0%E8%AE%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/" class="post-title-link" itemprop="url">Re:从零开始的数论（数论学习笔记索引）</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2023-10-08 00:00:00" itemprop="dateCreated datePublished" datetime="2023-10-08T00:00:00+08:00">2023-10-08</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-02-02 15:07:21" itemprop="dateModified" datetime="2024-02-02T15:07:21+08:00">2024-02-02</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%B4%A2%E5%BC%95/" itemprop="url" rel="index"><span itemprop="name">索引</span></a>
-                </span>
-            </span>
-
-          <br>
-            <span class="post-meta-item" title="本文字数">
-              <span class="post-meta-item-icon">
-                <i class="far fa-file-word"></i>
-              </span>
-                <span class="post-meta-item-text">本文字数：</span>
-              <span>8</span>
-            </span>
-            <span class="post-meta-item" title="阅读时长">
-              <span class="post-meta-item-icon">
-                <i class="far fa-clock"></i>
-              </span>
-                <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
-            </span>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>咕。咕。咕。</p>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2023/10/08/%E6%95%B0%E8%AE%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1241,7 +1263,7 @@ href="http://www.tle-automat.top/2023/10/11/CCPC2021威海站%20M.%20810975/">M.
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">32</span>
+          <span class="site-state-item-count">33</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -1254,7 +1276,7 @@ href="http://www.tle-automat.top/2023/10/11/CCPC2021威海站%20M.%20810975/">M.
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-count">28</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -1290,12 +1312,12 @@ href="http://www.tle-automat.top/2023/10/11/CCPC2021威海站%20M.%20810975/">M.
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-area"></i>
     </span>
-    <span title="站点总字数">42k</span>
+    <span title="站点总字数">43k</span>
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">38 分钟</span>
+    <span title="站点阅读时长">39 分钟</span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>

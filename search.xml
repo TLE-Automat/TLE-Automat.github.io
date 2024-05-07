@@ -742,6 +742,77 @@ href="https://tle-automat.top/2024/02/02/%E3%80%90%E9%A2%98%E8%A7%A3%E3%80%91CF1
       </tags>
   </entry>
   <entry>
+    <title>ABC352G - Socks 3</title>
+    <url>/2024/05/07/%E3%80%90%E9%A2%98%E8%A7%A3%E3%80%91ABC352G/</url>
+    <content><![CDATA[<h2 id="题目链接">题目链接</h2>
+<p><a
+href="https://atcoder.jp/contests/abc352/tasks/abc352_g">https://atcoder.jp/contests/abc352/tasks/abc352_g</a></p>
+<h2 id="题目大意">题目大意</h2>
+<p>总共有 <span class="math inline">\(N\)</span> 种不同颜色的袜子，第
+<span class="math inline">\(i\)</span> 种颜色的袜子有 <span
+class="math inline">\(A_i\)</span>
+只。现在高桥要按照以下规则决定早上穿哪一双袜子：</p>
+<ul>
+<li><p>从当前剩余的袜子中等概率随机且不放回地抽取一只袜子。</p></li>
+<li><p>若抽出的袜子颜色与之前某次抽出的袜子颜色相同，则停止操作并穿这种颜色的袜子；</p>
+<p>若抽出的袜子颜色与之前每一次抽出的颜色均不同，则进行下一次抽取操作。</p></li>
+</ul>
+<p>求高桥抽取袜子次数的期望值，对 <span
+class="math inline">\(998244353\)</span> 取模。</p>
+<h2 id="数据范围">数据范围</h2>
+<ul>
+<li><span class="math inline">\(1 \le N \le 3\times 10^{5}\)</span></li>
+<li><span class="math inline">\(2 \le A_i \le 3000\)</span></li>
+</ul>
+<span id="more"></span>
+<h2 id="解题思路">解题思路</h2>
+<p>设 <span class="math inline">\(f_k\)</span> 代表抽了 <span
+class="math inline">\(k\)</span>
+次袜子之后还没有凑出来一对相同颜色袜子的概率，那 <span
+class="math inline">\(f_k - f_{k + 1}\)</span> 就是第 <span
+class="math inline">\(k + 1\)</span>
+次抽袜子凑出来了一对相同颜色袜子的概率，设 <span
+class="math inline">\(tot = \sum A_i\)</span>，那么期望次数就是 <span
+class="math inline">\(\displaystyle{\sum_{k = 0}^{n}} (f_k - f_{k + 1})
+\times (k + 1)\)</span>。接下来考虑怎么求出 <span
+class="math inline">\(f\)</span>。</p>
+因为每种袜子抽到不能超过 <span class="math inline">\(1\)</span>
+次，考虑枚举抽到了 <span class="math inline">\(p_1, p_2, \cdots,
+p_k\)</span> 这些种类的袜子，那么有 $$
+<span class="math display">\[\begin{aligned}
+
+f_k &amp;= \sum\limits_{\{p_1, p_2, \cdots, p_k\} \sub \{1, 2, \cdots,
+n\}} k! \cdot \frac{A_{p_1}}{tot} \cdot \frac{A_{p_2}}{tot - 1} \cdots
+\frac{A_{p_k}}{tot - (k - 1)} \\
+
+&amp;= \frac{k!(tot - k)!}{tot!} \sum\limits_{\{p_1, p_2, \cdots, p_k\}
+\sub \{1, 2, \cdots, n\}} A_{p_1} A_{p_2}\cdots A_{p_k}
+
+\end{aligned}\]</span>
+<p>$$ 令 <span class="math inline">\(g_k =
+\displaystyle\sum\limits_{\{p_1, p_2, \cdots, p_k\} \sub \{1, 2, \cdots,
+n\}} A_{p_1} A_{p_2}\cdots A_{p_k}\)</span>，注意到 <span
+class="math inline">\(g_k\)</span> 的含义就是从 <span
+class="math inline">\(n\)</span> 个里面选 <span
+class="math inline">\(k\)</span> 个所有方案的乘积之和。</p>
+<p>可以把序列分为左右两部分，两部分的 <span
+class="math inline">\(g\)</span> 分别求出来，做一遍卷积就得到合起来的
+<span class="math inline">\(g\)</span> 了，使用分治即可，时间复杂度
+<span class="math inline">\(O(n\log^{2}n)\)</span>。</p>
+<h2 id="参考代码">参考代码</h2>
+<p><a
+href="https://atcoder.jp/contests/abc352/submissions/53158065">https://atcoder.jp/contests/abc352/submissions/53158065</a></p>
+]]></content>
+      <categories>
+        <category>AtCoder解题报告</category>
+      </categories>
+      <tags>
+        <tag>组合数学</tag>
+        <tag>概率与期望</tag>
+        <tag>多项式</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>【题解】AGC066A - Adjacent Difference</title>
     <url>/2024/04/03/%E3%80%90%E9%A2%98%E8%A7%A3%E3%80%91AGC066A/</url>
     <content><![CDATA[<h2 id="题目链接">题目链接</h2>
@@ -1696,8 +1767,8 @@ src="https://z1.ax1x.com/2023/10/19/piiGS0I.png" /></p>
       </categories>
       <tags>
         <tag>组合数学</tag>
-        <tag>动态规划</tag>
         <tag>容斥原理</tag>
+        <tag>动态规划</tag>
         <tag>树形背包</tag>
       </tags>
   </entry>
@@ -2100,19 +2171,6 @@ href="http://www.tle-automat.top/2023/10/11/CCPC2021威海站%20M.%20810975/">M.
       </tags>
   </entry>
   <entry>
-    <title>Re:从零开始的数论（数论学习笔记索引）</title>
-    <url>/2023/10/08/%E6%95%B0%E8%AE%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
-    <content><![CDATA[<p>咕。咕。咕。</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>索引</category>
-      </categories>
-      <tags>
-        <tag>数论</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Re:从零开始的生成函数（组合数学学习笔记索引）</title>
     <url>/2023/10/08/%E7%94%9F%E6%88%90%E5%87%BD%E6%95%B0%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
     <content><![CDATA[<p>咕。咕。咕。</p>
@@ -2123,6 +2181,19 @@ href="http://www.tle-automat.top/2023/10/11/CCPC2021威海站%20M.%20810975/">M.
       </categories>
       <tags>
         <tag>生成函数</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Re:从零开始的数论（数论学习笔记索引）</title>
+    <url>/2023/10/08/%E6%95%B0%E8%AE%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
+    <content><![CDATA[<p>咕。咕。咕。</p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>索引</category>
+      </categories>
+      <tags>
+        <tag>数论</tag>
       </tags>
   </entry>
   <entry>
