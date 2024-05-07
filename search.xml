@@ -790,8 +790,8 @@ f_k &amp;= \sum\limits_{\{p_1, p_2, \cdots, p_k\} \subset \{1, 2,
 
 \end{aligned}\]</span>
 <p>$$ 令 <span class="math inline">\(g_k =
-\displaystyle\sum\limits_{\{p_1, p_2, \cdots, p_k\} \sub \{1, 2, \cdots,
-n\}} A_{p_1} A_{p_2}\cdots A_{p_k}\)</span>，注意到 <span
+\displaystyle\sum\limits_{\{p_1, p_2, \cdots, p_k\} \subset \{1, 2,
+\cdots, n\}} A_{p_1} A_{p_2}\cdots A_{p_k}\)</span>，注意到 <span
 class="math inline">\(g_k\)</span> 的含义就是从 <span
 class="math inline">\(n\)</span> 个里面选 <span
 class="math inline">\(k\)</span> 个所有方案的乘积之和。</p>
@@ -2145,19 +2145,6 @@ href="http://www.tle-automat.top/2023/10/11/CCPC2021威海站%20M.%20810975/">M.
       </tags>
   </entry>
   <entry>
-    <title>Re:从零开始的数论（数论学习笔记索引）</title>
-    <url>/2023/10/08/%E6%95%B0%E8%AE%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
-    <content><![CDATA[<p>咕。咕。咕。</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>索引</category>
-      </categories>
-      <tags>
-        <tag>数论</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Re:从零开始的字符串算法（字符串算法学习笔记索引）</title>
     <url>/2023/10/08/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
     <content><![CDATA[<p>咕。咕。咕。</p>
@@ -2168,6 +2155,19 @@ href="http://www.tle-automat.top/2023/10/11/CCPC2021威海站%20M.%20810975/">M.
       </categories>
       <tags>
         <tag>字符串算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Re:从零开始的数论（数论学习笔记索引）</title>
+    <url>/2023/10/08/%E6%95%B0%E8%AE%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
+    <content><![CDATA[<p>咕。咕。咕。</p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>索引</category>
+      </categories>
+      <tags>
+        <tag>数论</tag>
       </tags>
   </entry>
   <entry>
