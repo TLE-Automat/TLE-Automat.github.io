@@ -757,10 +757,10 @@ class="math inline">\(y\)</span> 至少有一条路径经过偶数个结点。</
 <code>)</code>，那么可以在上面来回走来刷右括号。</p>
 <p>那么一个初步的想法就是：</p>
 <ul>
-<li><p>如果 <span class="math inline">\(x\)</span>
+<li>如果 <span class="math inline">\(x\)</span>
 可以直接沿着左右括号交替的路径走到 <span
-class="math inline">\(y\)</span>，那就做完了。</p></li>
-<li><p>否则，从 <span class="math inline">\(x\)</span>
+class="math inline">\(y\)</span>，那就做完了。</li>
+<li>否则，从 <span class="math inline">\(x\)</span>
 沿着交替的左右括号一直走，走到某一个
 <code>((</code>，然后开始刷足够多的左括号，然后原路返回 <span
 class="math inline">\(x\)</span>，再从 <span
@@ -768,8 +768,9 @@ class="math inline">\(x\)</span> 沿着某条经过偶数个结点的路径走�
 class="math inline">\(y\)</span>，从 <span
 class="math inline">\(y\)</span> 沿着交替的左右括号一直走，走到某一个
 <code>))</code>，然后开始刷右括号，刷到与剩下的左括号平衡，然后返回
-<span class="math inline">\(y\)</span> 即可。</p></li>
+<span class="math inline">\(y\)</span>​ 即可。</li>
 </ul>
+<span id="more"></span>
 <p>第一种情况正确性显然。</p>
 <p>第二种情况，三段路径中每段路径经过的点数都是偶数，且前面刷了足够多的左括号让中间的段的每个右括号都能匹配，且最后能够刷右括号去抵消之前刷多了的左括号，所以也是正确的。</p>
 <p>那么如果这两种情况都不满足，说明从 <span
@@ -882,8 +883,8 @@ href="https://atcoder.jp/contests/abc352/submissions/53158065">https://atcoder.j
       </categories>
       <tags>
         <tag>组合数学</tag>
-        <tag>多项式</tag>
         <tag>概率与期望</tag>
+        <tag>多项式</tag>
       </tags>
   </entry>
   <entry>
@@ -1841,8 +1842,8 @@ src="https://z1.ax1x.com/2023/10/19/piiGS0I.png" /></p>
       </categories>
       <tags>
         <tag>组合数学</tag>
-        <tag>动态规划</tag>
         <tag>容斥原理</tag>
+        <tag>动态规划</tag>
         <tag>树形背包</tag>
       </tags>
   </entry>
@@ -2219,6 +2220,19 @@ href="http://www.tle-automat.top/2023/10/11/CCPC2021威海站%20M.%20810975/">M.
       </tags>
   </entry>
   <entry>
+    <title>Re:从零开始的字符串算法（字符串算法学习笔记索引）</title>
+    <url>/2023/10/08/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
+    <content><![CDATA[<p>咕。咕。咕。</p>
+<span id="more"></span>
+]]></content>
+      <categories>
+        <category>索引</category>
+      </categories>
+      <tags>
+        <tag>字符串算法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Re:从零开始的多项式（多项式学习笔记索引）</title>
     <url>/2023/10/08/%E5%A4%9A%E9%A1%B9%E5%BC%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
     <content><![CDATA[<p>咕。咕。咕。</p>
@@ -2229,19 +2243,6 @@ href="http://www.tle-automat.top/2023/10/11/CCPC2021威海站%20M.%20810975/">M.
       </categories>
       <tags>
         <tag>多项式</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Re:从零开始的数论（数论学习笔记索引）</title>
-    <url>/2023/10/08/%E6%95%B0%E8%AE%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
-    <content><![CDATA[<p>咕。咕。咕。</p>
-<span id="more"></span>
-]]></content>
-      <categories>
-        <category>索引</category>
-      </categories>
-      <tags>
-        <tag>数论</tag>
       </tags>
   </entry>
   <entry>
@@ -2258,8 +2259,8 @@ href="http://www.tle-automat.top/2023/10/11/CCPC2021威海站%20M.%20810975/">M.
       </tags>
   </entry>
   <entry>
-    <title>Re:从零开始的字符串算法（字符串算法学习笔记索引）</title>
-    <url>/2023/10/08/%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
+    <title>Re:从零开始的数论（数论学习笔记索引）</title>
+    <url>/2023/10/08/%E6%95%B0%E8%AE%BA%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%E7%B4%A2%E5%BC%95/</url>
     <content><![CDATA[<p>咕。咕。咕。</p>
 <span id="more"></span>
 ]]></content>
@@ -2267,7 +2268,7 @@ href="http://www.tle-automat.top/2023/10/11/CCPC2021威海站%20M.%20810975/">M.
         <category>索引</category>
       </categories>
       <tags>
-        <tag>字符串算法</tag>
+        <tag>数论</tag>
       </tags>
   </entry>
   <entry>
